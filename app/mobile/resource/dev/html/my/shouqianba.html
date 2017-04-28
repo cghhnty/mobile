@@ -1,0 +1,104 @@
+<div class="my-center" rn-scope>
+    <div class="my-center-header">
+        <div class="my-center-group">
+            <div class="my-center-logo"></div>
+            <div class="my-center-vendor-name">福利社</div>
+        </div>
+
+        <div class="my-center-profile">
+            <div class="my-center-face-set">
+                <div class="my-center-member-avatar" style="background-image: url({{member.avatar || app.resource + '/img/my-center/avatar.png'}})"></div>
+                <div class="my-center-member-level"><div class="my-center-member-level-text">{{memberEx.levelName}}</div></div>
+            </div>
+            <div class="my-center-detail-set">
+                <div class="my-center-member-name">{{member.fullName}}</div>
+                <div class="my-center-member-info">
+                    会员号: {{member.memberCode}}
+                    <!-- <span style="{{show(memberEx.levelName)}}">&nbsp;&nbsp;等级: {{memberEx.levelName}}</span> -->
+                </div>
+                <div class="my-center-group">
+                    <i class="my-center-icon-score my-center-icon-inline"></i>
+                    <div class="my-center-member-hbjf-item my-center-text-inline">积分: {{point}}分</div><!--积分: {{yuan(memberEx.point)}}分-->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="my-center-content">
+        <div class="my-center-item-wrap">
+            <a class="my-center-item" href="{{link('shouqianba/obtain-point')}}">
+                <div class="my-center-item-content">
+                    <div class="my-center-item-icon">
+                        <div class="my-center-icon-block">
+                            <img class="my-center-icon" src="{{app.resource + '/img/my-center/obtain-point@2x.png'}}"/>
+                        </div>
+                    </div>
+                    <div class="my-center-item-text-second">积分赚取</div>
+                    <!-- <div class="my-center-item-comment" style="{{show(newOrdersCount)}}">有{{newOrdersCount}}条新记录</div> -->
+                </div>
+            </a>
+        </div>
+
+        <div class="my-center-item-wrap">
+            <a class="my-center-item" href="{{link('shouqianba/consume-history-record')}}">
+                <div class="my-center-item-content">
+                    <div class="my-center-item-icon">
+                        <div class="my-center-icon-block">
+                            <img class="my-center-icon" src="{{app.resource + '/img/my-center/record@2x.png'}}"/>
+                        </div>
+                    </div>
+                    <div class="my-center-item-text-second">积分记录</div>
+                    <!-- <div class="my-center-item-comment" style="{{show(newOrdersCount)}}">有{{newOrdersCount}}条新记录</div> -->
+                </div>
+            </a>
+        </div>
+
+        <!--<div class="my-center-item-wrap">-->
+            <!--<a id="pointShop" class="my-center-item" href="{{link('creditShop')}}">-->
+                <!--<div class="my-center-item-content">-->
+                    <!--<div class="my-center-item-icon">-->
+                        <!--<div class="my-center-icon-block">-->
+                            <!--<img class="my-center-icon" src="{{app.resource + '/img/my-center/point-shop@2x.png'}}"/>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="my-center-item-text-second">积分商城</div>-->
+                    <!--&lt;!&ndash; <div class="my-center-item-comment" style="{{show(newOrdersCount)}}">有{{newOrdersCount}}条新记录</div> &ndash;&gt;-->
+                <!--</div>-->
+            <!--</a>-->
+        <!--</div>-->
+        <div class="my-center-item-wrap">
+            <a class="my-center-item" href="{{link('shouqianba/top')}}">
+                <div class="my-center-item-content">
+                    <div class="my-center-item-icon">
+                        <div class="my-center-icon-block">
+                            <img class="my-center-icon" src="{{app.resource + '/img/my-center/top@2x.png'}}"/>
+                        </div>
+                    </div>
+                    <div class="my-center-item-text-second">英雄榜</div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+
+<script>
+    inc(
+            'css/shouqianba.css',
+            //'css/jquery.excoloSlider.css',
+            'js/Shouqianba.js',
+            // 'js/jquery-1.9.1.min.js',
+            //'js/jquery.excoloSlider.min.js',
+
+            function() {
+                new Shouqianba();
+                // $(function () {
+                //     $("#slider").excoloSlider();
+                // });
+            }
+
+    );
+</script>
+<script>
+
+</script>
+</div>

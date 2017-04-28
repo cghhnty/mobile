@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<style>
+	body {
+		background-color: #eee;
+	}
+
+	.common-preloader {
+		background: url(<%=app.resource%>/img/common/loading.gif) #eee no-repeat center;
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		z-index: 1000;
+	}
+	</style>
+	<script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?80f8de18a8d0447503c59ab8598d61cd";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+</head>
+
+<body>
+	<div class="common-preloader"></div>
+
+	<script>
+	var DEBUG = <%=JSON.stringify(DEBUG)%>;
+	var app = <%=JSON.stringify(app)%>;
+	var imgServer = <%=JSON.stringify(imgServer)%>;
+	var masterpage = <%=JSON.stringify(masterpage)%>;
+	var partial = <%=JSON.stringify(partial)%>;
+	var standalone = <%=JSON.stringify(standalone)%>;
+	var store = <%=JSON.stringify(store)%>;
+	var member = <%=JSON.stringify(member)%>;
+	var env = <%=JSON.stringify(env)%>;
+	</script>
+    // app.resource : http://postest.lakala.com.cn/mobile/dist
+	<script src="<%=app.resource%>/resdata.js?<%=checksums['resdata.js']%>"></script>
+	<script src="<%=app.resource%>/js/loader.js?<%=checksums['js/loader.js']%>"></script>
+</body>
+</html>

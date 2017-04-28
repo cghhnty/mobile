@@ -1,0 +1,99 @@
+doctype html
+html
+    head
+        meta(charset='utf-8')
+        title 会员中心
+        meta(name='viewport', content='width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no')
+        meta(name='apple-mobile-web-app-capable', content='yes')
+        meta(name='format-detection', content='telephone=no, email=no')
+        meta(name='msapplication-tap-highlight', content='no')
+        meta(http-equiv='expires', content='0')
+        meta(http-equiv='Pragma', content='no-cache')
+        meta(http-equiv='Cache-Control', content='no-cache')
+        link(rel='Shortcut Icon', href='/mobile/dist/images/icon/favicon.ico')
+        link(rel='stylesheet', type='text/css', href='/mobile/dist/build/css/app.min.css')
+        script(src='/mobile/dist/build/js/app.min.js')
+        script(src='/mobile/dist/assets/js/app/mobile-config.js')
+        script(type="text/javascript",define = null,require = null)
+        script(src='http://res.wx.qq.com/open/js/jweixin-1.0.0.js')
+    body
+
+        div(data-role='page', data-title='会员中心', data-dom-cache='true')
+            input#memberId(type='hidden', value='#{member?member.id:""}')
+            input#storeId(type='hidden', value='#{store?store.id:""}')
+            input#loginWeixin(type='hidden', value='#{member?member.weixinId:""}')
+            .ui-content.p-l-none.p-r-none.p-b-none.absolute.ui-content-top(data-role='main')
+                .absolute-top
+                    .row.m-n.padder-xs.el-click(style='height:132px;')
+                        .col-xs-9.col-xs-push-3.no-padder(style='margin-left:-25px;')
+                            .pull-left.padder-v-sm
+                                .rounded(style='height:50px; width:50px; border: 1px #999 solid;')
+                                    .h-full.rounded.clear(style='border: 1px #fff solid;')
+                                        img.w-full.h-full(src='#{member?member.avatar:""}')
+                            div(style='padding-left:50px;')
+                                .p-l.text-2x.m-t.m-b-none.text-ellipsis #{member?member.fullName:""}
+                        .clear-both.text-center.btn-wrap
+                            button.inline.btn.no-border.m-xs.m-t-none.r-2x
+                                p.m-b-none.font-bold 优惠券
+                                p.m-b-none.text-muted.text-xs
+                                  span#coupon.text-white.p-r-xs
+                                  | 张未使用
+                            a#grade.inline.btn.no-border.m-xs.m-t-none.r-2x.pos-rlt.p-r-lg
+                                p.m-b-none.font-bold
+                                    span.text-info.p-r-xs
+                                    | 会员等级卡
+                                p.m-b-none.text-muted.text-xs
+                                    span#gCard.text-white.p-r-xs
+                                    |张
+                                span.pos-abt.absolute-right.text-white.text-md.icon-icon_arrowRight(style='height:16px; margin-right:8px;')
+                            //button.btn.btn-xs.btn-warning.m-l-sm.m-r-n-md.l-h-sm.text-3xs(data-role='none', data-modal='#modalexplain') 查看说明
+                    #filter-control.row.m-l-none.m-r-none.text-center
+                        .col-xs-4.no-padder.el-click(data-target='#page1-tab0')
+                            span 全部分类
+                            span.icon-content.icon-icon_arrowLeft.m-l-sm.inline
+                        .col-xs-4.no-padder.el-click(data-target='#page1-tab1')
+                            span 综合排序
+                            span.icon-content.icon-icon_arrowLeft.m-l-sm.inline
+                        .col-xs-4.no-padder.el-click(data-target='#page1-tab2')
+                            span 筛选
+                            span.icon-icon_filter.m-l-sm.inline
+                    #filter-content.filter-content
+                        #page1-tab0.animated.fadeInUp.p-b-md(data-key="data0")
+                            div
+                                span.pull-left.m-l.m-t-sm 全部分类：
+                                .filter-list(style='padding-left:76px;', data-key='filter0')
+                                    span.active(data-name='name1') 代金券
+                        #page1-tab1.animated.fadeInUp.p-b-md(data-key="data1")
+                            div
+                                span.pull-left.m-l.m-t-sm 综合排序：
+                                .filter-list(style='padding-left:76px;', data-key='filter0')
+                                    span.active(data-name='name0') 默认排序
+                                    span(data-name='name1') 过期排序
+                        #page1-tab2.animated.fadeInUp.p-b-md(data-key="data2")
+                            div
+                                span.pull-left.m-l.m-t-sm 筛选：
+                                .filter-list(style='padding-left:76px;', data-key='filter0')
+                                    span.active(data-name='name0') 未使用
+                                    span(data-name='name1') 已过期
+                                    span(data-name='name2') 已使用
+                .lay-body.pos-rlt
+                    .absolute-bottom.text-center.text-sm.p-b-xs.text-muted.hide(data-loadshow='loadshow',style='line-height: 20px;')
+                        span.icon-icon_loadmore.inline.m-r-xs.text-xs
+                        img.img-icon_loadmore.hide.m-r-xs(src='/mobile/dist/images/icon/loading-more.gif', width='14')
+                        span.text 加载更多
+                    #page1-index-scroll-touch.h-full.scroll-touch
+                        #index-empty-ticket.h-full.text-center.w-full.hide(style='display: table;')
+                            .text-muteder(style='display: table-cell; vertical-align: middle;')
+                                span.icon-icon_emticket(style='font-size: 60px;')
+                                p.p-t-xs 您暂时没有优惠券哦~
+                        #ticket-list.ticket-list.scroll-touch-body
+                            
+                #modalticket.modals.animated.fadeInRight.scroll-touch
+                    
+                #modalexplain.modals.animated.fadeInRight.scroll-touch
+                    .padder.padder-v
+                        p.text-center.text-md
+                            span.close.modal-close.rounded(style='padding:10px; ') ×
+                            | 新发放说明
+                        p 说明文字
+            script(src='/mobile/dist/assets/js/app/coupon/index.js')

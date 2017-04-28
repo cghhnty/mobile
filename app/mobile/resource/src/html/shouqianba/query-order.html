@@ -1,0 +1,44 @@
+<div id="queryOrder">
+    <div id="amountContainer">
+        <div id="logoInfo"></div>
+        <div id="amount">
+            <!--<input type="text" placeholder="请输入订单号" name="amount" id="addmount" readonly disabled style="color: #313131;">-->
+            <div id="cursor"></div>
+            <p id="sn-input">请输入订单号</p>
+        </div>
+        <div id="search">
+            <div id="qr-scan" class="searchBtn_1">使用扫一扫</div>
+            <div id="submit" class="searchBtn_2">查询</div>
+        </div>
+        <div id="keyboardContainer">
+            <table id="keyboard" border="0" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td data-key="1">1</td>
+                    <td data-key="2">2</td>
+                    <td data-key="3">3</td>
+                </tr>
+                <tr>
+                    <td data-key="4">4</td>
+                    <td data-key="5">5</td>
+                    <td data-key="6">6</td>
+                </tr>
+                <tr>
+                    <td data-key="7">7</td>
+                    <td data-key="8">8</td>
+                    <td data-key="9">9</td>
+                </tr>
+                <tr>
+                    <td style="background-color:#f1f1f1;font-size:18px;font-weight:400;" data-key="clear">清空</td>
+                    <td data-key="0">0</td>
+                    <td style="background-color:#f1f1f1;font-size:18px;font-weight:400;" data-key="del">删除</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<script>inc('css/shouqianba-query-order.css',
+        'js/shouqianbaQueryOrder.js',
+        'http://res.wx.qq.com/open/js/jweixin-1.0.0.js',
+        function () {
+            new ShouqianbaQueryOrder();
+        });</script>

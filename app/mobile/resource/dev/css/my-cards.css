@@ -1,0 +1,19 @@
+.my-cards-card {
+  margin: 14px;
+}
+.my-cards-card-usage {
+  font-size: 40px;
+  color: #fff;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.133);
+}
+.my-cards-card-slash {
+  font-size: 40px;
+  color: rgba(255,255,255,0.5);
+  text-shadow: 0 1px 1px rgba(0,0,0,0.133);
+}
+.my-cards-card-total {
+  font-size: 25px;
+  color: rgba(255,255,255,0.5);
+  text-shadow: 0 1px 1px rgba(0,0,0,0.133);
+}
+/*# sourceMappingURL=my-cards.css.map */

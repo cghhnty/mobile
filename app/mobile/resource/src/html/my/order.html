@@ -1,0 +1,30 @@
+<div class="my-order" rn-scope>
+	<!-- <p style="{{hide(!randomTicketUrl || !store || !store.details || !store.details.name)}}" class="text-center text-danger" style="margin-top: 20px;">
+		【{{store.details.name}}】携手滴滴打车，为您报销路费，点击“我要领券”领取百元打车券！
+	</p> -->
+	<div class="text-center" style="margin-top: 20px;">
+		<a href="{{link('my/center')}}" class="btn btn-warning">前往会员中心</a>
+		<!-- <a id="
+		】、" style="{{hide(!randomTicketUrl)}}" href="{{randomTicketUrl}}" class="btn btn-danger">我要领券</a> -->
+	</div>
+	<!-- <p style="{{hide(!randomTicketUrl)}}" class="text-center text-muted" style="margin-top: 20px;">
+		*本服务由收钱吧提供，收钱吧是喔噻旗下的支付产品。
+	</p> -->
+
+	<script>
+	inc(
+		'html/my/orders.html',
+		'css/my-orders.css',
+		'js/MyOrders.js',
+		'js/MyOrder.js',
+		function() {
+			var $order = $(inc.get('html/my/orders.html')).find('.my-orders-order');
+			$order.addClass('my-orders-order-expand');
+			$order.find('.my-orders-order-detail-toggle').remove();
+			$order.find('.my-orders-order-detail-wrap').css('display', '');
+			$order.prependTo('.my-order');
+			new MyOrder();
+		}
+	);
+	</script>
+</div>

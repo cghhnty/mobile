@@ -1,0 +1,38 @@
+<div class="my-balance" rn-scope>
+	<a class="my-balance-account" href="{{link('my/orders', {type: 'BALANCE_ACCOUNT', cardId: account.id})}}">
+		<div class="my-balance-account-header">储值余额 (元)</div>
+		<div class="my-balance-account-balance">{{yuan(_data.account ? account.balance : 0).slice(0, -3)}}<span class="my-balance-account-balance-fraction">{{yuan(_data.account ? account.balance : 0).slice(-3)}}</span></div>
+	</a>
+
+	<!--<a class="card2 card2-cyan my-balance-card" href="{{link('my/orders', {type: 'BALANCE_CARD', cardId: id})}}" rn-foreach="cardsActive">-->
+		<!--<div class="card2-water-mark">储值卡</div>-->
+		<!--<div class="card2-header">{{name}} <span class="card2-header-right">总价: {{yuan(cardDef.faceValue)}}元</span></div>-->
+		<!--<div class="card2-body"><span class="my-balance-card-balance">{{yuan(balance)}}</span></div>-->
+		<!--<div class="card2-footer">有效期: {{effectiveTime || expirationTime ? date(effectiveTime || createDate) + ' 至 ' +  (expirationTime ? date(expirationTime) : '永久') : '永久有效'}}</div>-->
+	<!--</a>-->
+
+	<!--<a class="card2 card2-gray my-balance-card" href="{{link('my/orders', {type: 'BALANCE_CARD', cardId: id})}}" rn-foreach="cardsFrozen">-->
+		<!--<div class="card2-water-mark">储值卡</div>-->
+		<!--<div class="card2-header">{{name}} <span class="card2-header-right">总价: {{yuan(cardDef.faceValue)}}元</span></div>-->
+		<!--<div class="card2-body"><span class="my-balance-card-balance">{{yuan(balance)}}</span></div>-->
+		<!--<div class="card2-footer">已冻结</div>-->
+	<!--</a>-->
+
+	<!--<a class="card2 card2-gray my-balance-card" href="{{link('my/orders', {type: 'BALANCE_CARD', cardId: id})}}" rn-foreach="cardsExpired">-->
+		<!--<div class="card2-water-mark">储值卡</div>-->
+		<!--<div class="card2-header">{{name}} <span class="card2-header-right">总价: {{yuan(cardDef.faceValue)}}元</span></div>-->
+		<!--<div class="card2-body"><span class="my-balance-card-balance">{{yuan(balance)}}</span></div>-->
+		<!--<div class="card2-footer">已失效</div>-->
+	<!--</a>-->
+
+	<script>
+	inc(
+		'css/card2.css',
+		'css/my-balance.css',
+		'js/MyBalance.js',
+		function() {
+			new MyBalance();
+		}
+	)
+	</script>
+</div>

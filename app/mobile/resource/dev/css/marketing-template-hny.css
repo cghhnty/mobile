@@ -1,0 +1,689 @@
+@charset "utf-8";
+body, html {
+	height: 100%;
+	margin: 0
+}
+h3, p {
+	margin: 0
+}
+.icon {
+	display: inline-block;
+	vertical-align: middle
+}
+.template-hny .icon-hny {
+	background-image: url(../img/marketing-template/hny/sprite2x.png);
+	background-position: 0 -265px;
+	height: 74px;
+	width: 183px;
+	background-size: 302px 339px
+}
+.template-hny .icon-hny2 {
+	background-image: url(../img/marketing-template/hny/sprite2x.png);
+	background-position: -165px 0;
+	height: 122px;
+	width: 56px;
+	background-size: 302px 339px
+}
+.template-hny .icon-sheep {
+	background-image: url(../img/marketing-template/hny/sprite2x.png);
+	background-position: -100px -165px;
+	height: 91px;
+	width: 93px;
+	background-size: 302px 339px
+}
+.template-hny .icon-moon {
+	background-image: url(../img/marketing-template/hny/sprite2x.png);
+	background-position: -193px -122px;
+	height: 80px;
+	width: 80px;
+	background-size: 302px 339px
+}
+.template-hny .icon-flower {
+	background-image: url(../img/marketing-template/hny/sprite2x.png);
+	background-position: 0 0;
+	height: 165px;
+	width: 165px;
+	background-size: 302px 339px
+}
+.template-hny .icon-flower2 {
+	background-image: url(../img/marketing-template/hny/sprite2x.png);
+	background-position: -221px 0;
+	height: 81px;
+	width: 81px;
+	background-size: 302px 339px
+}
+.template-hny .icon-wosai {
+	background-image: url(../img/marketing-template/hny/sprite2x.png);
+	background-position: -221px -81px;
+	height: 17px;
+	width: 72px;
+	background-size: 302px 339px
+}
+.template-hny .icon-circle {
+	background-image: url(../img/marketing-template/hny/sprite2x.png);
+	background-position: 0 -165px;
+	height: 100px;
+	width: 100px;
+	background-size: 302px 339px
+}
+.icon-play {
+	background-image: url(../img/marketing-template/hny/sprite2x.png);
+	background-position: -165px -122px;
+	height: 21px;
+	width: 21px;
+	background-size: 302px 339px
+}
+.icon-stop {
+	background-image: url(../img/marketing-template/hny/sprite2x.png);
+	background-position: -165px -143px;
+	height: 21px;
+	width: 21px;
+	background-size: 302px 339px
+}
+.music {
+	width: 20px;
+	height: 20px;
+	position: fixed;
+	top: 10px;
+	right: 10px;
+	z-index: 9;
+	cursor: pointer;
+	-webkit-tap-highlight-color: transparent
+}
+.music .icon-play {
+	-webkit-animation: hny-rotate 1s linear infinite
+}
+.music.stop .icon-play {
+	background-image: url(../img/marketing-template/hny/sprite2x.png);
+	background-position: -165px -143px;
+	height: 21px;
+	width: 21px;
+	background-size: 302px 339px;
+	-webkit-animation: none
+}
+.swiper-container {
+	margin: 0 auto;
+	position: relative;
+	overflow: hidden;
+	direction: ltr;
+	-webkit-backface-visibility: hidden;
+	-ms-backface-visibility: hidden;
+	-o-backface-visibility: hidden;
+	backface-visibility: hidden;
+	z-index: 1
+}
+.swiper-wrapper {
+	position: relative;
+	-moz-transition-property: -moz-transform, left, top;
+	-moz-transition-duration: 0s;
+	-moz-transform: translate3d(0px, 0, 0);
+	-moz-transition-timing-function: ease;
+	-o-transform: translate(0px, 0);
+	-ms-transition-property: -ms-transform, left, top;
+	-ms-transition-duration: 0s;
+	-ms-transform: translate3d(0px, 0, 0);
+	-ms-transition-timing-function: ease;
+	-webkit-transition-property: -webkit-transform, left, top;
+	-o-transition-property: -o-transform, left, top;
+	transition-property: transform, left, top;
+	-webkit-transition-duration: 0s;
+	-o-transition-duration: 0s;
+	transition-duration: 0s;
+	-webkit-transform: translate3d(0px, 0, 0);
+	transform: translate3d(0px, 0, 0);
+	-webkit-transition-timing-function: ease;
+	-o-transition-timing-function: ease;
+	transition-timing-function: ease;
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	box-sizing: content-box
+}
+.swiper-free-mode>.swiper-wrapper {
+	-webkit-transition-timing-function: ease-out;
+	-o-transition-timing-function: ease-out;
+	transition-timing-function: ease-out;
+	margin: 0 auto
+}
+.swiper-slide {
+	float: left;
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	box-sizing: content-box
+}
+.swiper-wp8-horizontal {
+	-ms-touch-action: pan-y
+}
+.swiper-wp8-vertical {
+	-ms-touch-action: pan-x
+}
+.swiper-container, .swiper-slide, .swiper-wrapper {
+	width: 100%;
+	height: 100%
+}
+.template-hny .left {
+	width: 21px;
+	height: 14px;
+	position: absolute;
+	top: 50%;
+	margin-top: -7px;
+	right: 10px;
+	-webkit-transform: rotate(-90deg);
+	background: url(../img/marketing-template/hny/arrow.png) 0 0/21px 14px no-repeat;
+	-webkit-animation: fadeOut 1.2s ease-in both infinite
+}
+@-webkit-keyframes fadeOut {
+	100% {
+		opacity: 0
+	}
+}
+.template-hny .swiper-slide {
+	overflow: hidden;
+	position: relative;
+	background-color: #ac2b4e
+}
+.template-hny .swiper-slide .icon-flower {
+	position: absolute;
+	z-index: 2
+}
+.template-hny .swiper-slide pre {
+	margin: 0
+}
+.template-hny .slide1 .store {
+	position: absolute;
+	bottom: 100px;
+	left: 50%;
+	-webkit-transform: translate(-50%, 0)
+}
+.template-hny .slide1 .logo {
+	max-width: 200px;
+	max-height: 200px;
+	overflow: hidden
+}
+.template-hny .slide1 .logo img {
+	max-width: 100%
+}
+.template-hny .slide1 .name {
+	color: #fff9d7;
+	font-size: 20px;
+	padding: 10px;
+	text-align: center
+}
+.template-hny .slide1 .spring {
+	position: relative;
+	margin: 120px auto 0;
+	width: 299px;
+	height: 299px;
+	background: url(../img/marketing-template/hny/spring.jpg) 0 0/299px auto no-repeat
+}
+.template-hny .slide1 .spring .icon-sheep {
+	position: absolute;
+	left: 50%;
+	-webkit-transform: translate(-50%, 0);
+	-ms-transform: translate(-50%, 0);
+	-o-transform: translate(-50%, 0);
+	transform: translate(-50%, 0);
+	bottom: 55px
+}
+.template-hny .icon-tl {
+	top: -42px;
+	left: -42px
+}
+.template-hny .icon-tr {
+	top: -42px;
+	right: -42px;
+	-webkit-transform: rotate(-270deg)
+}
+.template-hny .icon-bl {
+	bottom: -80px;
+	left: -90px
+}
+.template-hny .icon-br {
+	-webkit-transform: rotate(180deg);
+	bottom: -80px;
+	right: -90px
+}
+.template-hny .icon-hny {
+	position: absolute;
+	bottom: 10px;
+	left: 50%;
+	-webkit-transform: translate3d(-50%, 0, 0);
+	transform: translate3d(-50%, 0, 0)
+}
+.template-hny .swiper-slide-active .spring {
+	-webkit-animation: hny-rotateIn 1s ease both 2s
+}
+.template-hny .swiper-slide-active .store {
+	-webkit-animation: hny-fadeInUp .6s ease-in both 4s
+}
+.template-hny .swiper-slide-active .icon-hny {
+	-webkit-animation: hny-fadeInUp .6s ease-in both 3s
+}
+.template-hny .swiper-slide-active .icon-tl {
+	-webkit-animation: hny-fadeTopLeft 1s ease both
+}
+.template-hny .swiper-slide-active .icon-tr {
+	-webkit-animation: hny-fadeTopRight 1s ease both
+}
+.template-hny .swiper-slide-active .icon-bl {
+	-webkit-animation: hny-fadeBottomLeft 1s ease both
+}
+.template-hny .swiper-slide-active .icon-br {
+	-webkit-animation: hny-fadeBottomRight 1s ease both
+}
+.template-hny .swiper-slide-active .icon-hny2 {
+	-webkit-animation: hny-fadeInUp2 .6s ease-in both 1.8s
+}
+.template-hny .swiper-slide-active .window pre, .template-hny .swiper-slide-active em {
+	-webkit-animation: hny-fadeInLeft 1s ease both .3s
+}
+.template-hny .swiper-slide-active .window .word h3 {
+	-webkit-animation: hny-lightSpeedIn 1s ease-in both 1s
+}
+.template-hny .swiper-slide-active .cloud {
+	-webkit-animation: hny-cloud 40s linear both infinite
+}
+.template-hny .swiper-slide-active .side {
+	-webkit-animation: hny-fadeInRight 1s linear both
+}
+.template-hny .swiper-slide-active.slide3 pre {
+	-webkit-animation: hny-fadeInLeft 1s ease both .5s
+}
+.template-hny .swiper-slide-active .bless {
+	-webkit-animation: hny-fadeUp 1s linear both 1s
+}
+.template-hny .swiper-slide-active .icon-circle {
+	-webkit-animation: hny-bounceInDown 1s linear both
+}
+.template-hny .swiper-slide-active .icon-wosai {
+	-webkit-animation: hny-wobble 1s linear both 3s
+}
+.template-hny .slide2 .window {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	width: 275px;
+	height: 275px;
+	background: url(../img/marketing-template/hny/word.jpg) 0 0/275px auto no-repeat
+}
+.template-hny .slide2 .window .word {
+	padding-top: 20px;
+	width: 194px;
+	text-align: right
+}
+.template-hny .slide2 .window pre {
+	width: 120px;
+	margin: 0 0 0 70px;
+	color: #ac2b4e;
+	font-size: 16px;
+	line-height: 2;
+	word-wrap: break-word
+}
+.template-hny .slide2 .window em {
+	display: block;
+	font-size: 24px;
+	color: #ac2b4e;
+	margin-bottom: 10px;
+	padding-right: 60px
+}
+.template-hny .slide2 .window h3 {
+	color: #ac2b4e;
+	font-size: 32px
+}
+.template-hny .slide2 .window .icon-hny2 {
+	position: absolute;
+	left: 10px;
+	bottom: -35px
+}
+.template-hny .slide3 {
+	background-color: #2773aa
+}
+.template-hny .slide3 .cloud {
+	background: url(../img/marketing-template/hny/cloud.png) 0 0/auto 107px repeat-x
+}
+.template-hny .slide3 .cloud .icon-moon {
+	margin: 40px 0 0 70px
+}
+.template-hny .slide3 .word {
+	position: absolute;
+	left: 20px;
+	bottom: 35px
+}
+.template-hny .slide3 pre {
+	font-size: 15px;
+	color: #fff9d7;
+	line-height: 1.8;
+	background-color: transparent;
+	border: 0
+}
+.template-hny .slide3 .side {
+	width: 170px;
+	height: 100%;
+	background: url(../img/marketing-template/hny/window.png) 0 0/170px 100% no-repeat;
+	position: absolute;
+	right: 0;
+	top: 0
+}
+.template-hny .slide3 .side .icon-flower2 {
+	position: absolute;
+	top: 50%;
+	left: -40px;
+	-webkit-transform: translate(0, -50%);
+	-ms-transform: translate(0, -50%);
+	-o-transform: translate(0, -50%);
+	transform: translate(0, -50%)
+}
+.template-hny .slide4 {
+	background: url(../img/marketing-template/hny/fu.png) 0 0/100% auto repeat-y #fff9d7
+}
+.template-hny .slide4 .icon-circle {
+	position: absolute;
+	top: 90px;
+	left: 50%;
+	-webkit-transform: translate(-50%, 0);
+	-ms-transform: translate(-50%, 0);
+	-o-transform: translate(-50%, 0);
+	transform: translate(-50%, 0);
+	color: #fff9d7;
+	font-size: 14px;
+	text-align: center;
+	padding: 30px 20px 10px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	z-index: 3
+}
+.template-hny .slide4 .bless {
+	min-height: 170px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	padding: 10px;
+	background-color: #ac2b4e;
+	text-align: center
+}
+.template-hny .slide4 .bless pre {
+	color: #fff9d7;
+	font-size: 16px;
+	padding: 10px;
+	-webkit-border-radius: 1px;
+	border-radius: 1px;
+	word-wrap: break-word
+}
+.template-hny .slide4 .wosai {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 6px 0;
+    text-align: center;
+    background-color: #fff
+}
+
+ 
+.template-hny .slide4 .create{
+	float: right;
+	padding-right: 30px;
+	color: #666;
+	text-decoration: underline;
+	color: #f40;
+	font-size: 12px;
+}
+.template-hny .slide4 .link{
+	float: left;
+	padding-left: 30px;
+ 
+}
+@media (min-height:735px) {
+	.template-hny .slide4 .icon-circle {
+		top: 140px
+	}
+}
+@media (min-height:639px) {
+	.template-hny .slide4 .icon-circle {
+		top: 110px
+	}
+}
+@media (max-width:320px) {
+	.template-hny .slide1 .spring {
+		margin: 70px auto 0
+	}
+	.template-hny .slide3 .side {
+		width: 110px
+	}
+}
+@media (max-height:450px) {
+	.template-hny .slide1 .store {
+		background-color: rgba(0, 0, 0, .2);
+		padding: 5px 0
+	}
+}
+@-webkit-keyframes hny-cloud {
+	from {
+		background-position: -1000px top
+	}
+}
+@-webkit-keyframes hny-rotate {
+	0% {
+		-webkit-transform: rotate(0deg)
+	}
+	100% {
+		-webkit-transform: rotate(360deg)
+	}
+}
+@-webkit-keyframes hny-fadeTopLeft {
+	0% {
+		opacity: 0;
+		-webkit-transform: translate3d(-50%, -50%, 0);
+		transform: translate3d(-50%, -50%, 0)
+	}
+	100% {
+		opacity: 1;
+		-webkit-transform: none
+	}
+}
+@-webkit-keyframes hny-fadeTopRight {
+	0% {
+		opacity: 0;
+		-webkit-transform: translate3d(50%, -50%, 0);
+		transform: translate3d(50%, -50%, 0)
+	}
+	100% {
+		opacity: 1;
+		-webkit-transform: rotate(-270deg)
+	}
+}
+@-webkit-keyframes hny-fadeBottomLeft {
+	0% {
+		opacity: 0;
+		-webkit-transform: translate3d(-50%, 50%, 0);
+		transform: translate3d(-50%, 50%, 0)
+	}
+	100% {
+		opacity: 1;
+		-webkit-transform: none;
+		transform: none
+	}
+}
+@-webkit-keyframes hny-fadeBottomRight {
+	0% {
+		opacity: 0;
+		-webkit-transform: translate3d(50%, 50%, 0);
+		transform: translate3d(50%, 50%, 0)
+	}
+	100% {
+		opacity: 1;
+		-webkit-transform: rotate(180deg)
+	}
+}
+@-webkit-keyframes hny-wobble {
+	0% {
+		-webkit-transform: none;
+		transform: none
+	}
+	15% {
+		-webkit-transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg);
+		transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg)
+	}
+	30% {
+		-webkit-transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg);
+		transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg)
+	}
+	45% {
+		-webkit-transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg);
+		transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg)
+	}
+	60% {
+		-webkit-transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg);
+		transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg)
+	}
+	75% {
+		-webkit-transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg);
+		transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg)
+	}
+	100% {
+		-webkit-transform: none;
+		transform: none
+	}
+}
+@-webkit-keyframes hny-fadeInLeft {
+	0% {
+		opacity: 0;
+		-webkit-transform: translate3d(-60%, 0, 0);
+		transform: translate3d(-60%, 0, 0)
+	}
+	100% {
+		opacity: 1;
+		-webkit-transform: none;
+		transform: none
+	}
+}
+@-webkit-keyframes hny-fadeInRight {
+	0% {
+		opacity: 0;
+		-webkit-transform: translate3d(100%, 0, 0);
+		transform: translate3d(100%, 0, 0)
+	}
+	100% {
+		opacity: 1;
+		-webkit-transform: none;
+		transform: none
+	}
+}
+@-webkit-keyframes hny-fadeUp {
+	0% {
+		opacity: .7;
+		-webkit-transform: translate3d(0, 100%, 0);
+		transform: translate3d(0, 100%, 0)
+	}
+	100% {
+		opacity: 1;
+		-webkit-transform: translate3d(0, 0, 0);
+		transform: translate3d(0, 0, 0)
+	}
+}
+@-webkit-keyframes hny-fadeInUp {
+	0% {
+		opacity: 0;
+		-webkit-transform: translate3d(-50%, 100%, 0);
+		transform: translate3d(-50%, 100%, 0)
+	}
+	100% {
+		opacity: 1;
+		-webkit-transform: translate3d(-50%, 0, 0);
+		transform: translate3d(-50%, 0, 0)
+	}
+}
+@-webkit-keyframes hny-fadeInUp2 {
+	0% {
+		opacity: 0;
+		bottom: -55px
+	}
+	100% {
+		opacity: 1;
+		bottom: -35px
+	}
+}
+@-webkit-keyframes hny-zoomIn {
+	0% {
+		opacity: 0;
+		-webkit-transform: scale3d(0.3, .3, .3);
+		transform: scale3d(0.3, .3, .3)
+	}
+	50% {
+		opacity: 1
+	}
+}
+@-webkit-keyframes hny-lightSpeedIn {
+	0% {
+		-webkit-transform: translate3d(-60%, 0, 0) skewX(-30deg);
+		transform: translate3d(-60%, 0, 0) skewX(-30deg);
+		opacity: 0
+	}
+	60% {
+		-webkit-transform: skewX(20deg);
+		transform: skewX(20deg);
+		opacity: 1
+	}
+	80% {
+		-webkit-transform: skewX(-5deg);
+		transform: skewX(-5deg);
+		opacity: 1
+	}
+	100% {
+		-webkit-transform: none;
+		transform: none;
+		opacity: 1
+	}
+}
+@-webkit-keyframes hny-bounceInDown {
+	0%, 100%, 60%, 75%, 90% {
+		-webkit-transition-timing-function: cubic-bezier(0.215, .61, .355, 1);
+		transition-timing-function: cubic-bezier(0.215, .61, .355, 1)
+	}
+	0% {
+		opacity: 0;
+		-webkit-transform: translate3d(-50%, -3000px, 0);
+		transform: translate3d(-50%, -3000px, 0)
+	}
+	60% {
+		opacity: 1;
+		-webkit-transform: translate3d(-50%, 25px, 0);
+		transform: translate3d(-50%, 25px, 0)
+	}
+	75% {
+		-webkit-transform: translate3d(-50%, -10px, 0);
+		transform: translate3d(-50%, -10px, 0)
+	}
+	90% {
+		-webkit-transform: translate3d(-50%, 5px, 0);
+		transform: translate3d(-50%, 5px, 0)
+	}
+	100% {
+		-webkit-transform: translate3d(-50%, 0, 0)
+	}
+}
+@-webkit-keyframes hny-rotateIn {
+	0% {
+		-webkit-transform-origin: center;
+		transform-origin: center;
+		-webkit-transform: rotate3d(0, 0, 1, -200deg);
+		transform: rotate3d(0, 0, 1, -200deg);
+		opacity: 0
+	}
+	100% {
+		-webkit-transform-origin: center;
+		transform-origin: center;
+		-webkit-transform: none;
+		transform: none;
+		opacity: 1
+	}
+}
+/*# sourceMappingURL=marketing-template-hny.css.map */

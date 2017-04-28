@@ -1,0 +1,71 @@
+<div class="activity-history" rn-scope>
+	<div style="{{hide(histories.length)}}">没有中奖记录</div>
+
+	<div class="activity-history-item card card-default" rn-foreach="activeTickets">
+		<div class="card-head">
+			<span class="card-head-title">{{card.name}}</span>
+		</div>
+
+		<div class="activity-history-content">
+			<div><span class="activity-history-title">面额:</span> {{yuan(card.faceValue)}}元</div>
+			<div><span class="activity-history-title">有效期:</span> {{card.effectiveTime ? date(card.effectiveTime) + '至' + date(card.expirationTime) : '永久有效'}}</div>
+			<div><span class="activity-history-title">优惠码:</span> {{card.cardCode}} <i class="fa fa-qrcode activity-history-qrcode-icon"></i></div>
+		</div>
+
+		<div class="activity-history-details" style="display: none">
+			<div class="activity-history-qrcode"><img rn-prop="src: app.api + '/qrcode?text=' + card.cardCode"></div>
+
+			<div class="activity-history-stores-title">适用门店:</div>
+			<div class="activity-history-stores">
+				<div class="activity-history-store" rn-foreach="card.storeWhiteList">
+					<div class="activity-history-store-name">{{details.name}}</div>
+					<div>营业时间: {{details.openTime}}</div>
+					<div>电话: <a href="tel:{{details.phoneNumber}}"><i class="fa fa-phone"></i> {{details.phoneNumber}}</a></div>
+					<div>地址: <a href="{{details.latitude ? mapLink(details.latitude, details.longitude, details.name, details.address, details.phoneNumber) : 'javascript:'}}">{{details.address}}</a></div>
+				</div>
+			</div>
+		</div>
+		<div class="activity-history-toggle"><i class="activity-history-toggle-icon fa fa-angle-down"></i></div>
+	</div>
+
+	<div class="activity-history-splitter" style="{{show(unavailableTickets.length)}}">已过期或已使用</div>
+
+	<div class="activity-history-item card card-gray" rn-foreach="unavailableTickets">
+		<div class="card-head">
+			<span class="card-head-title">{{card.name}}</span>
+		</div>
+
+		<div class="activity-history-content">
+			<div><span class="activity-history-title">面额: </span>{{yuan(card.faceValue)}}元</div>
+			<div><span class="activity-history-title">有效期: </span>{{card.effectiveTime ? date(card.effectiveTime) + '至' + date(card.expirationTime) : '永久有效'}}</div>
+			<div><span class="activity-history-title">优惠码: </span>{{card.cardCode}} <i class="fa fa-qrcode activity-history-qrcode-icon"></i></div>
+			<div><span class="activity-history-title">状态: </span>{{_data.status(card)}}</div>
+		</div>
+
+		<div class="activity-history-details" style="display: none">
+			<div class="activity-history-qrcode"><img rn-prop="src: app.api + '/qrcode?text=' + card.cardCode"></div>
+
+			<div class="activity-history-stores-title">适用门店:</div>
+			<div class="activity-history-stores">
+				<div class="activity-history-store" rn-foreach="card.storeWhiteList">
+					<div class="activity-history-store-name">{{details.name}}</div>
+					<div>营业时间: {{details.openTime}}</div>
+					<div>电话: <a href="tel:{{details.phoneNumber}}"><i class="fa fa-phone"></i> {{details.phoneNumber}}</a></div>
+					<div>地址: <a href="{{details.latitude ? mapLink(details.latitude, details.longitude, details.name, details.address, details.phoneNumber) : 'javascript:'}}">{{details.address}}</a></div>
+				</div>
+			</div>
+		</div>
+		<div class="activity-history-toggle"><i class="activity-history-toggle-icon fa fa-angle-down"></i></div>
+	</div>
+</div>
+
+<script>
+inc(
+	'css/card.css',
+	'css/activity-history.css',
+	'js/ActivityHistory.js',
+	function() {
+		new ActivityHistory();
+	}
+);
+</script>

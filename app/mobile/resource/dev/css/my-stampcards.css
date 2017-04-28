@@ -1,0 +1,84 @@
+.my-stampcards-card {
+  background-color: #efefef;
+  margin: 10px 0 20px;
+}
+.my-stampcards-card-head {
+  color: #87b740;
+  background-color: #e6e6e6;
+  border-bottom: 1px solid #ddd;
+  padding: 5px 10px;
+}
+.my-stampcards-card-gray .my-stampcards-card-head {
+  color: #333;
+}
+.my-stampcards-card-head i {
+  float: right;
+  margin-top: 5px;
+}
+.my-stampcards-link {
+  color: #333 !important;
+  text-decoration: none;
+}
+.my-stampcards table {
+  width: 100%;
+}
+.my-stampcards th {
+  padding-left: 10px;
+  text-align: left;
+}
+.my-stampcards td {
+  padding-right: 10px;
+  text-align: right;
+}
+.my-stampcards th,
+.my-stampcards td {
+  border-bottom: 1px solid #dfdfdf;
+  -webkit-box-shadow: 0 1px 0 0 #f9f9f9;
+  box-shadow: 0 1px 0 0 #f9f9f9;
+}
+.my-stampcards-orange {
+  color: #fb9620;
+}
+.my-stampcards-stamps {
+  background-color: #fff;
+}
+.my-stampcards-stamp-wrap {
+  display: inline-block;
+  vertical-align: top;
+  width: 64px;
+  margin: 10px;
+}
+.my-stampcards-stamp {
+  width: 64px;
+  height: 64px;
+  background: url("../img/my-stampcards/stamp.png?v=d879c7369ce033526d7c56300db6740b") no-repeat;
+  -webkit-background-size: 135px 65px;
+  -moz-background-size: 135px 65px;
+  background-size: 135px 65px;
+  line-height: 62px;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+.my-stampcards-stamp-used {
+  background-position: -70px 0;
+  color: #8f8f8f;
+}
+.my-stampcards-stamp-unused {
+  background-position: 0 0;
+  color: #67a709;
+}
+.my-stampcards-stamp-summary {
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.2;
+}
+.my-stampcards-splitter {
+  text-align: center;
+  border-bottom: 1px solid #eee;
+}
+/*# sourceMappingURL=my-stampcards.css.map */

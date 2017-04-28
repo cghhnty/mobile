@@ -1,0 +1,29 @@
+<div id="recordHistory" rn-scope>
+    <div style="{{hide(records.length)}}" class="common-not-found">
+        <div class="common-not-found-header">您还没有消费记录</div>
+    </div>
+    <div rn-foreach="records" >
+        <div class="recode-item">
+            <div class="time-container">
+                <div class="time">{{ctime}}</div>
+                <div class="expired" style="{{show(isIncrease)}}">有效期至 {{expiration}}</div>
+            </div>
+            <div class="content-container">
+                <div class="consume-detail" rn-html="eventStr">
+                </div>
+                <div class="point-change {{isIncrease?'increase':'decrease'}}">
+                    <span style="font-size: 20px;">{{isIncrease ? '+':'-'}}</span>
+                    <span style="font-size: 25px; padding: 0 4px 0 6px;">{{amount}}</span>
+                    <span style="font-size: 14px;">积分</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <p id="loading"><i class="glyphicon glyphicon-refresh glyphicon-spin"></i> 正在加载</p>
+</div>
+<script>inc(
+        'css/shouqianba-consume-recode.css',
+        'js/ShouqianbaConsumeRecode.js',
+        function () {
+            new ShouqianbaConsumeRecode();
+        });</script>

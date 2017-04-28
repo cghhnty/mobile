@@ -1,0 +1,58 @@
+doctype html
+html
+    head
+        meta(charset='utf-8')
+        title 开票确认
+        meta(name='viewport', content='width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no')
+        meta(name='apple-mobile-web-app-capable', content='yes')
+        meta(name='format-detection', content='telephone=no, email=no')
+        meta(name='msapplication-tap-highlight', content='no')
+        link(rel='Shortcut Icon', href='/mobile/dist/images/icon/favicon.ico')
+        link(rel='stylesheet', type='text/css', href='/mobile/dist/assets/css/bootstrap.min.css')
+        link(rel='stylesheet', type='text/css', href='/mobile/dist/assets/css/app.min.css')
+        script(src='/mobile/dist/assets/js/lib/jquery-1.11.3.min.js')
+        script(src='/mobile/dist/assets/js/lib/template-0.7.1.min.js')
+        script(src='/mobile/dist/assets/js/app/mobile-config.js')
+    body.bg-light
+        input#merchantId(type='hidden', value='#{merchant ? merchant.merchantId : ""}')
+        input#shopNo(type='hidden', value='#{merchant ? merchant.shopNo : ""}')
+        input#termNo(type='hidden', value='#{merchant ? merchant.termNo : ""}')
+        input#weixinId(type='hidden', value='#{weixinId}')
+        input#invoiceType(type='hidden', value='#{type}')
+        .absolute.scroll-touch(style='bottom:76px')
+            img.block.m-auto.m-t(src='/mobile/dist/images/icon/pic_invoice.png', width='60')
+            h4#shopName.text-center.font-bold.text-md.p-b-xs  #{merchant ? merchant.shopName : ""}
+            ul.list-unstyled.m-b-none.p-l-sm.bg-white.m-t-sm
+                li.pos-rlt.padder-v-xs(style='padding-left:94px;')
+                    span.absolute-left(style='margin-top:5px;') 名称
+                    p#invoiceHeader.m-b-none #{invoiceHeader ? invoiceHeader : ""}
+                if (type=='profession')
+                    li.pos-rlt.padder-v-xs(style='padding-left:94px;')
+                        span.absolute-left(style='margin-top:5px;') 纳税人识别号
+                        p#taxpayerNo.m-b-none #{taxpayerNo ? taxpayerNo : ""}
+                    li.pos-rlt.padder-v-xs(style='padding-left:94px;')
+                        span.absolute-left(style='margin-top:5px;') 开户行
+                        p#bankName.m-b-none #{bankName ? bankName : ""}
+                    li.pos-rlt.padder-v-xs(style='padding-left:94px;')
+                        span.absolute-left(style='margin-top:5px;') 开户账号
+                        p#bankCardNo.m-b-none #{bankCardNo ? bankCardNo : ""}
+                    li.pos-rlt.padder-v-xs(style='padding-left:94px;')
+                        span.absolute-left(style='margin-top:5px;') 地址
+                        p#address.m-b-none #{address ? address : ""}
+                    li.pos-rlt.padder-v-xs(style='padding-left:94px;')
+                        span.absolute-left(style='margin-top:5px;') 电话
+                        p#telPhone.m-b-none #{telPhone ? telPhone : ""}
+                    li.pos-rlt.padder-v-xs(style='padding-left:94px;')
+                        span.absolute-left(style='margin-top:5px;') 手机号码
+                        p#phoneNo.m-b-none #{phoneNo ? phoneNo : ""}
+                else
+                    li.pos-rlt.padder-v-xs(style='padding-left:94px;')
+                        span.absolute-left(style='margin-top:5px;') 手机号码
+                        p#phoneNo.m-b-none #{phoneNo ? phoneNo : ""}
+            .clear.b-t.b-b.bg-white.text-center
+                a.padder-v-sm.block(href='/invoice/invoiceChange?weixinId=#{weixinId}&merchantId=#{merchant ? merchant.merchantId : ""}', style='color:#0C97FF;')
+                    | 更换开票信息
+                    span.icon-icon_arrowRight.text-xs
+        .absolute(style='bottom:15px; top:auto; margin:0 15px;')
+            a#saveInvoice.btn.btn-lg.btn-info.r-3x.w-full 申请开票
+            script(src='/mobile/dist/assets/js/app/invoice/saveInvoice.js?r=#{Math.random()}')

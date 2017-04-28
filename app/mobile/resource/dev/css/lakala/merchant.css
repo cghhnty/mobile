@@ -1,0 +1,130 @@
+body {
+  background-color: #e5e5e5;
+}
+@media (min-width: 1024px) {
+  .lakala-merchant {
+    width: 740px;
+    margin: auto;
+  }
+}
+.lakala-merchant {
+  padding: 0 10px;
+}
+.lakala-merchant .merchant-info {
+  padding: 15px 0 20px;
+}
+.lakala-merchant .merchant-name {
+  color: #363e46;
+  font-size: 22px;
+  font-weight: 400;
+  text-align: center;
+}
+.lakala-merchant .no-coupon {
+  margin-top: 120px;
+  text-align: center;
+  font-size: 14px;
+  color: #c9c9c9;
+}
+.lakala-merchant .no-coupon p {
+  margin-top: 10px;
+}
+.lakala-merchant .no-coupon img {
+  width: 120px;
+  height: 62px;
+}
+.lakala-merchant .user-coupon {
+  margin-top: 5px;
+  text-align: center;
+}
+.lakala-merchant .user-coupon .point,
+.lakala-merchant .user-coupon .coupon {
+  display: inline-block;
+  margin: 0 11px;
+  padding-left: 23px;
+  color: #1a1a1a;
+  font-size: 14px;
+  font-weight: 400;
+}
+.lakala-merchant .user-coupon .point {
+  background: url("../../img/lakala/point.png?v=e9a9ce2ba7428b99356a1ca8827013c2") no-repeat;
+  -webkit-background-size: 16px 19px;
+  -moz-background-size: 16px 19px;
+  background-size: 16px 19px;
+}
+.lakala-merchant .user-coupon .coupon {
+  background: url("../../img/lakala/coupon.png?v=d11e85fe94f1fc9cae0602b87ffdc7a1") no-repeat;
+  -webkit-background-size: 16px 18px;
+  -moz-background-size: 16px 18px;
+  background-size: 16px 18px;
+}
+.lakala-merchant .coupons {
+  padding: 0;
+}
+.lakala-merchant .coupons .coupon {
+  margin: 14px 0;
+  -webkit-border-radius: 0 5px;
+  border-radius: 0 5px;
+}
+.lakala-merchant .coupons .coupon:first-child {
+  margin-top: 0;
+}
+.lakala-merchant .coupons .coupon:last-child {
+  margin-bottom: 0;
+}
+.lakala-merchant .coupons .coupon.disabled .summary .coupon-name {
+  color: #c9c9c9;
+}
+.lakala-merchant .coupons .coupon.disabled .summary .coupon-amount {
+  color: #c9c9c9;
+}
+.lakala-merchant .coupons .coupon.disabled .coupon-expired {
+  background-color: #c9c9c9;
+  background-image: url("../../img/lakala/circle-disable.png?v=a016441952269578cef82197161d144c");
+}
+.lakala-merchant .coupons .coupon.disabled .coupon-expired .overdue {
+  display: inline-block;
+}
+.lakala-merchant .coupons .coupon .summary {
+  padding: 10px 25px;
+  background-color: #fff;
+  font-weight: 400;
+  -webkit-border-radius: 8px 8px 0 0;
+  border-radius: 8px 8px 0 0;
+}
+.lakala-merchant .coupons .coupon .summary .coupon-name {
+  display: inline-block;
+  padding-right: 15px;
+  width: 60%;
+  color: #131d28;
+  font-size: 18px;
+  vertical-align: middle;
+}
+.lakala-merchant .coupons .coupon .summary .coupon-amount {
+  display: inline-block;
+  width: 40%;
+  color: #f2600f;
+  font-size: 32px;
+  vertical-align: middle;
+  text-align: right;
+}
+.lakala-merchant .coupons .coupon .coupon-expired {
+  padding: 10px 25px;
+  background: #ffaf98 url("../../img/lakala/circle.png?v=f302fa97ea5a36dc4e74d888d122e0dc") repeat-x;
+  background-position: 6px bottom;
+  -webkit-background-size: 19px 7px;
+  -moz-background-size: 19px 7px;
+  background-size: 19px 7px;
+  color: #fff;
+  -webkit-border-radius: 0 0 8px 8px;
+  border-radius: 0 0 8px 8px;
+}
+.lakala-merchant .coupons .coupon .coupon-expired .time {
+  display: inline-block;
+  width: 70%;
+}
+.lakala-merchant .coupons .coupon .coupon-expired .overdue {
+  display: none;
+  width: 30%;
+  text-align: right;
+}
+/*# sourceMappingURL=merchant.css.map */

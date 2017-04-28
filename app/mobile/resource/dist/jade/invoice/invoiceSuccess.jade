@@ -1,0 +1,24 @@
+doctype html
+html
+    head
+        meta(charset='utf-8')
+        title 开票成功
+        meta(name='viewport', content='width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no')
+        meta(name='apple-mobile-web-app-capable', content='yes')
+        meta(name='format-detection', content='telephone=no, email=no')
+        meta(name='msapplication-tap-highlight', content='no')
+        link(rel='Shortcut Icon', href='/mobile/dist/images/icon/favicon.ico')
+        link(rel='stylesheet', type='text/css', href='/mobile/dist/assets/css/bootstrap.min.css')
+        link(rel='stylesheet', type='text/css', href='/mobile/dist/assets/css/app.min.css')
+    body.bg-light
+        .text-center.p-t-lg
+            span.icon-icon_rightinfo.text-success(style='font-size:60px;')
+        h4.text-center.font-bold.text-md.p-b-xs 开票申请成功
+        .bg-white.m-t-md.p-t-md.p-b-lg
+            //img.pointer-none.rounded.block.m-auto(src='/mobile/dist/images/icon/#{platformImg}', width='60')
+            //p.text-md.text-center.m-t  #{platformName}
+            p.text-muted.text-center.m-l-lg.m-r-lg 您可以关注“#{platformName}”管理开票信息，下次申请就无需重复填写开票信息咯~
+            img.block.m-auto.box-shadow.m-t(src='/mobile/dist/images/icon/#{platformImg}', width='160')
+            p.text-muted.text-center.text-xs.m-l-lg.m-r-lg.m-t-sm 长按图片[识别二维码]
+            //.text-center.p-t-md
+              a.btn.btn-info.m-auto.r-2x(href='#{subscribeUrl}', style='color:#0C97FF !important; padding:6px 26px; background:none; box-shadow:none !important;') 查看公众账号

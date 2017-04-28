@@ -1,0 +1,35 @@
+<div class="lakala-center" rn-scope>
+    <div class="user-info">
+        <div class="user-avatar">
+            <img src="{{member.avatar || app.resource + '/img/my-center/avatar.png'}}"/>
+        </div>
+        <div class="user-name">{{member.fullName}}</div>
+    </div>
+    <div class="no-merchant" style="{{hide(memberExs.length)}}">
+        <img src="{{app.resource + '/img/lakala/no-merchant.png'}}" alt=""/>
+        <p>空空如也~ 快去消费吧</p>
+    </div>
+    <ul class="merchants">
+        <li class="merchant" rn-foreach="memberExs" data-merchant-id="{{member.storeId}}" data-can-enter="{{countVoucher ? 'true':'false'}}">
+            <div class="merchant-name">
+                {{store.details.fullName}}
+            </div><div class="coupon-under-merchant">
+                <div class="point">
+                    {{point}} 分
+                </div>
+                <div class="coupon">
+                    {{countVoucher}} 张券
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+<script>
+    inc(
+        'css/lakala/center.css',
+        'js/lakala/center.js',
+        function() {
+            new LakalaCenter();
+        }
+    );
+</script>

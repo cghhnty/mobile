@@ -1,0 +1,18 @@
+<div class="timeline-photo" rn-scope>
+	<div class="common-top-bar common-wx-subscribe" style="{{hide(isSelf)}}">关注这家店</div>
+	<div class="timeline-item-title">{{store.details.name}}与您共享美好时光</div>
+	<img rn-attr="src: img(imgUrl, '1440w_60Q')" class="timeline-photo-img">
+
+	<div class="common-bottom-bar common-wx-share" style="{{show(isSelf)}}">分享给好友</div>
+	<div class="common-bottom-bar common-wx-subscribe" style="{{hide(isSelf)}}">我也想去</div>
+
+	<script>
+	inc(
+		'css/timeline-photo.css',
+		'js/TimelinePhoto.js',
+		function() {
+			new TimelinePhoto();
+		}
+	);
+	</script>
+</div>

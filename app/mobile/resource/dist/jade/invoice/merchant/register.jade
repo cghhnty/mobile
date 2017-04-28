@@ -1,0 +1,170 @@
+doctype html
+html(ng-app='app')
+    head
+        meta(charset='utf-8')
+        title 发票管家
+        meta(name='viewport', content='width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no')
+        meta(name='apple-mobile-web-app-capable', content='yes')
+        meta(name='format-detection', content='telephone=no, email=no')
+        meta(name='msapplication-tap-highlight', content='no')
+        link(rel='Shortcut Icon', href='/mobile/dist/images/icon/favicon.ico')
+        link(rel='stylesheet', type='text/css', href='/mobile/dist/assets/css/bootstrap.min.css?r=#{Math.random()}')
+        link(rel='stylesheet', type='text/css', href='/mobile/dist/assets/css/app.min.css?r=#{Math.random()}')
+        script(src='/mobile/dist/assets/js/lib/angular.min.js')
+        script(src='/mobile/dist/assets/js/lib/jquery-1.11.3.min.js')
+        script(src='/mobile/dist/assets/js/app/mobile-config.js?r=#{Math.random()}')
+    body.bg-light(ng-controller='InvoiceManageController')
+        // ng-init="invoiceSelect = 'invoice1'"
+        input#weixinId(type='hidden', value='#{member?member.weixinId:""}')
+        input#merchantId(type='hidden', value='#{merchant?merchant.merchantId:""}')
+        ul.row.p-t.padder-xs.m-l-none.m-r-none.list-unstyled.text-center.user-tabs.text-white.text-xs.invoice-tabs-nav
+            li.active.col-xs-3
+                div
+                    span 1
+                    i
+                    | 申请
+                    br
+                    | 开通
+            li.col-xs-3
+                div
+                    span 2
+                    i
+                    | 设置
+                    br
+                    | 账户
+            li.col-xs-3
+                div
+                    span 3
+                    i
+                    | 商户
+                    br
+                    | 信息
+            li.col-xs-3
+                div
+                    span 4
+                    i
+                    | 完成
+                    br
+                    | 开通
+        .tab-content.invoice-tab-content.p-b-xl.m-t-xxl.invoice-tab-content
+            .tab-pane.active
+                .absolute.scroll-touch(style='bottom:76px; top:70px;')
+                    ul.list-unstyled.p-l-sm.b-t.b-b.bg-white
+                        li.b-b(style='height:46px;')
+                            label.i-checks.p-l-none.block.m-b-n.pos-rlt(style='line-height:46px;')
+                                input(type='radio', name='invoice', value='invoice0', ng-model='invoiceSelect')
+                                i.hide
+                                | 我已经是拉卡拉商户
+                                span.icon-icon_001.absolute-right.text-success.font-bold.text-lg(style='height:20px; margin-right:15px;', ng-show="invoiceSelect=='invoice0'")
+                        li(style='height:46px;')
+                            label.i-checks.p-l-none.block.m-b-n.pos-rlt(style='line-height:46px;')
+                                input(type='radio', name='invoice', value='invoice1', ng-model='invoiceSelect')
+                                i.hide
+                                | 我想成为拉卡拉商户
+                                span.icon-icon_001.absolute-right.text-success.font-bold.text-lg(style='height:20px; margin-right:15px;', ng-show="invoiceSelect=='invoice1'")
+                .absolute.invoice-tab-content(style='bottom:15px; top:auto; margin:0 15px;')
+                    button.btn.btn-lg.btn-info.w-full(type='button', ng-disabled='!invoiceSelect', ng-click='nextStep(1)') 下一步
+
+            .tab-pane
+                .absolute.scroll-touch(style='bottom:76px; top:70px;')
+                    form(name='Step2')
+                        ul.list-unstyled.p-l-sm.b-t.b-b.bg-white
+                            li.pos-rlt.b-b(style='height:46px; padding-left:28px; padding-right:110px;')
+                                span.icon-icon_004.text-info.text-lg.absolute-left(style='height:18px;', ng-class="{'error': Step2.username.$dirty && Step2.username.$invalid }")
+                                input.inputSytle1(type='tel', value='', data-infoempty='请输入手机号码', data-infoerror='请输入正确的手机号码' ,placeholder='请输入手机号码', maxlength='11', name='username', ng-model='invoiceMerchant.username', ng-pattern='/^1[34578]\\d{9}$/', required)
+                                button.absolute-right.btn.btn-info.no-border(type='button', style='width:90px; right:10px; bottom:auto;background-color:#29bdef; color:#fff; font-size:10px;  margin-top:8px;', ng-disabled=' Step2.username.$invalid || sign.codeFlag', ng-bind='sign.codeText', ng-click='getAuthCode()', validate-text='', conf='sign')
+                            li.pos-rlt.b-b.p-r-sm(style='height:46px; padding-left:28px;')
+                                span.icon-icon_007.text-info.text-lg.absolute-left(style='height:18px;', ng-class="{'error':Step2.verifyCode.$dirty && (!sign.authFlag || Step2.verifyCode.$invalid) }")
+                                input.inputSytle1(type='text', value='',data-infoempty='请输入短信验证码', data-infoerror='请输入6位短信验证码', placeholder='请输入短信验证码', maxlength='6', name='verifyCode', ng-model='invoiceMerchant.verifyCode', ng-minlength='6', ng-maxlength='6', ng-change='authCode()', required)
+                            li.pos-rlt.b-b.p-r-sm(style='height:46px; padding-left:28px;')
+                                span.icon-icon_003.text-info.text-lg.absolute-left(style='height:18px;', ng-class="{'error': Step2.password.$dirty && Step2.password.$invalid }")
+                                input.inputSytle1(type='password', value='',data-infoempty='请设置登录密码', data-infoerror='密码须由8-16位数字、字母或与特殊字符组成', placeholder='请设置登录密码', maxlength='16', name='password', ng-model='invoiceMerchant.password', ng-minlength='8', ng-maxlength='16', ng-pattern='/(?!^[0-9]*$)(?!^[a-zA-Z]*$)^([a-zA-Z0-9!@#$%^&*`_()\\[\\]{}\\\\|/]{8,16})$/', required)
+                            li.pos-rlt.p-r-sm(style='height:46px; padding-left:28px;')
+                                span.icon-icon_006.text-info.text-lg.absolute-left(ng-class="{'error':( Step2.repassword.$dirty && (Step2.password.$viewValue != Step2.repassword.$viewValue) )}", style='height:18px;')
+                                input.inputSytle1(type='password', value='', placeholder='请输入确认密码', maxlength='16', name='repassword', ng-model='repassword', required='')
+                        ul.list-unstyled.p-l-sm.b-t.b-b.bg-white
+                            li.pos-rlt(style='height:46px; padding-left:28px;')
+                                span.icon-icon_002.text-info.text-lg.absolute-left(style='height:18px;')
+                                input.inputSytle1(type='text', value='', placeholder='请输入推荐人姓名', maxlength='10', name='referee', ng-model='invoiceMerchant.referee')
+                .absolute.invoice-tab-content.text-center(style='bottom:15px; top:auto; margin:0 15px;')
+                    button.btn.btn-lg.btn-info.inline(type='button', style='width:46%;margin-right:4%', ng-click='nextStep(0)') 上一步
+                    button.btn.btn-lg.btn-info.inline(type='button', style='width:46%', ng-disabled='Step2.$invalid || Step2.password.$viewValue != Step2.repassword.$viewValue || !sign.authFlag', ng-click='toStep2();') 下一步
+            .tab-pane
+                // 存量
+                form(name='invoice0Step3', ng-show="invoiceSelect=='invoice0'")
+                    .absolute.scroll-touch(style='bottom:76px; top:70px;')
+                        ul.list-unstyled.p-l-sm.b-t.b-b.bg-white
+                            li.pos-rlt.b-b(style='height:46px; padding-left:54px;')
+                                span.absolute-left(style='height:18px;', ng-class="{'error':invoice0Step3.exShopNo.$dirty && invoice0Step3.exShopNo.$invalid }") 商户号
+                                input.inputSytle1.text-right(type='text', data-infoempty='请输入商户号', data-infoerror='请输入15位数字的商户号', placeholder='请输入商户号', name='exShopNo', ng-model='invoiceMerchant.exShopNo',maxlength='15', ng-pattern='/^\\d{15}$/', required='')
+                            li.pos-rlt(style='height:46px; padding-left:54px;')
+                                span.absolute-left(style='height:18px;', ng-class="{'error':invoice0Step3.exTermNo.$dirty && invoice0Step3.exTermNo.$invalid }") 终端号
+                                input.inputSytle1.text-right(type='text', data-infoempty='请输入终端号', data-infoerror='请输入8位数字的终端号',placeholder='请输入终端号', name='exTermNo', ng-model='invoiceMerchant.exTermNo', maxlength='8', ng-pattern='/^\\d{8}$/',required='')
+                    .absolute.invoice-tab-content.text-center(style='bottom:15px; top:auto; margin:0 15px;')
+                        button.btn.btn-lg.btn-info.inline(type='button', style='width:46%; margin-right:4%', ng-click='nextStep(1)') 上一步
+                        button.btn.btn-lg.btn-info.inline(type='button', style='width:46%', ng-disabled='invoice0Step3.$invalid', ng-click='toStep3(1);', ng-show="invoiceSelect=='invoice0'") 下一步
+                // 注册
+                form(name='invoice1Step3', ng-show="invoiceSelect=='invoice1'")
+                    .absolute.scroll-touch(style='bottom:76px; top:70px;')
+                        ul.list-unstyled.p-l-sm.b-t.b-b.bg-white
+                            li.pos-rlt.b-b(style='height:46px; padding-left:92px;')
+                                span.absolute-left(style='height:18px;', ng-class="{'error':invoice1Step3.name.$dirty && invoice1Step3.name.$invalid }") 商户注册名称
+                                input.inputSytle1.text-right(type='text', data-infoempty='请输入商户注册名称', data-infoerror='请输入商户注册名称',placeholder='请输入商户注册名称', name='name', ng-model='invoiceMerchant.name',maxlength='50', required='')
+                            li.pos-rlt.b-b(style='height:46px; padding-left:92px;')
+                                span.absolute-left(style='height:18px;', ng-class="{'error':invoice1Step3.bizName.$dirty && invoice1Step3.bizName.$invalid }") 商户经营名称
+                                input.inputSytle1.text-right(type='text', data-infoempty='请输入商户经营名称', data-infoerror='请输入商户经营名称', placeholder='请输入商户经营名称', name='bizName', ng-model='invoiceMerchant.bizName',maxlength='50', required='')
+                            li.pos-rlt.b-b(style='height:46px; padding-left:92px;')
+                                span.absolute-left(style='height:18px;', ng-class="{'error':invoice1Step3.contact.$dirty && invoice1Step3.contact.$invalid }") 联系人姓名
+                                input.inputSytle1.text-right(type='text', data-infoempty='请输入联系人姓名', data-infoerror='请输入联系人姓名',placeholder='请输入联系人姓名', name='contact', ng-model='invoiceMerchant.contact', required='')
+                            li.pos-rlt.b-b(style='height:46px; padding-left:92px;')
+                                span.absolute-left(style='height:18px;', ng-class="{'error':invoice1Step3.mobile.$dirty && invoice1Step3.mobile.$invalid }") 联系手机号
+                                input.inputSytle1.text-right(type='tel', data-infoempty='请输入联系手机号', data-infoerror='请输入正确的手机号', placeholder='请输入联系手机号', name='mobile', ng-model='invoiceMerchant.mobile', maxlength='11', ng-pattern='/^1[34578]\\d{9}$/', required='')
+                            li.pos-rlt(style='height:36px; padding-left:92px;')
+                                span.absolute-left(style='height:18px;') 商户地址
+                            li.pos-rlt.b-b
+                                .row.m-l-none.m-r-none
+                                    .col-xs-4.padder-xs.p-l-none
+                                        select.form-control.m-b-sm(name='province', province-city-county='', data-fill='{"province":{"model":"invoiceMerchant.province", "listName": "provinceList"},"city":{"model":"invoiceMerchant.city","listName": "cityList"},"county":{"model":"invoiceMerchant.county", "listName": "countyList"}}', ng-model='invoiceMerchant.province', ng-options='item.id as item.text for item in provinceList', required='')
+                                            option(value='') 请选择省
+                                    .col-xs-4.padder-xs
+                                        select.form-control.m-b(name='city', ng-model='invoiceMerchant.city', ng-options='item.id as item.text for item in cityList', required='')
+                                            option(value='') 请选择市
+                                    .col-xs-4.padder-xs
+                                        select.form-control.m-b(name='district', ng-model='invoiceMerchant.county', ng-options='item.id as item.text for item in countyList')
+                                            option(value='') 请选择区\县
+                            li.pos-rlt(style='height:36px; padding-left:92px;')
+                                span.absolute-left(style='height:18px;', ng-class="{'error':invoice1Step3.address.$dirty && invoice1Step3.address.$invalid }") 详细地址
+                            li.pos-rlt.p-r-sm
+                                textarea.inputSytle1.m-b(rows='2', data-infoempty='请输入详细地址', data-infoerror='请输入详细地址' ,placeholder='请勿重复填写省市区信息', name='address', ng-model='invoiceMerchant.address', required='')
+                    .absolute.invoice-tab-content.text-center(style='bottom:15px; top:auto; margin:0 15px;')
+                        button.btn.btn-lg.btn-info.inline(type='button', style='width:46%;margin-right:4%', ng-click='nextStep(1)') 上一步
+                        button.btn.btn-lg.btn-info.inline(type='button', style='width:46%', ng-disabled='invoice1Step3.$invalid', ng-click='toStep3(2);', ng-show="invoiceSelect=='invoice1'") 下一步
+            .tab-pane
+                .absolute.scroll-touch(style='bottom:76px; top:70px;')
+                    .padder.m-t-lg
+                        .pos-rlt
+                            span.block(style='position:absolute; top:0; left:0; height:10px; width:10px; background-color:black; border-radius:50%;')
+                            span.block(style='position:absolute; top:0; right:0; height:10px; width:10px; background-color:black; border-radius:50%;')
+                            .bg-white.pos-rlt(style='margin:0 6px 0; top:6px;  box-shadow:rgba(0,0,0,0.2) 0 0 5px;')
+                                span(style='position:absolute; left:-3px; top:4px; bottom:4px; width:7px; background:url(/mobile/dist/images/icon/shadow_r_l.png) repeat-y; background-size:100% auto;')
+                                span(style='position:absolute; right:-3px; top:4px; bottom:4px; width:7px; background:url(/mobile/dist/images/icon/shadow_r_r.png) repeat-y; background-size:100% auto;')
+                                .text-center.p-t-lg
+                                    span.icon-icon_rightinfo.text-success(style='font-size:36px;')
+                                    p.text-md.m-t-xs 开通成功
+                                    p.text-xs.p-t-xs.p-b-sm 您可使用以下信息登录拉卡拉发票管家客户端
+                                .row.m-l-none.m-r-none.p-b
+                                    .col-xs-6.col-xs-push-6.no-padder
+                                        p.text-xs.m-b-none(style='margin-left:-64px;')
+                                            | 租户名：
+                                            span.text-info(ng-bind='rentName')
+                                        p.text-xs(style='margin-left:-64px;')
+                                            | 分机号：
+                                            span.text-info(ng-bind='extNo')
+                            span.box-shadow(style=' position:absolute; top:3px; right:3px; left:4px; height:4px; background-color:black;')
+                .absolute.invoice-tab-content.text-center(style='bottom:15px; top:auto; margin:0 15px;')
+                    a.btn.btn-lg.btn-info.inline.w-full(onclick="WeixinJSBridge.call('closeWindow');") 完成
+        script(src='/mobile/dist/assets/js/app/invoice/merchant/app.js')
+        script(src='/mobile/dist/assets/js/app/invoice/merchant/config.js')
+        script(src='/mobile/dist/assets/js/app/invoice/merchant/ui-validateCode.js?r=#{Math.random()}')
+        script(src='/mobile/dist/assets/js/app/invoice/merchant/ui-city.js?r=#{Math.random()}')
+        script(src='/mobile/dist/assets/js/app/invoice/merchant/invoiceManageController.js?r=#{Math.random()}')

@@ -1,0 +1,17 @@
+<div class="article-template-default">
+	<h1 class="article-template-default-title">{{article.title}}</h1>
+	<div class="article-template-default-meta">
+		<span class="article-template-default-date">{{date(article.lastModified)}}</span>
+		<a class="article-template-default-weixin-nickname common-wx-subscribe">{{store.details.name}}</a>
+	</div>
+
+	<div style="{{show(article.showThumbInContent)}}">
+		<img rn-attr="src: article.thumbUrl">
+	</div>
+
+	<div class="article-template-default-content" rn-html="article.content"></div>
+
+	<script>
+	inc('css/article-template-default.css');
+	</script>
+</div>

@@ -1,0 +1,27 @@
+doctype html
+html
+    head
+        meta(charset='utf-8')
+        title 消费记录
+        meta(name='viewport', content='width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no')
+        meta(name='apple-mobile-web-app-capable', content='yes')
+        meta(name='format-detection', content='telephone=no, email=no')
+        meta(name='msapplication-tap-highlight', content='no')
+        meta(http-equiv='expires', content='0')
+        meta(http-equiv='Pragma', content='no-cache')
+        meta(http-equiv='Cache-Control', content='no-cache')
+        link(rel='Shortcut Icon', href='/mobile/dist/images/icon/favicon.ico')
+        link(rel='stylesheet', type='text/css', href='/mobile/dist/build/css/app.min.css')
+        script(src='/mobile/dist/build/js/app.min.js')
+        script(src='/mobile/dist/assets/js/app/mobile-config.js')
+    body
+        #consumeList(data-role='page', data-title='消费记录', data-dom-cache='true')
+            input#loginWeixin(type='hidden', value='#{member?member.weixinId:""}')
+            input#storeId(type='hidden', value='#{store?store.id:""}')
+            .ui-content.p-l-none.p-r-none.p-t-none.p-b-none.absolute(data-role='main')
+                #consume-empty-note.h-full.text-center.w-full.hide(style='display:table;')
+                    .text-muteder(style='display:table-cell; vertical-align:middle;')
+                        span.icon-icon_emnote(style='font-size:60px;')
+                        p.p-t-xs 您暂时还没有记录哦~
+                #consume-list.lay-body
+            script(src='/mobile/dist/assets/js/app/consume/consumeList.js')

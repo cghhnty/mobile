@@ -1,0 +1,38 @@
+<div class="timeline-list common-bottom-bar-margin {{isSelf ? '' : 'common-top-bar-margin'}}" rn-scope>
+	<div style="{{hide(items.length)}}" class="common-not-found">
+		<div class="common-not-found-header">亲, 您还没有在店内留过影呢~ <br>店员随手一拍, 留住您的美好时光</div>
+	</div>
+
+
+	<div class="common-top-bar common-wx-subscribe" style="{{hide(isSelf)}}">关注这家店</div>
+<!-- {{isSelf}}{{items.length}} -->
+	<div rn-foreach="items" class="timeline-list-item" style="{{show(imageUrls.length)}}">
+		<div class="timeline-list-date">
+			<div class="timeline-list-date-lg">
+				{{dateOfMonth(lastModified)}}
+				<span>{{monthCn(lastModified)}}</span>
+			</div>
+		</div>
+
+		<div class="timeline-list-photos">
+			<a rn-foreach="imageUrls" href="{{_list.length == 1 ? link('timeline/item#' + _key, {id: id}) : link('timeline/item#' + _key, {id: id})}}"><img rn-attr="src: img(_value, _list.length == 1 ? '306w_60Q' : '1640w_1640h_60Q_1e_1c')" class="{{_list.length == 1 ? 'timeline-list-img-single' : 'timeline-list-img'}}" style="{{show(_key<4)}}"></a>
+		</div>
+
+		<div class="timeline-list-describ">
+			{{description}}
+			<div class="timeline-list-count">共{{imageUrls.length}}张</div>
+		</div>	
+	</div>
+	<div class="common-bottom-bar common-wx-share" style="{{show(isSelf && items.length)}}">分享所有图片给好友</div>
+	<div class="common-bottom-bar common-wx-subscribe" style="{{hide(isSelf)}}">我也想去</div>
+
+	<script>
+	inc(
+		'css/timeline-list.css',
+		'js/TimelineList.js',
+		function() {
+			new TimelineList();
+		}
+	);
+	</script>
+</div>

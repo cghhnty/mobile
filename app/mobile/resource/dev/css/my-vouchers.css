@@ -1,0 +1,368 @@
+.my-vouchers {
+  color: #313c4a;
+}
+.tab {
+  width: 100%;
+  height: 45px;
+}
+.tab-splitter {
+  height: 35px;
+  margin-left: -1px;
+  margin-top: 5px;
+  width: 1px;
+  float: left;
+  background-color: #b0b0b0;
+}
+.tab-filter {
+  float: left;
+  text-align: center;
+  color: #000;
+  background: #eee;
+  width: 33.3333%;
+  height: 45px;
+  padding-top: 10px;
+  font-size: 15px;
+  border-bottom: 1px solid #b0b0b0;
+}
+.tab-focus {
+  border-bottom: #f39800;
+  border-bottom-style: inset;
+}
+.my-vouchers-card {
+  clear: both;
+  margin: 12px;
+  padding-bottom: 12px;
+}
+.my-vouchers-prize {
+  text-align: center;
+  font-size: 18px;
+}
+.my-vouchers-lg {
+  font-size: 40px;
+}
+.my-vouchers-sm {
+  font-size: 12px;
+}
+.my-vouchers-gray {
+  color: #b0b0b0;
+  font-size: 14px;
+}
+.my-vouchers-qrcode {
+  text-align: center;
+}
+.my-vouchers-padding {
+  padding: 0 10px;
+}
+.my-vouchers-expand {
+  text-align: center;
+  color: #e2e2e2;
+}
+@-webkit-keyframes zoom_in {
+  0% {
+    -webkit-transform: scale(0, 0);
+  }
+  25% {
+    -webkit-transform: scale(0.25, 0.25);
+  }
+  50% {
+    -webkit-transform: scale(0.5, 0.5);
+  }
+  75% {
+    -webkit-transform: scale(0.75, 0.75);
+  }
+  100% {
+    -webkit-transform: scale(1, 1);
+  }
+}
+.modal-dialog.my-modal-dialog.my-modal-dialog-zoom-in {
+  -webkit-animation-name: zoom-in;
+  -moz-animation-name: zoom-in;
+  -o-animation-name: zoom-in;
+  -ms-animation-name: zoom-in;
+  animation-name: zoom-in;
+  -webkit-animation: zoom-in;
+  -webkit-animation-duration: 3s;
+  -moz-animation-duration: 3s;
+  -o-animation-duration: 3s;
+  -ms-animation-duration: 3s;
+  animation-duration: 3s;
+  -webkit-animation-duration: 3s;
+}
+.my-modal-dialog {
+  margin-top: 75px;
+  margin-left: 35px;
+  margin-right: 35px;
+}
+.my-modal-body {
+  position: relative;
+  text-align: center;
+  color: #313c4a;
+  border-bottom: 1px solid #e5e5e5;
+}
+.branches-wrap {
+  position: relative;
+  padding-left: 20px;
+  font-size: 12px;
+}
+.my-modal-title {
+  text-align: center;
+  font-size: 16px;
+}
+.branches-wrap .my-modal-text {
+  color: #b0b0b0;
+  padding-top: 0;
+  font-size: 12px;
+}
+.branch-text {
+  display: inline-block;
+}
+.dropdown-arrow {
+  width: 12px;
+  position: absolute;
+  bottom: 7px;
+  right: 20px;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  -ms-transition: 0.3s;
+  transition: 0.3s;
+}
+.dropdown-arrow.rotate {
+  width: 12px;
+  position: absolute;
+  bottom: 7px;
+  right: 20px;
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  -ms-transition: 0.3s;
+  transition: 0.3s;
+}
+.my-modal-footer {
+  padding: 15px;
+  border-top: 1px solid #e5e5e5;
+}
+div.modal-content {
+  color: #313c4a;
+}
+.card3 {
+  background-image: url("data:image/svg+xml;utf8,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20width=%27100%%27%20height=%271%27%3E%3Crect%20fill=%27#b0b0b0%27%20x=%270%27%20y=%270%27%20width=%27100%%27%20height=%270.5%27/%3E%3C/svg%3E");
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+}
+.card3-header {
+  display: inline-block;
+  font-size: 16px;
+  font-weight: bold;
+}
+.card3-red .card3-color {
+  color: #ff7373;
+}
+.card3-gray .card3-color {
+  color: #989898;
+}
+.my-vouchers-text-content {
+  display: inline-block;
+  width: 85%;
+  vertical-align: top;
+}
+.voucher-header {
+  padding-bottom: 5px;
+}
+.voucher-type {
+  display: inline-block;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  text-align: center;
+  font-size: 10px;
+  color: #fff;
+  width: 38px;
+  height: 15px;
+}
+.voucher-type.groupon {
+  background-color: #fd2570;
+}
+.voucher-type.voucher {
+  background-color: #eda530;
+}
+.voucher-type.cash {
+  background-color: #f39800;
+}
+.my-vouchers-img {
+  display: inline-block;
+  width: 15%;
+  vertical-align: top;
+  text-align: right;
+}
+img.thumb-qrcode {
+  width: 45px;
+}
+img.arrow {
+  width: 10px;
+}
+.my-modal-text {
+  padding-top: 10px;
+  font-size: 14px;
+}
+img.modal-qrcode {
+  width: 200px;
+}
+@-moz-keyframes zoom_in {
+  0% {
+    -webkit-transform: scale(0, 0);
+    -moz-transform: scale(0, 0);
+    -o-transform: scale(0, 0);
+    -ms-transform: scale(0, 0);
+    transform: scale(0, 0);
+  }
+  25% {
+    -webkit-transform: scale(0.25, 0.25);
+    -moz-transform: scale(0.25, 0.25);
+    -o-transform: scale(0.25, 0.25);
+    -ms-transform: scale(0.25, 0.25);
+    transform: scale(0.25, 0.25);
+  }
+  50% {
+    -webkit-transform: scale(0.5, 0.5);
+    -moz-transform: scale(0.5, 0.5);
+    -o-transform: scale(0.5, 0.5);
+    -ms-transform: scale(0.5, 0.5);
+    transform: scale(0.5, 0.5);
+  }
+  75% {
+    -webkit-transform: scale(0.75, 0.75);
+    -moz-transform: scale(0.75, 0.75);
+    -o-transform: scale(0.75, 0.75);
+    -ms-transform: scale(0.75, 0.75);
+    transform: scale(0.75, 0.75);
+  }
+  100% {
+    -webkit-transform: scale(1, 1);
+    -moz-transform: scale(1, 1);
+    -o-transform: scale(1, 1);
+    -ms-transform: scale(1, 1);
+    transform: scale(1, 1);
+  }
+}
+@-webkit-keyframes zoom_in {
+  0% {
+    -webkit-transform: scale(0, 0);
+    -moz-transform: scale(0, 0);
+    -o-transform: scale(0, 0);
+    -ms-transform: scale(0, 0);
+    transform: scale(0, 0);
+  }
+  25% {
+    -webkit-transform: scale(0.25, 0.25);
+    -moz-transform: scale(0.25, 0.25);
+    -o-transform: scale(0.25, 0.25);
+    -ms-transform: scale(0.25, 0.25);
+    transform: scale(0.25, 0.25);
+  }
+  50% {
+    -webkit-transform: scale(0.5, 0.5);
+    -moz-transform: scale(0.5, 0.5);
+    -o-transform: scale(0.5, 0.5);
+    -ms-transform: scale(0.5, 0.5);
+    transform: scale(0.5, 0.5);
+  }
+  75% {
+    -webkit-transform: scale(0.75, 0.75);
+    -moz-transform: scale(0.75, 0.75);
+    -o-transform: scale(0.75, 0.75);
+    -ms-transform: scale(0.75, 0.75);
+    transform: scale(0.75, 0.75);
+  }
+  100% {
+    -webkit-transform: scale(1, 1);
+    -moz-transform: scale(1, 1);
+    -o-transform: scale(1, 1);
+    -ms-transform: scale(1, 1);
+    transform: scale(1, 1);
+  }
+}
+@-o-keyframes zoom_in {
+  0% {
+    -webkit-transform: scale(0, 0);
+    -moz-transform: scale(0, 0);
+    -o-transform: scale(0, 0);
+    -ms-transform: scale(0, 0);
+    transform: scale(0, 0);
+  }
+  25% {
+    -webkit-transform: scale(0.25, 0.25);
+    -moz-transform: scale(0.25, 0.25);
+    -o-transform: scale(0.25, 0.25);
+    -ms-transform: scale(0.25, 0.25);
+    transform: scale(0.25, 0.25);
+  }
+  50% {
+    -webkit-transform: scale(0.5, 0.5);
+    -moz-transform: scale(0.5, 0.5);
+    -o-transform: scale(0.5, 0.5);
+    -ms-transform: scale(0.5, 0.5);
+    transform: scale(0.5, 0.5);
+  }
+  75% {
+    -webkit-transform: scale(0.75, 0.75);
+    -moz-transform: scale(0.75, 0.75);
+    -o-transform: scale(0.75, 0.75);
+    -ms-transform: scale(0.75, 0.75);
+    transform: scale(0.75, 0.75);
+  }
+  100% {
+    -webkit-transform: scale(1, 1);
+    -moz-transform: scale(1, 1);
+    -o-transform: scale(1, 1);
+    -ms-transform: scale(1, 1);
+    transform: scale(1, 1);
+  }
+}
+@keyframes zoom_in {
+  0% {
+    -webkit-transform: scale(0, 0);
+    -moz-transform: scale(0, 0);
+    -o-transform: scale(0, 0);
+    -ms-transform: scale(0, 0);
+    transform: scale(0, 0);
+  }
+  25% {
+    -webkit-transform: scale(0.25, 0.25);
+    -moz-transform: scale(0.25, 0.25);
+    -o-transform: scale(0.25, 0.25);
+    -ms-transform: scale(0.25, 0.25);
+    transform: scale(0.25, 0.25);
+  }
+  50% {
+    -webkit-transform: scale(0.5, 0.5);
+    -moz-transform: scale(0.5, 0.5);
+    -o-transform: scale(0.5, 0.5);
+    -ms-transform: scale(0.5, 0.5);
+    transform: scale(0.5, 0.5);
+  }
+  75% {
+    -webkit-transform: scale(0.75, 0.75);
+    -moz-transform: scale(0.75, 0.75);
+    -o-transform: scale(0.75, 0.75);
+    -ms-transform: scale(0.75, 0.75);
+    transform: scale(0.75, 0.75);
+  }
+  100% {
+    -webkit-transform: scale(1, 1);
+    -moz-transform: scale(1, 1);
+    -o-transform: scale(1, 1);
+    -ms-transform: scale(1, 1);
+    transform: scale(1, 1);
+  }
+}
+/*# sourceMappingURL=my-vouchers.css.map */

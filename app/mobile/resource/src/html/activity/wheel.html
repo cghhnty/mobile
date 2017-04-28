@@ -1,0 +1,108 @@
+<div class="activity-wheel" rn-scope>
+	<div class="activity-wheel-logo"></div>
+	<div class="activity-wheel-wrap">
+		<div>
+			<div class="activity-wheel-row-wrap">
+				<div class="activity-wheel-row">
+					<div class="activity-wheel-block activity-wheel-animate" data-index="0">
+						<div class="activity-wheel-icon"></div>
+					</div>
+					<div class="activity-wheel-block even activity-wheel-animate" data-index="1">
+						<div class="activity-wheel-icon"></div>
+					</div>
+					<div class="activity-wheel-block activity-wheel-animate" data-index="2">
+						<div class="activity-wheel-icon"></div>
+					</div>
+					<div class="activity-wheel-block even activity-wheel-animate" data-index="3">
+						<div class="activity-wheel-icon"></div>
+					</div>
+				</div>
+			</div>
+			<div class="activity-wheel-row-wrap">
+				<div class="activity-wheel-row activity-wheel-sep-row">
+					<div class="activity-wheel-block even activity-wheel-animate" data-index="11">
+						<div class="activity-wheel-icon"></div>
+					</div>
+					<div class="activity-wheel-block activity-wheel-animate" data-index="4">
+						<div class="activity-wheel-icon"></div>
+					</div>
+				</div>
+			</div>
+			<div class="activity-wheel-row-wrap">
+				<div class="activity-wheel-row activity-wheel-sep-row">
+					<div class="activity-wheel-block activity-wheel-animate" data-index="10">
+						<div class="activity-wheel-icon"></div>
+					</div>
+					<div class="activity-wheel-block even activity-wheel-animate" data-index="5">
+						<div class="activity-wheel-icon"></div>
+					</div>
+				</div>
+			</div>
+			<div class="activity-wheel-row-wrap">
+				<div class="activity-wheel-row">
+					<div class="activity-wheel-block even activity-wheel-animate" data-index="9">
+						<div class="activity-wheel-icon"></div>
+					</div>
+					<div class="activity-wheel-block activity-wheel-animate" data-index="8">
+						<div class="activity-wheel-icon"></div>
+					</div>
+					<div class="activity-wheel-block even activity-wheel-animate" data-index="7">
+						<div class="activity-wheel-icon"></div>
+					</div>
+					<div class="activity-wheel-block activity-wheel-animate" data-index="6">
+						<div class="activity-wheel-icon"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="activity-wheel-btn-area">
+			<div class="activity-wheel-btn"></div>
+		</div>
+	</div>
+
+	<div class="activity-wheel-info-area">
+		<div class="activity-wheel-remaining" style="{{hide(remaining == null || member.trial)}}">抽奖次数: <span class="activity-wheel-remaining-count">{{remaining}}</span> 次</div>
+
+		<div class="activity-wheel-view-history">
+			<a href="{{link('activity/history', {type: 'WHEEL'})}}" class="activity-wheel-view-history-link">我的中奖记录 <i class="fa fa-angle-double-right"></i></a>
+		</div>
+
+		<div class="activity-wheel-info">
+			<div class="activity-wheel-head">{{activity.name}}</div>
+
+			<div class="activity-wheel-head">活动日期:</div>
+			<div>{{date(activity.startTime)}} 至 {{date(activity.endTime)}}</div>
+
+			<div class="activity-wheel-head">奖品内容:</div>
+			<div rn-foreach="activity.prizes">{{_value.name ? _value.name + ': ' : ''}}{{description}}</div>
+
+			<div class="activity-wheel-head">奖品使用有效期:</div>
+			<div>{{activity.prizes[0].voucherDef.effectiveDate ? date(activity.prizes[0].voucherDef.effectiveDate) + ' 至 ' + date(activity.prizes[0].voucherDef.expirationDate) : '永久有效'}}</div>
+
+			<div class="activity-wheel-head">活动门店:</div>
+			<div class="activity-wheel-stores activity-wheel-collapse">
+				<div class="activity-wheel-store" rn-foreach="activity.storeWhiteList">
+					<div class="activity-wheel-store-name">{{details.name}}</div>
+					<div>地址: <a href="{{details.latitude ? mapLink(details.latitude, details.longitude, details.name, details.address, details.phoneNumber) : 'javascript:'}}">{{details.address}}</a></div>
+					<div>电话: <a href="tel:{{details.phoneNumber}}">{{details.phoneNumber}}</a></div>
+				</div>
+			</div>
+			<div class="activity-wheel-stores-toggle" style="{{hide(activity.storeWhiteList.length < 2)}}">
+				其他{{activity.storeWhiteList.length - 1}}家适用门店 <i class="activity-wheel-stores-toggle-icon fa fa-angle-down"></i>
+			</div>
+
+			<div class="activity-wheel-head" style="{{show(activity.intro)}}">活动说明:</div>
+			<div class="activity-wheel-desc">{{activity.intro}}</div>
+		</div>
+	</div>
+
+	<script>
+	inc(
+		'css/activity-wheel.css',
+		'js/ActivityWheel.js',
+		function() {
+			new ActivityWheel();
+		}
+	);
+	</script>
+</div>

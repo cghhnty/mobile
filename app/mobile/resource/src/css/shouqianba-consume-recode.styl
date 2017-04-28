@@ -1,0 +1,69 @@
+@import 'nib';
+
+#recordHistory {
+  padding: 15px 15px 0;
+  .recode-item {
+    min-height: 84px;
+    padding: 10px;
+    margin-bottom: 12px;
+    background-color: #ffffff;
+    border-radius: 6px;
+    .time-container{
+      font-size: 13px;
+    }
+    .time {
+      float: left;
+      color: rgba(21,25,34,.5);
+    }
+    .expired {
+      text-align: right;
+      color: rgba(255,0,0,.5);
+    }
+    .content-container{
+      clear: both;
+      margin-top: 4px;
+      vertical-align: top;
+      .consume-detail {
+        float: left;
+        padding-top: 10px;
+        color: #212534;
+        font-size: 14px;
+
+        .location {
+          padding-right: 10px;
+        }
+
+          .checkout{
+            .high-light {
+              color: red;
+            }
+          }
+            .revoke{
+              .high-light {
+                color: #00ff00;
+              }
+            }
+      }
+      .point-change {
+        text-align: right;
+        vertical-align: top;
+
+        span {
+          display: inline-block;
+        }
+
+        &.increase {
+          color: #ff0000;
+        }
+        &.decrease{
+          color: #00ff00;
+        }
+      }
+    }
+  }
+
+    #loading {
+      display: none;
+      text-align: center;
+    }
+}

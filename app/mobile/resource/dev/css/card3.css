@@ -1,0 +1,24 @@
+.card3 {
+  border-width: 1px 1px 3px;
+  border-image-slice: 1 1 6 1 fill;
+  border-image-width: 1px 1px 3px 1px;
+  border-image-repeat: round;
+  border-image-source: url("../img/card3/border@2x.png?v=8d31dedd640138bd890e9119ae82287a");
+}
+.card3-header {
+  padding: 6px;
+  color: #fff;
+}
+.card3-red .card3-header {
+  background-color: #ff7373;
+}
+.card3-gray .card3-header {
+  background-color: #989898;
+}
+.card3-red .card3-color {
+  color: #ff7373;
+}
+.card3-gray .card3-color {
+  color: #989898;
+}
+/*# sourceMappingURL=card3.css.map */

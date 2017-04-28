@@ -1,0 +1,60 @@
+* {
+  backgroud-color: #fff;
+}
+.timeline-list-item {
+  background-color: #fff;
+  margin: 0px 0;
+  padding: 12px 0;
+  overflow: hidden;
+}
+.timeline-list-date {
+  color: #000;
+  text-align: center;
+  font-size: 13px;
+  float: left;
+  width: 68px;
+  margin: 0px 7px;
+  margin-left: 10px;
+}
+.timeline-list-date span {
+  font-weight: 600;
+  margin: 3px;
+  font-size: 13px;
+}
+.timeline-list-date-lg {
+  font-size: 24px;
+}
+.timeline-list-photos {
+  display: inline-block;
+  height: 110px;
+  width: 28%;
+}
+.timeline-list-describ {
+  font-size: 1.1em;
+  font-weight: 200;
+  margin-left: 10px;
+  vertical-align: top;
+  display: inline-block;
+  height: 100%;
+  width: 38%;
+  white-space: normal;
+  position: relative;
+  line-height: 120%;
+}
+.timeline-list-count {
+  position: absolute;
+  bottom: -36px;
+  left: 0px;
+  font-size: 12px;
+  margin-top: 80px;
+  color: #777;
+}
+.timeline-list-img {
+  width: 48%;
+  height: 49%;
+  margin: 0px 0.5px;
+}
+.timeline-list-img-single {
+  width: 100%;
+}
+/*# sourceMappingURL=timeline-list.css.map */

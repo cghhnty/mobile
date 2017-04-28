@@ -1,0 +1,200 @@
+<!doctype html>
+<html ng-app="app">
+<head>
+<meta charset="utf-8">
+<title>发票管家</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="format-detection"content="telephone=no, email=no" />
+<meta name="msapplication-tap-highlight" content="no">
+<link rel="Shortcut Icon" href="./../../../images/icon/favicon.ico">
+<link rel="stylesheet" type="text/css" href="./../../../assets/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="./../../../assets/css/app.min.css">
+<script src="../../../assets/js/lib/angular.min.js"></script>
+<script src="../../../assets/js/lib/jquery-1.11.3.min.js"></script>
+<script src="../../../assets/js/app/mobile-config.js"></script>
+</head>
+
+<body class="bg-light" ng-controller="InvoiceManageController">
+<!--ng-init="invoiceSelect = 'invoice1'"-->
+<ul class="row p-t padder-xs m-l-none m-r-none list-unstyled text-center user-tabs text-white text-xs invoice-tabs-nav">
+    <li class="active col-xs-3">
+        <div><span>1</span><i></i>申请<br>
+            开通</div>
+    </li>
+    <li class="col-xs-3">
+        <div><span>2</span><i></i>设置<br>
+            账户</div>
+    </li>
+    <li class="col-xs-3">
+        <div><span>3</span><i></i>商户<br>
+            信息</div>
+    </li>
+    <li class="col-xs-3">
+        <div><span>4</span><i></i>完成<br>
+            开通</div>
+    </li>
+</ul>
+<div class="tab-content invoice-tab-content p-b-xl m-t-xxl invoice-tab-content">
+    <div class="tab-pane">
+        <div class="absolute scroll-touch" style="bottom:76px; top:70px;">
+            <ul class="list-unstyled p-l-sm b-t b-b bg-white">
+                <li class="b-b" style="height:46px;">
+                    <label class="i-checks p-l-none block m-b-n pos-rlt" style="line-height:46px;">
+                        <input type="radio" name="invoice" value="invoice0" ng-model="invoiceSelect" />
+                        <i class="hide"></i>我已经是拉卡拉商户 <span class="icon-icon_001 absolute-right text-success font-bold text-lg" style="height:20px; margin-right:15px;" ng-show="invoiceSelect=='invoice0'"></span></label>
+                </li>
+                <li style="height:46px;">
+                    <label class="i-checks p-l-none block m-b-n pos-rlt" style="line-height:46px;">
+                        <input type="radio" name="invoice" value="invoice1" ng-model="invoiceSelect" />
+                        <i class="hide"></i>我想成为拉卡拉商户 <span class="icon-icon_001 absolute-right text-success font-bold text-lg" style="height:20px; margin-right:15px;" ng-show="invoiceSelect=='invoice1'"></span></label>
+                </li>
+            </ul>
+        </div>
+        <div class="absolute invoice-tab-content" style="bottom:15px; top:auto; margin:0 15px;">
+            <button type="button" class="btn btn-lg btn-info w-full" ng-disabled="!invoiceSelect" ng-click="nextStep(1)">下一步</button>
+        </div>
+    </div>
+    <div class="tab-pane">
+        <div class="absolute scroll-touch" style="bottom:76px; top:70px;">
+            <form name="Step2">
+                <ul class="list-unstyled p-l-sm b-t b-b bg-white">
+                    <li class="pos-rlt b-b" style="height:46px; padding-left:28px; padding-right:110px;"><span class="icon-icon_004 text-info text-lg absolute-left" style="height:18px;" ng-class="{'error': Step2.mobile.$dirty && Step2.mobile.$invalid }"></span>
+                        <input class="inputSytle1" type="tel" value="" data-infoempty="请输入手机号码" data-infoerror="请输入正确的手机号码" placeholder="请输入手机号码" maxlength="11" name="mobile" ng-model="invoiceMerchant.contact.mobile" ng-pattern="/^1[34578]\d{9}$/" required />
+                        <button type="button" class="absolute-right btn btn-info no-border" style="width:90px; right:10px; bottom:auto;background-color:#29bdef; color:#fff; font-size:10px;  margin-top:8px;" ng-disabled=" Step2.mobile.$invalid || sign.codeFlag" ng-bind="sign.codeText" ng-click="getAuthCode()" validate-text conf="sign"></button>
+                    </li>
+                    <li class="pos-rlt b-b p-r-sm" style="height:46px; padding-left:28px;"><span class="icon-icon_007 text-info text-lg absolute-left" style="height:18px;" ng-class="{'error':Step2.verifyCode.$dirty && (!authFlag || Step2.verifyCode.$invalid) }"></span>
+                        <input class="inputSytle1" type="text" value="" data-infoempty="请输入短信验证码" data-infoerror="请输入短信验证码" placeholder="请输入短信验证码" maxlength="6" name="verifyCode" ng-model="invoiceMerchant.verifyCode" ng-minlength="6" ng-maxlength="6" ng-change="authCode()" required />
+                    </li>
+                    <li class="pos-rlt b-b p-r-sm" style="height:46px; padding-left:28px;"><span class="icon-icon_003 text-info text-lg absolute-left" style="height:18px;" ng-class="{'error': Step2.password.$dirty && Step2.password.$invalid }"></span>
+                        <input class="inputSytle1" type="password" value="" data-infoempty="请设置登录密码" data-infoerror="密码须由8-16位数字、字母或与特殊字符组成" placeholder="请设置登录密码" maxlength="16" name="password" ng-model="invoiceUser.password" ng-minlength='8' ng-maxlength="16" ng-pattern="/(?!^[0-9]*$)(?!^[a-zA-Z]*$)^([a-zA-Z0-9!@#$%^&*`_()\[\]{}\\|/]{8,16})$/" required />
+                    </li>
+                    <li class="pos-rlt p-r-sm" style="height:46px; padding-left:28px;"><span class="icon-icon_006 text-info text-lg absolute-left" 
+                    ng-class="{'error':( Step2.repassword.$dirty && (Step2.password.$viewValue != Step2.repassword.$viewValue) )}" style="height:18px;"></span>
+                        <input class="inputSytle1" type="password" value="" placeholder="请输入确认密码" maxlength="16" name="repassword" ng-model="repassword" required />
+                    </li>
+                </ul>
+                <ul class="list-unstyled p-l-sm b-t b-b bg-white">
+                    <li class="pos-rlt" style="height:46px; padding-left:28px;"><span class="icon-icon_002 text-info text-lg absolute-left" style="height:18px;"></span>
+                        <input class="inputSytle1 " type="text" value="" placeholder="请输入推荐人姓名" maxlength="10" name="recommend" ng-model="invoiceUser.recommend"/>
+                        <!--ng-focus="Step2recommend = true"-->
+                        <!--<span class="pos-abt icon-icon_005 text-muted absolute-right text-md" style="padding:15px 8px;" ng-click="invoiceUser.recommend=''" ng-show="Step2recommend"></span> </li>-->
+                </ul>
+            </form>
+        </div>
+        <div class="absolute invoice-tab-content text-center" style="bottom:15px; top:auto; margin:0 15px;">
+            <button type="button" class="btn btn-lg btn-info inline" style="width:46%;margin-right:4%" ng-click="nextStep(0)">上一步</button>
+            <button type="button" class="btn btn-lg btn-info inline" style="width:46%" ng-disabled="Step2.$invalid || Step2.password.$viewValue != Step2.repassword.$viewValue || !authFlag" ng-click="toStep2();">下一步</button>
+        </div>
+    </div>
+    <div class="tab-pane active">
+    	<!--存量-->
+        <form name="invoice0Step3" ng-if="invoiceSelect=='invoice0'">
+            <div class="absolute scroll-touch" style="bottom:76px; top:70px;">
+                <ul class="list-unstyled p-l-sm b-t b-b bg-white">
+                    <li class="pos-rlt b-b " style="height:46px; padding-left:54px;"><span class="absolute-left" style="height:18px;" ng-class="{'error':invoice0Step3.shopNo.$dirty && invoice0Step3.shopNo.$invalid }">商户号</span>
+                        <input class="inputSytle1 text-right" type="text" data-infoempty="请输入商户号" data-infoerror="请输入商户号" placeholder="请输入商户号" name="shopNo" ng-model="invoiceMerchant.shopNo" required />
+                    </li>
+                    <li class="pos-rlt " style="height:46px; padding-left:54px;"><span class="absolute-left" style="height:18px;" ng-class="{'error':invoice0Step3.terminalNo.$dirty && invoice0Step3.terminalNo.$invalid }">终端号</span>
+                        <input class="inputSytle1 text-right" type="text" data-infoempty="请输入终端号" data-infoerror="请输入终端号" placeholder="请输入终端号" name="terminalNo" ng-model="invoiceMerchant.terminalNo" required />
+                    </li>
+                </ul>
+            </div>
+            <div class="absolute invoice-tab-content text-center" style="bottom:15px; top:auto; margin:0 15px;">
+                <button type="button" class="btn btn-lg btn-info inline" style="width:46%; margin-right:4%" ng-click="nextStep(1)">上一步</button>
+                <button type="button" class="btn btn-lg btn-info inline" style="width:46%" ng-disabled="invoice0Step3.$invalid" ng-click="toStep3_0();" ng-show="invoiceSelect=='invoice0'">下一步</button>
+            </div>
+        </form>
+        <!--注册-->
+        <form name="invoice1Step3" ng-if="invoiceSelect=='invoice1'">
+            <div class="absolute scroll-touch" style="bottom:76px; top:70px;">
+                <ul class="list-unstyled p-l-sm b-t b-b bg-white">
+                    <li class="pos-rlt b-b" style="height:46px; padding-left:92px;"><span class="absolute-left" style="height:18px;" ng-class="{'error':invoice1Step3.shanghuzhuce.$dirty && invoice1Step3.shanghuzhuce.$invalid }">商户注册名称</span>
+                        <input class="inputSytle1 text-right" type="text" data-infoempty="请输入商户注册名称" data-infoerror="请输入商户注册名称" placeholder="请输入商户注册名称" name="shanghuzhuce" ng-model="invoiceMerchant.shanghuzhuce" required/>
+                        <!--ng-focus="invoice1Step3shanghuzhuce = true"--> 
+                        <!--<span class="pos-abt icon-icon_005 text-muted absolute-right text-md" style="padding:15px 8px;" ng-click="invoiceMerchant.shanghuzhuce=''; invoice1Step3shanghuzhuce=false;" ng-show="invoice1Step3shanghuzhuce"></span>--> 
+                    </li>
+                    <li class="pos-rlt b-b " style="height:46px; padding-left:92px;"><span class="absolute-left" style="height:18px;" ng-class="{'error':invoice1Step3.shanghujingyin.$dirty && invoice1Step3.shanghujingyin.$invalid }">商户经营名称</span>
+                        <input class="inputSytle1 text-right" type="text" data-infoempty="请输入商户经营名称" data-infoerror="请输入商户经营名称" placeholder="请输入商户经营名称" name="shanghujingyin" ng-model="invoiceMerchant.shanghujingyin" required />
+                    </li>
+                    <li class="pos-rlt b-b " style="height:46px; padding-left:92px;"><span class="absolute-left" style="height:18px;" ng-class="{'error':invoice1Step3.lianxiren.$dirty && invoice1Step3.lianxiren.$invalid }">联系人姓名</span>
+                        <input class="inputSytle1 text-right" type="text" data-infoempty="请输入联系人姓名" data-infoerror="请输入联系人姓名" placeholder="请输入联系人姓名" name="lianxiren" ng-model="invoiceMerchant.lianxiren" required />
+                    </li>
+                    <li class="pos-rlt b-b " style="height:46px; padding-left:92px;"><span class="absolute-left" style="height:18px;" ng-class="{'error':invoice1Step3.lianxirenshoujihao.$dirty && invoice1Step3.lianxirenshoujihao.$invalid }">联系手机号</span>
+                        <input class="inputSytle1 text-right" type="tel" data-infoempty="请输入联系手机号" data-infoerror="请输入正确的手机号" placeholder="请输入联系手机号" name="lianxirenshoujihao" ng-model="invoiceMerchant.lianxirenshoujihao" maxlength="11" ng-pattern="/^1[34578]\d{9}$/" required />
+                    </li>
+                    <li class="pos-rlt" style="height:36px; padding-left:92px;"><span class="absolute-left" style="height:18px;">商户地址</span> </li>
+                    <li class="pos-rlt b-b">
+                        <div class="row m-l-none m-r-none">
+                            <div class="col-xs-4 padder-xs p-l-none">
+                                <select class="form-control m-b-sm" name="province" province-city-county data-fill='{"province":{"model":"invoiceMerchant.contact.region.parent.parent.id", "listName": "provinceList"},"city":{"model":"invoiceMerchant.contact.region.parent.id","listName": "cityList"},"county":{"model":"invoiceMerchant.contact.region.id", "listName": "countyList"}}' ng-model="invoiceMerchant.contact.region.parent.parent.id" ng-options="item.id as item.text for item in provinceList" required>
+                                    <option value="">请选择省</option>
+                                </select>
+                            </div>
+                            <div class="col-xs-4 padder-xs">
+                                <select class="form-control m-b" name="city" ng-model="invoiceMerchant.contact.region.parent.id" ng-options="item.id as item.text for item in cityList" required>
+                                    <option value="">请选择市</option>
+                                </select>
+                            </div>
+                            <div class="col-xs-4 padder-xs ">
+                                <select class="form-control m-b" name="district" ng-model="invoiceMerchant.contact.region.id" ng-options="item.id as item.text for item in countyList" >
+                                    <option value="">请选择区\县</option>
+                                </select>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="pos-rlt" style="height:36px; padding-left:92px;"><span class="absolute-left" style="height:18px;" ng-class="{'error':invoice1Step3.address.$dirty && invoice1Step3.address.$invalid }">详细地址</span> </li>
+                    <li class="pos-rlt p-r-sm" >
+                        <textarea class="inputSytle1 m-b" rows="2" data-infoempty="请输入详细地址" data-infoerror="请输入详细地址" placeholder="请勿重复填写省市区信息" name="address" ng-model="invoiceMerchant.contact.address" required></textarea>
+                    </li>
+                </ul>
+            </div>
+            <div class="absolute invoice-tab-content text-center" style="bottom:15px; top:auto; margin:0 15px;">
+                <button type="button" class="btn btn-lg btn-info inline" style="width:46%;margin-right:4%" ng-click="nextStep(1)">上一步</button>
+                <button type="button" class="btn btn-lg btn-info inline" style="width:46%" ng-disabled="invoice1Step3.$invalid" ng-click="toStep3_1();" ng-show="invoiceSelect=='invoice1'">下一步</button>
+            </div>
+        </form>
+    </div>
+    <div class="tab-pane active">
+        <div class="absolute scroll-touch" style="bottom:76px; top:70px;">
+            <!--<div class="text-center bg-white b-t b-b">
+                <p class="padder-sm p-t-lg">您申请的发票管家功能已开通<br/>
+                    请妥善保管好您的激活码</p>
+                <p class="text-warning padder-sm text-lg break-all" ng-bind="activationCode"></p>
+                <img class="b box-shadow m-t" style="width:160px; height:160px;" ng-src="{{sampleQRCode}}" style="background:url(../../../images/icon/loading.gif) center center no-repeat;"  />
+                <p class="text-xs text-muted m-t-xs p-b-sm">长按二维码图片保存</p>
+            </div>-->
+            <div class="padder m-t-lg">
+            	<div class="pos-rlt">
+                	<span class="block" style="position:absolute; top:0; left:0; height:10px; width:10px; background-color:black; border-radius:50%;"></span>
+                    <span class="block" style="position:absolute; top:0; right:0; height:10px; width:10px; background-color:black; border-radius:50%;"></span>
+                    <div class="bg-white pos-rlt" style="margin:0 6px 0; top:6px;  box-shadow:rgba(0,0,0,0.2) 0 0 5px;">
+                    	<span style="position:absolute; left:-3px; top:4px; bottom:4px; width:7px; background:url(../../../images/icon/shadow_r_l.png) repeat-y; background-size:100% auto;"></span>
+                        <span style="position:absolute; right:-3px; top:4px; bottom:4px; width:7px; background:url(../../../images/icon/shadow_r_r.png) repeat-y; background-size:100% auto;"></span>
+                        <div class="text-center p-t-lg">
+                        	<span class="icon-icon_rightinfo text-success" style="font-size:36px;"></span>
+                            <p class="text-md m-t-xs">开票成功</p>
+                            <p class="text-xs p-t-xs p-b-sm">您可使用以下信息登录拉卡拉发票管家客户端</p>
+                        </div>
+                        <div class="row m-l-none m-r-none p-b">
+                        	<div class="col-xs-6 col-xs-push-6 no-padder">
+                            	<p class="text-xs m-b-none" style="margin-left:-64px;">租户名：<span class="text-info" ng-bind=""></span></p>
+                                <p class="text-xs" style="margin-left:-64px;">分机号：<span class="text-info" ng-bind=""></span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <span class="box-shadow" style=" position:absolute; top:3px; right:3px; left:4px; height:4px; background-color:black;"></span>
+                </div>
+            </div>
+        </div>
+        <div class="absolute invoice-tab-content text-center" style="bottom:15px; top:auto; margin:0 15px;"> <a href="" class="btn btn-lg btn-info inline w-full" >完成</a> </div>
+    </div>
+</div>
+<!--<div class="absolute" style="bottom:15px; top:auto; margin:0 15px;"> <a href="#" class="btn btn-lg btn-info w-full">申请开票</a> </div>--> 
+<script src="../../../assets/js/app/invoiceManage/app.js"></script> 
+<script src="../../../assets/js/app/invoiceManage/config.js"></script> 
+<script src="../../../assets/js/app/directives/ui-validateCode.js"></script> 
+<script src="../../../assets/js/app/directives/ui-city.js"></script> 
+<script src="../../../assets/js/app/invoiceManage/invoiceManageController.js"></script>
+</body>
+</html>

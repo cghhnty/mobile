@@ -1,0 +1,495 @@
+.activity-wheel-animate {
+  -webkit-animation-duration: 1s;
+  -moz-animation-duration: 1s;
+  -o-animation-duration: 1s;
+  -ms-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  -ms-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+.activity-wheel-animate-infinite {
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
+  -o-animation-iteration-count: infinite;
+  -ms-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+.activity-wheel-tada {
+  -webkit-animation-name: activity-wheel-tada;
+  -moz-animation-name: activity-wheel-tada;
+  -o-animation-name: activity-wheel-tada;
+  -ms-animation-name: activity-wheel-tada;
+  animation-name: activity-wheel-tada;
+}
+.activity-wheel-pulse {
+  -webkit-animation-name: activity-wheel-pulse;
+  -moz-animation-name: activity-wheel-pulse;
+  -o-animation-name: activity-wheel-pulse;
+  -ms-animation-name: activity-wheel-pulse;
+  animation-name: activity-wheel-pulse;
+}
+.activity-wheel {
+  background-color: #7f2789;
+}
+.activity-wheel-logo {
+  width: 320px;
+  height: 154px;
+  background: url("../img/activity-wheel/logo.png?v=4953055fce77a84e18758d5a181d6f95") no-repeat;
+  -webkit-background-size: 320px 154px;
+  -moz-background-size: 320px 154px;
+  background-size: 320px 154px;
+  margin: 0 auto;
+}
+.activity-wheel-wrap {
+  position: relative;
+  width: 280px;
+  margin: 10px auto 0;
+}
+.activity-wheel-btn-area {
+  position: absolute;
+  top: 72px;
+  left: 70px;
+  width: 139px;
+  height: 145px;
+  background: url("../img/activity-wheel/button.png?v=c3c24266380e0d27d41e1e24e3512d32");
+  -webkit-background-size: 139px 145px;
+  -moz-background-size: 139px 145px;
+  background-size: 139px 145px;
+  z-index: 1;
+}
+.activity-wheel-btn {
+  position: absolute;
+  top: 25px;
+  left: 20px;
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+  -webkit-border-radius: 40px;
+  border-radius: 40px;
+}
+.activity-wheel-row::before,
+.activity-wheel-row::after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.activity-wheel-row::after {
+  clear: both;
+}
+.activity-wheel-block:last-child {
+  float: right;
+}
+.activity-wheel-block {
+  float: left;
+  position: relative;
+  width: 69px;
+  margin: 0 1px 1px 0;
+  height: 71px;
+  background-color: #cb1573;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  z-index: 2;
+}
+.activity-wheel-block.even {
+  background-color: #d84190;
+}
+.activity-wheel-block::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: rgba(0,0,0,0.2);
+}
+.activity-wheel-block-active {
+  background-color: #ffffb5 !important;
+}
+.activity-wheel-block-active::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: #ff0;
+  opacity: 0.3;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+  filter: alpha(opacity=30);
+}
+.activity-wheel-icon {
+  position: absolute;
+  left: 18px;
+  top: 16px;
+  width: 36px;
+  height: 36px;
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-background-size: 36px;
+  -moz-background-size: 36px;
+  background-size: 36px;
+}
+.activity-wheel-icon-custom {
+  left: 12px;
+  top: 10px;
+  width: 48px;
+  height: 48px;
+  -webkit-background-size: 48px;
+  -moz-background-size: 48px;
+  background-size: 48px;
+}
+.activity-wheel-icon-smile {
+  background-image: url("../img/activity-wheel/face-smile.png?v=72f189af68228ba6de0c50aa002aee03");
+}
+.activity-wheel-icon-upset {
+  background-image: url("../img/activity-wheel/face-upset.png?v=2b3e40f87bb0499e7bc1fd3fd21fe8ee");
+}
+.activity-wheel-icon-prize0 {
+  background-image: url("../img/activity-wheel/prize0.png?v=9f70eb20c10fd4ee7a133ffa3676089e");
+}
+.activity-wheel-icon-prize1 {
+  background-image: url("../img/activity-wheel/prize1.png?v=790d56ab7547b22315411af5afcb5af2");
+}
+.activity-wheel-icon-prize2 {
+  background-image: url("../img/activity-wheel/prize2.png?v=2f3c76b761f1a9c1d09054e321ad5c30");
+}
+.activity-wheel-icon-prize3 {
+  background-image: url("../img/activity-wheel/prize3.png?v=cb0a901e161a75e636c4d3dd2cce5a90");
+}
+.activity-wheel-icon-point,
+.activity-wheel-icon-coupon {
+  left: 12px;
+  top: 14px;
+  width: 48px;
+  height: 48px;
+  -webkit-background-size: 48px;
+  -moz-background-size: 48px;
+  background-size: 48px;
+}
+.activity-wheel-icon-point {
+  background-image: url("../img/activity-wheel/point.png?v=8c6c70fe3025bceed1d948294dd5900b");
+}
+.activity-wheel-icon-coupon {
+  top: 9px;
+  background-image: url("../img/activity-wheel/coupon.png?v=863e3f46f281e9d7a06fb9bba9e6bdbe");
+}
+.activity-wheel-remaining {
+  text-align: center;
+  color: #e56176;
+}
+.activity-wheel-remaining-count {
+  color: #fff;
+}
+.activity-wheel-view-history {
+  text-align: center;
+}
+.activity-wheel-view-history-link,
+.activity-wheel-view-history-link:hover {
+  display: inline-block;
+  background-color: #ff278a;
+  color: #fff;
+  padding: 5px 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  text-decoration: none;
+}
+.activity-wheel-info-area {
+  padding-top: 10px;
+  padding-bottom: 20px;
+  width: 275px;
+  margin: 0 auto;
+}
+.activity-wheel-info {
+  color: #e2bfe0;
+  font-size: 14px;
+  margin-top: 5px;
+}
+.activity-wheel-head {
+  font-weight: bold;
+  line-height: 2;
+  margin-top: 8px;
+}
+.activity-wheel-desc {
+  white-space: pre-wrap;
+}
+.activity-wheel-store {
+  display: block;
+  text-decoration: none;
+  padding: 8px 0 6px;
+  border-bottom: 1px dashed #bbb;
+}
+.activity-wheel-store:first-child {
+  padding-top: 0;
+}
+.activity-wheel-store:last-child {
+  border-bottom: 0;
+}
+.activity-wheel-stores {
+  overflow: hidden;
+}
+.activity-wheel-store-name {
+  font-weight: bold;
+}
+.activity-wheel-stores-toggle {
+  padding: 4px 10px;
+  text-align: center;
+}
+@media only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+  .activity-wheel-icon-smile {
+    background-image: url("../img/activity-wheel/face-smile@2x.png?v=52a1010e84a7a9d891398f12b23107e8");
+  }
+  .activity-wheel-icon-upset {
+    background-image: url("../img/activity-wheel/face-upset@2x.png?v=cb3e8855332c9b49f57e512f1bc2af4a");
+  }
+  .activity-wheel-btn-area {
+    background-image: url("../img/activity-wheel/button@2x.png?v=1a76bd5482b789572ff430c2fe93d2e8");
+  }
+  .activity-wheel-logo {
+    background-image: url("../img/activity-wheel/logo@2x.png?v=16c322b9dba90bdde6aa12711d551969");
+  }
+}
+@-moz-keyframes activity-wheel-tada {
+  0% {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -o-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  10%, 20% {
+    -webkit-transform: scale(0.9) rotate(-3deg);
+    -moz-transform: scale(0.9) rotate(-3deg);
+    -o-transform: scale(0.9) rotate(-3deg);
+    -ms-transform: scale(0.9) rotate(-3deg);
+    transform: scale(0.9) rotate(-3deg);
+  }
+  30%, 50%, 70%, 90% {
+    -webkit-transform: scale(1.1) rotate(3deg);
+    -moz-transform: scale(1.1) rotate(3deg);
+    -o-transform: scale(1.1) rotate(3deg);
+    -ms-transform: scale(1.1) rotate(3deg);
+    transform: scale(1.1) rotate(3deg);
+  }
+  40%, 60%, 80% {
+    -webkit-transform: scale(1.1) rotate(-3deg);
+    -moz-transform: scale(1.1) rotate(-3deg);
+    -o-transform: scale(1.1) rotate(-3deg);
+    -ms-transform: scale(1.1) rotate(-3deg);
+    transform: scale(1.1) rotate(-3deg);
+  }
+  100% {
+    -webkit-transform: scale(1) rotate(0);
+    -moz-transform: scale(1) rotate(0);
+    -o-transform: scale(1) rotate(0);
+    -ms-transform: scale(1) rotate(0);
+    transform: scale(1) rotate(0);
+  }
+}
+@-webkit-keyframes activity-wheel-tada {
+  0% {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -o-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  10%, 20% {
+    -webkit-transform: scale(0.9) rotate(-3deg);
+    -moz-transform: scale(0.9) rotate(-3deg);
+    -o-transform: scale(0.9) rotate(-3deg);
+    -ms-transform: scale(0.9) rotate(-3deg);
+    transform: scale(0.9) rotate(-3deg);
+  }
+  30%, 50%, 70%, 90% {
+    -webkit-transform: scale(1.1) rotate(3deg);
+    -moz-transform: scale(1.1) rotate(3deg);
+    -o-transform: scale(1.1) rotate(3deg);
+    -ms-transform: scale(1.1) rotate(3deg);
+    transform: scale(1.1) rotate(3deg);
+  }
+  40%, 60%, 80% {
+    -webkit-transform: scale(1.1) rotate(-3deg);
+    -moz-transform: scale(1.1) rotate(-3deg);
+    -o-transform: scale(1.1) rotate(-3deg);
+    -ms-transform: scale(1.1) rotate(-3deg);
+    transform: scale(1.1) rotate(-3deg);
+  }
+  100% {
+    -webkit-transform: scale(1) rotate(0);
+    -moz-transform: scale(1) rotate(0);
+    -o-transform: scale(1) rotate(0);
+    -ms-transform: scale(1) rotate(0);
+    transform: scale(1) rotate(0);
+  }
+}
+@-o-keyframes activity-wheel-tada {
+  0% {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -o-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  10%, 20% {
+    -webkit-transform: scale(0.9) rotate(-3deg);
+    -moz-transform: scale(0.9) rotate(-3deg);
+    -o-transform: scale(0.9) rotate(-3deg);
+    -ms-transform: scale(0.9) rotate(-3deg);
+    transform: scale(0.9) rotate(-3deg);
+  }
+  30%, 50%, 70%, 90% {
+    -webkit-transform: scale(1.1) rotate(3deg);
+    -moz-transform: scale(1.1) rotate(3deg);
+    -o-transform: scale(1.1) rotate(3deg);
+    -ms-transform: scale(1.1) rotate(3deg);
+    transform: scale(1.1) rotate(3deg);
+  }
+  40%, 60%, 80% {
+    -webkit-transform: scale(1.1) rotate(-3deg);
+    -moz-transform: scale(1.1) rotate(-3deg);
+    -o-transform: scale(1.1) rotate(-3deg);
+    -ms-transform: scale(1.1) rotate(-3deg);
+    transform: scale(1.1) rotate(-3deg);
+  }
+  100% {
+    -webkit-transform: scale(1) rotate(0);
+    -moz-transform: scale(1) rotate(0);
+    -o-transform: scale(1) rotate(0);
+    -ms-transform: scale(1) rotate(0);
+    transform: scale(1) rotate(0);
+  }
+}
+@keyframes activity-wheel-tada {
+  0% {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -o-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  10%, 20% {
+    -webkit-transform: scale(0.9) rotate(-3deg);
+    -moz-transform: scale(0.9) rotate(-3deg);
+    -o-transform: scale(0.9) rotate(-3deg);
+    -ms-transform: scale(0.9) rotate(-3deg);
+    transform: scale(0.9) rotate(-3deg);
+  }
+  30%, 50%, 70%, 90% {
+    -webkit-transform: scale(1.1) rotate(3deg);
+    -moz-transform: scale(1.1) rotate(3deg);
+    -o-transform: scale(1.1) rotate(3deg);
+    -ms-transform: scale(1.1) rotate(3deg);
+    transform: scale(1.1) rotate(3deg);
+  }
+  40%, 60%, 80% {
+    -webkit-transform: scale(1.1) rotate(-3deg);
+    -moz-transform: scale(1.1) rotate(-3deg);
+    -o-transform: scale(1.1) rotate(-3deg);
+    -ms-transform: scale(1.1) rotate(-3deg);
+    transform: scale(1.1) rotate(-3deg);
+  }
+  100% {
+    -webkit-transform: scale(1) rotate(0);
+    -moz-transform: scale(1) rotate(0);
+    -o-transform: scale(1) rotate(0);
+    -ms-transform: scale(1) rotate(0);
+    transform: scale(1) rotate(0);
+  }
+}
+@-moz-keyframes activity-wheel-pulse {
+  0% {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -o-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -o-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@-webkit-keyframes activity-wheel-pulse {
+  0% {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -o-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -o-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@-o-keyframes activity-wheel-pulse {
+  0% {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -o-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -o-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@keyframes activity-wheel-pulse {
+  0% {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -o-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -o-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+}
+/*# sourceMappingURL=activity-wheel.css.map */

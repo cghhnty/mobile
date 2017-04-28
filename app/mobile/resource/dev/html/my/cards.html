@@ -1,0 +1,200 @@
+<div class="my-cards-root" rn-scope>
+    <div class="tab">
+        <div class="tab-filter tab-focus active-filter">有效卡</div>
+        <div class="tab-splitter"></div>
+        <div class="tab-filter inactive-filter">过期卡</div>
+    </div>
+
+    <div class="my-cards card-list">
+        <div class="block block-active">
+            <div style="{{hide(active_cards.length)}}" class="common-not-found">
+                <div class="common-not-found-header">暂无有效会员卡</div>
+            </div>
+            <div class="my-cards-card" rn-foreach="active_cards">
+                <div class="modal-pop-dist">
+                    <img class="card-qrcode-img" src="{{'/api/qrcode?s=10&text='+id}}" data-toggle="modal"
+                         data-target="#qrcodeModal{{id}}">
+                </div>
+                <!-- Modal -->
+                <div id="qrcodeModal{{id}}" class="modal fade" role="dialog">
+                    <div class="modal-dialog my-modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close my-modal-close-button"
+                                        data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title my-modal-title">{{name}}</h4>
+                            </div>
+                            <div class="my-modal-body">
+                                <div class="my-modal-text" style="{{show(type=='STAMP_CARD')}}">
+                                    余次：{{remainingStamps}}
+                                </div>
+                                <img class="modal-qrcode {{(type == 'BALANCE_CARD' || type == 'DISCOUNT_CARD') ? 'opacity': ''}}"
+                                     src="{{'/api/qrcode?s=10&text='+id}}">
+                            </div>
+                            <a class="my-modal-footer" style="{{show(isViewConsumeNum)}}" href="{{link('my/orders', {type: type, cardId: id})}}">
+                                该卡片交易记录
+                                <img class="modal-right-arrow"
+                                     src="{{app.resource + '/img/my-center/arrow@2x.png'}}">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!--end of Modal -->
+                <div class="card-body-wrap {{className}}">
+                    <div class="card2-header">{{name}}</div>
+
+                    <div class="card-body-footer-wrap" style="display: none">
+                        <div class="card2-body">
+                            <!--计次卡-->
+                        <span class="stamp-card-text" style="{{show(type == 'STAMP_CARD')}}">
+                            余次:<span class="my-balance-card-balance"> {{remainingStamps}}</span>
+                            共 <span class="my-balance-card-balance">{{numberOfStamps}}</span>次
+                        </span>
+                            <!--时段卡-->
+                            <!--<span style="{{show(type == 'PERIOD_CARD')}}">-->
+                            <!--{{Math.ceil((Date.now() - createDate) / 86400000)}}/{{expirationTime ? Math.ceil((expirationTime - -->
+                            <!--createDate) / 86400000) + '天' : '永久'}}-->
+                            <!--</span>-->
+                            <!--储值卡-->
+                        <span class="balance-card-text" style="{{show(type == 'BALANCE_CARD')}}">
+                            余额: <span class="my-balance-card-balance">{{yuan(balance)}}</span>
+                             元
+                        </span>
+                            <!--资格卡-->
+                            <span class="my-balance-card-balance"
+                                  style="{{show(type == 'DISCOUNT_CARD')}}">&nbsp;&nbsp;</span>
+                        </div>
+
+                        <div class="card2-footer">
+                            <!-- 计次卡 时段卡 -->
+                        <span class="card-effective-date"
+                              style="{{show(type == 'STAMP_CARD' || type == 'PERIOD_CARD')}}">
+                            <span style="{{show(status == 'ACTIVE')}}">
+                                有效期: {{effectiveTime || expirationTime ? date(effectiveTime || createDate) + ' 至 ' + (expirationTime ?
+                                date(expirationTime) : '永久') : '永久有效'}}
+                            </span>
+                            <span style="{{show(status != 'ACTIVE')}}">
+                                {{status == 'FROZEN' ? '已冻结' : '已失效'}}
+                            </span>
+                        </span>
+                            <!-- 储值卡 资格卡 -->
+                        <span style="{{show(type == 'BALANCE_CARD' || type == 'DISCOUNT_CARD')}}">
+                            <span style="{{show(status == 'ACTIVE')}}">
+                                 有效期: {{effectiveTime || expirationTime ? date(effectiveTime || createDate) + ' 至 ' + (expirationTime ? date(expirationTime) : '永久') : '永久有效'}}
+                            </span>
+                            <span style="{{show(status != 'ACTIVE')}}">{{status == 'FROZEN' ? '已冻结' : '已失效'}}</span>
+                        </span>
+                        </div>
+                        <!-- </div> -->
+                    </div>
+
+
+                </div>
+                <div class="bottom-shadow"></div>
+
+            </div>
+        </div>
+        <div class="block block-expired" style="display: none">
+            <div style="{{hide(expired_cards.length)}}" class="common-not-found">
+                <div class="common-not-found-header">暂无过期会员卡</div>
+            </div>
+            <div class="my-cards-card" rn-foreach="expired_cards">
+                <div class="modal-pop-dist">
+                    <img class="card-qrcode-img" src="{{'/api/qrcode?s=10&text='+id}}" data-toggle="modal"
+                         data-target="#qrcodeModal{{id}}">
+                </div>
+                <!-- Modal -->
+                <div id="qrcodeModal{{id}}" class="modal fade" role="dialog">
+                    <div class="modal-dialog my-modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close my-modal-close-button"
+                                        data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title my-modal-title">{{name}}</h4>
+                            </div>
+                            <div class="my-modal-body">
+                                <div class="my-modal-text" style="{{show(type=='STAMP_CARD')}}">
+                                    余次：{{remainingStamps}}
+                                </div>
+                                <img class="modal-qrcode {{(type == 'BALANCE_CARD' || type == 'DISCOUNT_CARD') ? 'opacity': ''}}"
+                                     src="{{'/api/qrcode?s=10&text='+id}}">
+                            </div>
+                            <a class="my-modal-footer" style="{{show(isViewConsumeNum)}}" href="{{link('my/orders', {type: type, cardId: id})}}">
+                                该卡片交易记录
+                                <img class="modal-right-arrow"
+                                     src="{{app.resource + '/img/my-center/arrow@2x.png'}}">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!--end of Modal -->
+                <div class="card-body-wrap {{className}}">
+                    <div class="card2-header">{{name}}</div>
+                    <div class="card-body-footer-wrap" style="display: none">
+                        <div class="card2-body">
+                            <!--计次卡-->
+                            <span class="stamp-card-text" style="{{show(type == 'STAMP_CARD')}}">
+                                余次:<span class="my-balance-card-balance"> {{remainingStamps}}</span>
+                                共 <span class="my-balance-card-balance">{{numberOfStamps}}</span>次
+                            </span>
+                            <!--时段卡-->
+                            <!--<span style="{{show(type == 'PERIOD_CARD')}}">-->
+                            <!--{{Math.ceil((Date.now() - createDate) / 86400000)}}/{{expirationTime ? Math.ceil((expirationTime - -->
+                            <!--createDate) / 86400000) + '天' : '永久'}}-->
+                            <!--</span>-->
+                            <!--储值卡-->
+                            <span class="balance-card-text" style="{{show(type == 'BALANCE_CARD')}}">
+                                余额: <span class="my-balance-card-balance">{{yuan(balance)}}</span>
+                                 元
+                            </span>
+                            <!--资格卡-->
+                            <span class="my-balance-card-balance"
+                                  style="{{show(type == 'DISCOUNT_CARD')}}">&nbsp;&nbsp;</span>
+                        </div>
+
+                        <div class="card2-footer">
+                            <!-- 计次卡 时段卡 -->
+                        <span class="card-effective-date"
+                              style="{{show(type == 'STAMP_CARD' || type == 'PERIOD_CARD')}}">
+                            <span style="{{show(status == 'ACTIVE')}}">
+                                有效期: {{effectiveTime || expirationTime ? date(effectiveTime || createDate) + ' 至 ' + (expirationTime ?
+                                date(expirationTime) : '永久') : '永久有效'}}
+                            </span>
+                            <span style="{{show(status != 'ACTIVE')}}">
+                                {{status == 'FROZEN' ? '已冻结' : '已失效'}}
+                            </span>
+                        </span>
+                            <!-- 储值卡 资格卡 -->
+                        <span style="{{show(type == 'BALANCE_CARD' || type == 'DISCOUNT_CARD')}}">
+                            <span style="{{show(status == 'ACTIVE')}}">
+                                 有效期: {{effectiveTime || expirationTime ? date(effectiveTime || createDate) + ' 至 ' + (expirationTime ? date(expirationTime) : '永久') : '永久有效'}}
+                            </span>
+                            <span style="{{show(status != 'ACTIVE')}}">{{status == 'FROZEN' ? '已冻结' : '已失效'}}</span>
+                        </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bottom-shadow"></div>
+            </div>
+        </div>
+
+
+        <style type="text/css">
+            body {
+                background-color: white;
+            }
+        </style>
+        <script>
+            inc(
+                    'css/card_list.css',
+                    'css/my-modal.css',
+                    'js/MyCards.js',
+                    function () {
+                        new MyCards();
+                    }
+            );
+        </script>
+    </div>
+</div>
+
+

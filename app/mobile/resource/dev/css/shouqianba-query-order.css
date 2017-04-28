@@ -1,0 +1,132 @@
+body {
+  height: 100%;
+}
+#queryOrder {
+  background-color: #eee;
+  height: 100%;
+}
+#amountContainer {
+  padding: 0.1rem 0.1rem 0;
+  font-size: 0.16rem;
+  height: 50%;
+}
+#logoInfo {
+  width: 40%;
+  min-width: 140px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 18px;
+  margin-bottom: 20px;
+  display: block;
+  position: relative;
+  background: url("http://images.wosaimg.com/27/63f4668b7b18284224642447a45d6e0e18a30a.png") no-repeat;
+  background-size: 100%;
+}
+#logoInfo:after {
+  padding-top: 32.14%;
+  display: block;
+  content: '';
+}
+#amount {
+  display: block;
+  width: 75%;
+  height: 50px;
+  margin: 0 auto;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  border-radius: 15px;
+}
+#sn-input {
+  width: 100%;
+  padding: 0.3rem 0.45rem 0 1.5rem;
+  border: none;
+  font-size: 1.8rem;
+  text-align: left;
+  line-height: 50px;
+  vertical-align: middle;
+  background-color: #fff;
+  border-radius: 5px;
+  color: #dcdcdc;
+}
+#cursor {
+  display: block;
+  height: 30px;
+  width: 2px;
+  background-color: #7d7d7d;
+  position: absolute;
+  margin-top: 12px;
+  margin-left: 12px;
+}
+#amount input {
+  width: 100%;
+  padding: 0.3rem 0.45rem 0 1rem;
+  border: none;
+  font-size: 1.8rem;
+  text-align: left;
+  height: 100%;
+  color: #dcddcd C;
+}
+#amount input:focus {
+  outline: none;
+}
+#amount input[disabled] {
+  color: #313131;
+}
+#search {
+  margin-top: 20px;
+  display: block;
+  width: 75%;
+  height: 50px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+#search .searchBtn_1 {
+  float: left;
+  width: 48%;
+  height: 50px;
+  line-height: 50px;
+  margin: 0 auto;
+  border: 1px solid #eab241;
+  color: #eab241;
+  font-size: 1.5rem;
+  text-align: center;
+  border-radius: 5px;
+}
+#search .searchBtn_2 {
+  float: right;
+  width: 48%;
+  height: 50px;
+  line-height: 50px;
+  margin: 0 auto;
+  background-color: #eab241;
+  color: #fff;
+  font-size: 1.5rem;
+  text-align: center;
+  border-radius: 5px;
+}
+#keyboardContainer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #ebebeb;
+  z-index: 1000;
+}
+#keyboard {
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  border-top: 1px solid #f1f1f1;
+  background-color: #fff;
+  font-size: 32px;
+  font-weight: 200;
+  color: #181c28;
+}
+#keyboard td {
+  width: 33%;
+  border: 1px solid #f1f1f1;
+  border-right: 0;
+  border-top: 0;
+}
+/*# sourceMappingURL=shouqianba-query-order.css.map */

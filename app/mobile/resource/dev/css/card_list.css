@@ -1,0 +1,244 @@
+.my-cards-card {
+  position: relative;
+  overflow: hidden;
+}
+.card-body-wrap.expanded {
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.card-body-wrap {
+  margin: 14px;
+  position: relative;
+  margin-bottom: 0;
+  height: 70px;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -webkit-border-radius: 16px;
+  border-radius: 16px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  -ms-transition: 0.3s;
+  transition: 0.3s;
+}
+@media (min-width: 400px) {
+  div.card-body-wrap.expanded {
+    height: 209px;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -o-transition: 0.3s;
+    -ms-transition: 0.3s;
+    transition: 0.3s;
+  }
+}
+@media (min-width: 321px) and (max-width: 400px) {
+  div.card-body-wrap.expanded {
+    height: 190px;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -o-transition: 0.3s;
+    -ms-transition: 0.3s;
+    transition: 0.3s;
+  }
+}
+@media (max-width: 320px) {
+  div.card-body-wrap.expanded {
+    height: 157px;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -o-transition: 0.3s;
+    -ms-transition: 0.3s;
+    transition: 0.3s;
+  }
+}
+.tab {
+  width: 100%;
+}
+.tab-splitter {
+  height: 35px;
+  margin-left: -1px;
+  margin-top: 5px;
+  width: 1px;
+  float: left;
+  background-color: #b0b0b0;
+}
+.tab-filter {
+  float: left;
+  text-align: center;
+  color: #000;
+  background: #eee;
+  width: 50%;
+  height: 45px;
+  padding-top: 10px;
+  font-size: 15px;
+  border-bottom: 1px solid #b0b0b0;
+}
+.tab-focus {
+  border-bottom: #f39800;
+  border-bottom-style: inset;
+}
+.block {
+  z-index: -1;
+}
+.card2-header {
+  padding: 15px;
+  font-size: 16px;
+  color: #fff;
+  text-shadow: #858585 1px 1px 0px;
+}
+.card2-header-right {
+  float: right;
+}
+.card2-body {
+  font-size: 16px;
+}
+.card-body-footer-wrap {
+  width: 100%;
+  margin-left: 15px;
+  height: 70px;
+  position: absolute;
+  bottom: -6px;
+  -webkit-transition: 0;
+  -moz-transition: 0;
+  -o-transition: 0;
+  -ms-transition: 0;
+  transition: 0;
+}
+.stamp-card-text {
+  color: #235f64;
+}
+.balance-card-text {
+  color: #805823;
+}
+.card2-footer {
+  position: absolute;
+  bottom: 13px;
+  width: 100%;
+  -webkit-border-radius: 0 0 12px 12px;
+  border-radius: 0 0 12px 12px;
+  color: #fff;
+  text-shadow: #858585 1px 1px 0px;
+  font-size: 13px;
+}
+.card2-corner-mark {
+  width: 160px;
+  padding: 5px 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  text-align: center;
+  -webkit-transform: rotate(45deg) translateX(50px) translateY(-20px);
+  -moz-transform: rotate(45deg) translateX(50px) translateY(-20px);
+  -o-transform: rotate(45deg) translateX(50px) translateY(-20px);
+  -ms-transform: rotate(45deg) translateX(50px) translateY(-20px);
+  transform: rotate(45deg) translateX(50px) translateY(-20px);
+}
+.card-list {
+  margin: 0;
+  padding: 5px;
+  clear: both;
+}
+a.card {
+  display: block;
+}
+.card .card-condition {
+  font-size: 24px;
+  letter-spacing: 0.1em;
+}
+.card .card-condition small {
+  color: #e6e6e6;
+}
+.card-qrcode-img {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  opacity: 0.9;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
+  filter: alpha(opacity=90);
+}
+.my-balance-card {
+  background-image: url("../img/card/balance-card@2x.png?v=efdd51a4a4e29bb2f460960531ef8795");
+}
+.my-discount-card {
+  background-image: url("../img/card/discount-card@2x.png?v=95033a7ddf0703fb5be889ff21b8d33e");
+}
+.card-stamp {
+  background-image: url("../img/card/stamp-card@2x.png?v=09dd4b071d43688e39fc80dffdc9eedb");
+}
+.card-period {
+  background-image: url("../img/card/period-card@2x.png?v=fe31ae3638a0ac11461f00385561e90c");
+}
+.stamp-card-inactive {
+  background-image: url("../img/card/stamp-card-invalid@2x.png?v=df649ce4c53a2b6a5c55f0ceb7bdff50");
+}
+.period-card-inactive {
+  background-image: url("../img/card/period-card-invalid@2x.png?v=ae08a1afd597d03d88acadb6cac99166");
+}
+.my-discount-card-expired {
+  background-image: url("../img/card/disount-card-invalid@2x.png?v=a5939349f6b52b8b5954a89bdd4d203e");
+}
+.my-balance-card-expired {
+  background-image: url("../img/card/balance-card-invalid@2x.png?v=96069f7872b491683c0d30fb5c5b52c9");
+}
+.bottom-shadow {
+  position: absolute;
+  height: 1px;
+  left: 0;
+  bottom: -1px;
+  width: 100%;
+  -webkit-box-shadow: 0 -2px 6px #696464;
+  box-shadow: 0 -2px 6px #696464;
+  -webkit-box-shadow: 0 -2px 6px #696464;
+}
+.my-balance-account {
+  padding: 30px 24px 25px;
+  display: block;
+  background: #fff url("../img/my-balance/no-expires@2x.png?v=aeafdb99d0aafc63a738e3b8ab350be9") no-repeat right 30px top 23px/57px 37px;
+  margin-bottom: 15px;
+}
+.my-balance-account-header {
+  color: #b4b4b4;
+}
+.my-balance-account-balance {
+  font-size: 60px;
+  color: #fdb731;
+}
+.my-balance-account-balance-fraction {
+  font-size: 28px;
+}
+.my-balance-card-balance {
+  font-size: 21px;
+}
+.my-cards-card-usage {
+  font-size: 40px;
+  color: #fff;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.133);
+}
+.my-cards-card-slash {
+  font-size: 40px;
+  color: rgba(255,255,255,0.5);
+  text-shadow: 0 1px 1px rgba(0,0,0,0.133);
+}
+.my-cards-card-total {
+  font-size: 25px;
+  color: rgba(255,255,255,0.5);
+  text-shadow: 0 1px 1px rgba(0,0,0,0.133);
+}
+.modal-pop-dist {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  right: 14px;
+  top: 14px;
+  z-index: 2;
+}
+/*# sourceMappingURL=card_list.css.map */

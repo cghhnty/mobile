@@ -1,0 +1,17 @@
+#obtainPointRule {
+  background: #fff;
+  padding: 15px;
+}
+#obtainPointRule .rule-section {
+  margin-bottom: 10px;
+}
+#obtainPointRule .rule-section .rule-title {
+  padding-bottom: 5px;
+  font-size: 16px;
+  border-bottom: 1px solid rgba(0,0,0,0.7);
+}
+#obtainPointRule .rule-section .rule-detail {
+  font-size: 14px;
+  margin-left: -15px;
+}
+/*# sourceMappingURL=shouqianba-obtain-point.css.map */

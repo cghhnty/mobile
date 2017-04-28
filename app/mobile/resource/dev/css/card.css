@@ -1,0 +1,84 @@
+.card {
+  position: relative;
+  background: #f8f8f8;
+  -webkit-border-radius: 14px;
+  border-radius: 14px;
+  margin: 18px auto;
+  -webkit-box-shadow: 0 2px 1px rgba(0,0,0,0.15);
+  box-shadow: 0 2px 1px rgba(0,0,0,0.15);
+  overflow: hidden;
+}
+.card-head {
+  padding: 11px 15px 15px;
+  background-repeat: repeat-x;
+  background-position: 2px bottom;
+  font-size: 18px;
+  line-height: 22px;
+}
+.card-default .card-head {
+  background-color: #0eb1ce;
+  background-image: url("../img/card/top.png?v=95124488fd00f4bfe827a60cd062b3ab");
+  -webkit-background-size: 4px auto;
+  -moz-background-size: 4px auto;
+  background-size: 4px auto;
+  color: #fff;
+}
+.card-gray .card-head {
+  background-color: #bababa;
+  background-image: url("../img/card/top-gray.png?v=cacef01ff95afb1985cb782dca3091ad");
+  -webkit-background-size: 4px auto;
+  -moz-background-size: 4px auto;
+  background-size: 4px auto;
+  color: #333;
+}
+.card-head-right {
+  float: right;
+  font-size: 12px;
+  color: #fff;
+}
+.card-img-wrap {
+  position: relative;
+}
+.card-img-top {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  top: 0;
+  left: 0;
+  background: url("../img/card/img-top.png?v=c71579b1a018e28818eeb7aed5185d4c") repeat-x 2px top;
+  -webkit-background-size: 4px 2px;
+  -moz-background-size: 4px 2px;
+  background-size: 4px 2px;
+}
+.card-img-bottom {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background: url("../img/card/img-bottom.png?v=2b080e87ca15ddc61aa8cc371191bba2") repeat-x 2px top;
+  -webkit-background-size: 4px 2px;
+  -moz-background-size: 4px 2px;
+  background-size: 4px 2px;
+}
+.card-img {
+  display: block;
+  width: 100%;
+}
+.card-content {
+  padding: 10px;
+}
+.card-default .card-bottom {
+  background-color: #0eb1ce;
+  background-image: url("../img/card/bottom.png?v=e30b6777a9e698744602a5058a1dd5ac");
+  background-repeat: repeat-x;
+  -webkit-background-size: 4px auto;
+  -moz-background-size: 4px auto;
+  background-size: 4px auto;
+  background-position: 2px top;
+  color: #fff;
+  font-size: 12px;
+  line-height: 22px;
+  padding: 12px 15px;
+}
+/*# sourceMappingURL=card.css.map */

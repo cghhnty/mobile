@@ -1,0 +1,215 @@
+@import 'nib';
+
+body {
+  background-color: #ffffff;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+#top {
+
+  .header {
+    width: 100%;
+    padding: 20px 0 10px;
+    background: url("../img/shouqianba/bg@2x.png") no-repeat;
+    background-size: 100% 100%;
+
+    .my-avatar {
+      margin: 0 auto 10px auto;
+      width: 89px;
+      height: 89px;
+      border: 4px solid #ffffff;
+      border-radius: 50%;
+      overflow: hidden;
+      box-sizing: content-box;
+
+      img {
+        width: 100%;
+      }
+    }
+    .my-points {
+      text-align: center;
+      font-size: 14px;
+      color: #000000;
+    }
+    .my-top {
+      margin: 10px auto 0;
+      text-align: center;
+      font-size: 14px;
+      color: #000000;
+
+      .high-light {
+        display: inline-block;
+        margin: 0 5px;
+        font-size: 22px;
+        color: #ec495c;
+      }
+    }
+  }
+
+  #tab {
+    .tab {
+      list-style: none;
+    }
+    .tab-item {
+      display: inline-block;
+      width: 50%;
+      line-height: 40px;
+      text-align: center;
+      background-color: #e5e5e5;
+
+      &.active {
+        background-color: #ffffff;
+      }
+    }
+    .tab-content {
+      display: none;
+      padding: 10px 15px;
+
+      &.active {
+        display: block;
+      }
+
+      .ranking-not-found {
+        height: 71px;
+
+        .ranking-not-found-header {
+          text-align: center;
+          font-size: 1.2em;
+          font-weight: bold;
+          line-height: 71px;
+        }
+      }
+      .top-list {
+        list-style: none;
+      }
+
+      .top-list-item {
+        padding: 4px 0;
+        border-bottom: 1px solid #dcdcdc;
+
+        &:last-child {
+          border: none;
+        }
+
+        &:after {
+          border-bottom: none;
+        }
+
+        &:nth-child(1), &:nth-child(2), &:nth-child(3) {
+          .avatar-container {
+            &:after {
+              content: '';
+              display: block;
+              position: absolute;
+              top: -10px;
+              left: -4px;
+              width: 26px;
+              height: 21px;
+              background-repeat: no-repeat;
+              background-size: 100% 100%;
+            }
+          }
+          .point {
+            .point-number {
+              font-size: 30px;
+              color: #ec495c;
+            }
+          }
+        }
+        &:nth-child(1) {
+          .avatar-container {
+            &:after {
+              background-image: url('../img/shouqianba/list-first@2x.png');
+            }
+          }
+        }
+        &:nth-child(2) {
+          .avatar-container {
+            &:after {
+              background-image: url('../img/shouqianba/list-second@2x.png');
+            }
+          }
+        }
+        &:nth-child(3) {
+          .avatar-container {
+            &:after {
+              background-image: url('../img/shouqianba/list-third@2x.png');
+            }
+          }
+        }
+
+        .avatar, .user-info, .point {
+          display: inline-block;
+        }
+
+        .avatar {
+          width: 20%;
+          vertical-align: middle;
+
+          .avatar-container {
+            position: relative;
+            width: 48px;
+            height: 48px;
+            margin: 0 auto;
+            vertical-align: middle;
+
+            img {
+              width: 100%;
+              border-radius: 50%;
+              border: 1px solid #dcdcdc;
+            }
+          }
+        }
+        .user-info {
+          width: 42%;
+          font-size: 15px;
+          color: #000000;
+          vertical-align: middle;
+          .name {
+            margin: 0 0 2px;
+            word-break: keep-all;
+            text-overflow: ellipsis;
+            overflow: hidden;
+          }
+          .location {
+            margin: 2px 0 0;
+            color: #959595;
+            font-size: 0.9em;
+            white-space: nowrap;
+
+            .icon-location {
+              position: relative;
+              top: 2px;
+              margin-right: 5px;
+              display: inline-block;
+              width: 13px;
+              height: 15px;
+              background: url("../img/shouqianba/icon-location@2x.png");
+              background-size: 100% auto;
+            }
+          }
+        }
+        .point {
+          width: 38%;
+          padding-top: 14px;
+          text-align: right;
+          vertical-align: middle;
+
+          .point-number {
+            font-size: 25px;
+            color: #0c90ff;
+          }
+          .point-label {
+            font-size: 14px;
+            color: #000000;
+          }
+        }
+      }
+    }
+  }
+
+}

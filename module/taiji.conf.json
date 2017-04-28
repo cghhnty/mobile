@@ -1,0 +1,2763 @@
+{
+	"store": {
+		"getFlag": [
+			"ctx",
+			"flag"
+		],
+		"getAllExtendField4Member": [
+			"ctx"
+		],
+		"getDeviceByDeviceId": [
+			"deviceId"
+		],
+		"getStore": [
+			"ctx"
+		],
+		"getAgentCodeList": [
+			"ctx"
+		],
+		"updateResource": [
+			"ctx",
+			"resource"
+		],
+		"createResource": [
+			"ctx",
+			"newResource"
+		],
+		"removeResource": [
+			"ctx",
+			"resourceId"
+		],
+		"createStore": [
+			"ctx",
+			"newStore",
+			"accountId"
+		],
+		"createResourceGroup": [
+			"ctx",
+			"group"
+		],
+		"getResourceGroup": [
+			"ctx",
+			"groupId"
+		],
+		"updateResourceGroup": [
+			"ctx",
+			"group"
+		],
+		"getAllResourceGroups": [
+			"ctx",
+			"category"
+		],
+		"createResourceList": [
+			"ctx",
+			"newResourceList"
+		],
+		"removeResourceList": [
+			"ctx",
+			"resourceIdList"
+		],
+		"getAllResource": [
+			"ctx",
+			"category",
+			"status"
+		],
+		"getAvailableResource": [
+			"ctx",
+			"category",
+			"startDate",
+			"endDate"
+		],
+		"getResourceStatus": [
+			"ctx",
+			"resourceId"
+		],
+		"resourceInService": [
+			"ctx",
+			"resourceId"
+		],
+		"resourceOutOfService": [
+			"ctx",
+			"resourceId"
+		],
+		"getAutoUpdate": [
+			"ctx"
+		],
+		"createCustomPayment": [
+			"ctx",
+			"customPayment"
+		],
+		"removeCustomPayment": [
+			"ctx",
+			"customPaymentId"
+		],
+		"updateCustomPayment": [
+			"ctx",
+			"customPayment"
+		],
+		"getAllCustomPayment": [
+			"ctx"
+		],
+		"createStoreX": [
+			"ctx",
+			"newStore",
+			"accountName"
+		],
+		"addZkTecoDeviceSN": [
+			"ctx",
+			"sn"
+		],
+		"removeZkTecoDeviceSN": [
+			"ctx",
+			"sn"
+		],
+		"listZkTecoDevices": [
+			"ctx"
+		],
+		"updateZkTecoArea": [
+			"ctx"
+		],
+		"createStoreTemplate": [
+			"ctx",
+			"storeTemplate"
+		],
+		"removeStoreTemplate": [
+			"ctx",
+			"storeTemplateId"
+		],
+		"updateStoreTemplate": [
+			"ctx",
+			"storeTemplate"
+		],
+		"getStoreTemplate": [
+			"ctx",
+			"storeTemplateId"
+		],
+		"getAllStoreTemplates": [
+			"ctx"
+		],
+		"getStoreTemplateByTemplateName": [
+			"ctx",
+			"templateName"
+		],
+		"getAllStoreTemplateImportRecords": [
+			"ctx"
+		],
+		"importStoreTemplate": [
+			"ctx",
+			"templateName",
+			"configs"
+		],
+		"checkConfigSet": [
+			"ctx",
+			"configs"
+		],
+		"getLastStatisticsTime": [
+			"ctx"
+		],
+		"getStoreByAccount": [
+			"ctx",
+			"accountId"
+		],
+		"getAccountNames": [
+			"ctx"
+		],
+		"addExtendField4Member": [
+			"ctx",
+			"extendField"
+		],
+		"createExtendField": [
+			"ctx",
+			"extendField"
+		],
+		"getExtendField4Member": [
+			"ctx",
+			"fieldId"
+		],
+		"getExtendField": [
+			"ctx",
+			"fieldId"
+		],
+		"updateExtendField4Member": [
+			"ctx",
+			"extendField"
+		],
+		"updateExtendField": [
+			"ctx",
+			"extendField"
+		],
+		"removeExtendFiled": [
+			"ctx",
+			"fieldId"
+		],
+		"getStoresByParent": [
+			"ctx",
+			"parentId"
+		],
+		"queryManagingStores": [
+			"ctx",
+			"name"
+		],
+		"saveOrUpdateDevice": [
+			"ctx",
+			"device"
+		],
+		"genOrderIndexOnDevice": [
+			"ctx"
+		],
+		"getDeviceByDeviceKey": [
+			"ctx",
+			"deviceId"
+		],
+		"getAllDevices": [
+			"ctx"
+		],
+		"setViewConsumeNum": [
+			"ctx",
+			"num"
+		],
+		"getViewConsumeNum": [
+			"ctx"
+		],
+		"activeLakalaStoreByDeviceKey": [
+			"ctx",
+			"deviceKey"
+		],
+		"getLakalaStoreByDeviceKey": [
+			"ctx",
+			"deviceKey"
+		],
+		"getStoreByLakalaStoreId": [
+			"ctx",
+			"lakalaStoreId"
+		],
+		"getExtendFields": [
+			"ctx",
+			"categoryTags"
+		],
+		"getResource": [
+			"ctx",
+			"resourceId"
+		],
+		"getResources": [
+			"ctx",
+			"category",
+			"group",
+			"status"
+		],
+		"update": [
+			"ctx",
+			"store"
+		],
+		"queryInvoiceMerchant": [
+			"ctx",
+			"shopNo"
+		]
+	},
+	"product": {
+		"getCategory": [
+			"ctx",
+			"id"
+		],
+		"createStampCardBindProductDef": [
+			"ctx",
+			"stampCardDef"
+		],
+		"createStampCardDefX": [
+			"ctx",
+			"stampCardDef"
+		],
+		"updateStampCardDef": [
+			"ctx",
+			"stampCardDef"
+		],
+		"updateStampCardBindProductDef": [
+			"ctx",
+			"stampCardDef"
+		],
+		"getStampCardBindProductEx": [
+			"ctx",
+			"productId",
+			"memberId"
+		],
+		"createPeriodCardDef": [
+			"ctx",
+			"periodCardDef"
+		],
+		"createPeriodCardBindProductDef": [
+			"ctx",
+			"periodCardDef"
+		],
+		"getPeriodCardBindProductEx": [
+			"ctx",
+			"productId",
+			"memberId"
+		],
+		"getDiscountByCardProuctEx": [
+			"ctx",
+			"productId",
+			"memberId"
+		],
+		"isProductBindCard": [
+			"ctx",
+			"productId"
+		],
+		"updatePeriodCardDef": [
+			"ctx",
+			"periodCardDef"
+		],
+		"updatePeriodCardBindProductDef": [
+			"ctx",
+			"periodCardDef"
+		],
+		"createBalanceCardDef": [
+			"ctx",
+			"balanceCardDef"
+		],
+		"updateBalanceCardDef": [
+			"ctx",
+			"balanceCardDef"
+		],
+		"createDiscountCardDef": [
+			"ctx",
+			"discountCardDef"
+		],
+		"updateDiscountCardDef": [
+			"ctx",
+			"discountCardDef"
+		],
+		"createVoucherDef": [
+			"ctx",
+			"voucherDef"
+		],
+		"updateVoucherDef": [
+			"ctx",
+			"voucherDef"
+		],
+		"deleteVoucherDef": [
+			"ctx",
+			"defId"
+		],
+		"batchCreateProduct": [
+			"ctx",
+			"productList"
+		],
+		"batchLoadProduct": [
+			"ctx",
+			"productDataList"
+		],
+		"getAllLevelCardDef": [
+			"ctx"
+		],
+		"getAllStampCardDef": [
+			"ctx"
+		],
+		"getAllStampCardDefByCategoryAndName": [
+			"ctx",
+			"categoryId",
+			"nameRegex",
+			"pagation"
+		],
+		"getAllDiscountCardDef": [
+			"ctx"
+		],
+		"getAllDiscountCardDefByCategoryAndName": [
+			"ctx",
+			"categoryId",
+			"nameRegex",
+			"pagation"
+		],
+		"getVoucherDefs": [
+			"ctx",
+			"effectiveStore"
+		],
+		"getAllPeriodCardDef": [
+			"ctx"
+		],
+		"getAllPeriodCardDefByCategoryAndName": [
+			"ctx",
+			"categoryId",
+			"nameRegex",
+			"pagation"
+		],
+		"getAllBalanceCardDef": [
+			"ctx"
+		],
+		"getAllBalanceCardDefByCategoryAndName": [
+			"ctx",
+			"categoryId",
+			"nameRegex",
+			"pagation"
+		],
+		"createCategory": [
+			"ctx",
+			"newCategory"
+		],
+		"updateProduct": [
+			"ctx",
+			"product"
+		],
+		"updateInvisibleStores": [
+			"ctx",
+			"productId",
+			"invisibleStores"
+		],
+		"updateProductImageList": [
+			"ctx",
+			"productId",
+			"imageList"
+		],
+		"updateCategory": [
+			"ctx",
+			"category"
+		],
+		"getCategoryByCode": [
+			"ctx",
+			"categoryCode"
+		],
+		"removeCategory": [
+			"ctx",
+			"categoryId"
+		],
+		"getProduct": [
+			"ctx",
+			"productId"
+		],
+		"getProductByName": [
+			"ctx",
+			"name"
+		],
+		"getCardDefByName": [
+			"ctx",
+			"name"
+		],
+		"getProductByCode": [
+			"ctx",
+			"productCode"
+		],
+		"getProductBySkuBarcode": [
+			"ctx",
+			"barcode"
+		],
+		"getSkuByCode": [
+			"ctx",
+			"skuCode"
+		],
+		"getPricedProduct": [
+			"ctx",
+			"productId",
+			"memberId"
+		],
+		"getAllProducts": [
+			"ctx",
+			"filter"
+		],
+		"getAllProductsByNameOrCode": [
+			"ctx",
+			"filter",
+			"name",
+			"code"
+		],
+		"getAllProductsByCategoryNameOrCodeRegex": [
+			"ctx",
+			"filter",
+			"categoryId",
+			"nameRegex",
+			"codeRegex"
+		],
+		"getAllProductsByNameOrCodeRegex": [
+			"ctx",
+			"filter",
+			"nameRegex",
+			"codeRegex"
+		],
+		"countAllProductsByNameOrCodeRegex": [
+			"ctx",
+			"filter",
+			"nameRegex",
+			"codeRegex"
+		],
+		"countAllProductsByCategoryNameOrCodeRegex": [
+			"ctx",
+			"filter",
+			"categoryId",
+			"nameRegex",
+			"codeRegex"
+		],
+		"getAllPricedProducts": [
+			"ctx",
+			"filter",
+			"memberId"
+		],
+		"applyPricingRules": [
+			"ctx",
+			"memberId",
+			"products"
+		],
+		"getProductsByCategory": [
+			"ctx",
+			"categoryId"
+		],
+		"getUnCategoryProducts": [
+			"ctx",
+			"type"
+		],
+		"getAllCategories": [
+			"ctx"
+		],
+		"createSkuFromDefinition": [
+			"ctx",
+			"skuDef",
+			"productId"
+		],
+		"deleteProduct": [
+			"ctx",
+			"productId"
+		],
+		"removeProducts": [
+			"ctx",
+			"productIds"
+		],
+		"removeProduct": [
+			"ctx",
+			"productId"
+		],
+		"deleteCategory": [
+			"ctx",
+			"categoryId"
+		],
+		"getProductInfo": [
+			"ctx"
+		],
+		"copyProduct": [
+			"ctx",
+			"productId",
+			"storeId",
+			"override"
+		],
+		"copyProducts": [
+			"ctx",
+			"productIds",
+			"storeIds",
+			"override"
+		],
+		"getAllProductCache": [
+			"ctx"
+		],
+		"createProduct": [
+			"ctx",
+			"newProduct"
+		],
+		"createLevelDef": [
+			"ctx",
+			"levelCard"
+		],
+		"updateLevelDef": [
+			"ctx",
+			"levelCardDef"
+		],
+		"createStampCardDef": [
+			"ctx",
+			"stampCardDef"
+		],
+		"getCoupons": [
+			"ctx",
+			"map"
+		],
+		"getCouponDetail": [
+			"ctx"
+		],
+		"getCouponsV3": [
+			"ctx",
+			"map"
+		]
+	},
+	"member": {
+		"removeMember": [
+			"ctx",
+			"memberId"
+		],
+		"removeMembers": [
+			"ctx",
+			"memberIds"
+		],
+		"removeMemberByCode": [
+			"ctx",
+			"memberCode"
+		],
+		"getMember": [
+			"ctx",
+			"memberId"
+		],
+		"getMemberByCode": [
+			"ctx",
+			"memberCode"
+		],
+		"getMemberExByCode": [
+			"ctx",
+			"memberCode"
+		],
+		"getMemberByWeixinId": [
+			"ctx",
+			"weixinId"
+		],
+		"getMemberByWeixinIdExp": [
+			"ctx",
+			"weixinId"
+		],
+		"getMemberExByWeixinId": [
+			"ctx",
+			"weixinId"
+		],
+		"getAllMemberExByChannelMemberId": [
+			"ctx",
+			"memberId"
+		],
+		"queryMemberByMobile": [
+			"ctx",
+			"mobile"
+		],
+		"getAllMembers": [
+			"ctx"
+		],
+		"getAllMembersEx": [
+			"ctx"
+		],
+		"queryMembersEx": [
+			"ctx",
+			"filter"
+		],
+		"queryCustomMembersEx": [
+			"ctx",
+			"customFilter"
+		],
+		"listMembersByRegistrationDate": [
+			"ctx"
+		],
+		"queryMembersByBirthMonth": [
+			"ctx",
+			"birthMonth"
+		],
+		"queryMembersByBirthDay": [
+			"ctx",
+			"birthMonth",
+			"day"
+		],
+		"queryMembers": [
+			"ctx",
+			"filter"
+		],
+		"queryMemberList": [
+			"ctx",
+			"filterStr"
+		],
+		"queryMemberExList": [
+			"ctx",
+			"filterStr"
+		],
+		"getMemberInfo": [
+			"ctx",
+			"filter"
+		],
+		"recharge": [
+			"ctx",
+			"memberId",
+			"amount",
+			"gift",
+			"orderId"
+		],
+		"refundBalance": [
+			"ctx",
+			"memberId",
+			"amount",
+			"orderId"
+		],
+		"revokeBalance": [
+			"ctx",
+			"memberId",
+			"amount",
+			"orderId"
+		],
+		"useBalance": [
+			"ctx",
+			"memberId",
+			"amount",
+			"orderId"
+		],
+		"getBalance": [
+			"ctx",
+			"memberId"
+		],
+		"updateBalance": [
+			"ctx",
+			"memberId",
+			"amount",
+			"remark"
+		],
+		"addPoint": [
+			"ctx",
+			"memberId",
+			"amount",
+			"expirationDate",
+			"orderId",
+			"operator"
+		],
+		"refundPoint": [
+			"ctx",
+			"memberId",
+			"amount",
+			"orderId"
+		],
+		"revokePoint": [
+			"ctx",
+			"memberId",
+			"amount",
+			"orderId"
+		],
+		"usePoint": [
+			"ctx",
+			"memberId",
+			"amount",
+			"orderId"
+		],
+		"getPoint": [
+			"ctx",
+			"memberId"
+		],
+		"updatePoint": [
+			"ctx",
+			"memberId",
+			"amount",
+			"remark"
+		],
+		"addHongBao": [
+			"ctx",
+			"memberId",
+			"amount",
+			"expirationDate",
+			"orderId"
+		],
+		"refundHongBao": [
+			"ctx",
+			"memberId",
+			"amount",
+			"orderId"
+		],
+		"revokeHongBao": [
+			"ctx",
+			"memberId",
+			"amount",
+			"orderId"
+		],
+		"useHongBao": [
+			"ctx",
+			"memberId",
+			"amount",
+			"orderId"
+		],
+		"getHongBao": [
+			"ctx",
+			"memberId"
+		],
+		"updateHongBao": [
+			"ctx",
+			"memberId",
+			"amount",
+			"remark"
+		],
+		"accumulate": [
+			"ctx",
+			"memberId",
+			"expense",
+			"balance",
+			"giftBalance"
+		],
+		"addTimelineItem": [
+			"ctx",
+			"item"
+		],
+		"removeTimeLineItem": [
+			"ctx",
+			"itemId"
+		],
+		"updateTimelineItem": [
+			"ctx",
+			"item"
+		],
+		"saveTimelineItem": [
+			"ctx",
+			"item"
+		],
+		"getTimelineItem": [
+			"ctx",
+			"itemId"
+		],
+		"getAllTimelineItems": [
+			"ctx",
+			"memberId",
+			"types"
+		],
+		"getAllTimelineItemsX": [
+			"ctx",
+			"memberId",
+			"cardId",
+			"types"
+		],
+		"addTag": [
+			"ctx",
+			"memberId",
+			"key",
+			"value"
+		],
+		"batchAddTags": [
+			"ctx",
+			"memberId",
+			"tags"
+		],
+		"updateTags": [
+			"ctx",
+			"memberId",
+			"tags"
+		],
+		"checkin": [
+			"ctx",
+			"memberId",
+			"date"
+		],
+		"getNextMemberCode": [
+			"ctx"
+		],
+		"signOn": [
+			"ctx",
+			"memberId",
+			"remark"
+		],
+		"createPassword": [
+			"ctx",
+			"memberId",
+			"password"
+		],
+		"hasSetPassword": [
+			"ctx",
+			"memberId"
+		],
+		"vertifyPassword": [
+			"ctx",
+			"memberId",
+			"password"
+		],
+		"getMemberProfileByMemberId": [
+			"ctx",
+			"memberId"
+		],
+		"getMemberEx": [
+			"ctx",
+			"memberId"
+		],
+		"getMemberLevel": [
+			"ctx",
+			"memberId"
+		],
+		"enroll": [
+			"ctx",
+			"newMember",
+			"levelId",
+			"triggerRules"
+		],
+		"updateMemberLevel": [
+			"ctx",
+			"memberId",
+			"levelId"
+		],
+		"revokeMemberLevel": [
+			"ctx",
+			"memberId",
+			"levelId"
+		],
+		"batchEnroll": [
+			"ctx",
+			"memberList",
+			"triggerRules"
+		],
+		"updateEx": [
+			"ctx",
+			"member"
+		],
+		"update": [
+			"ctx",
+			"member"
+		]
+	},
+	"order": {
+		"cancel": [
+			"ctx",
+			"orderId"
+		],
+		"finish": [
+			"ctx",
+			"orderId"
+		],
+		"getOrder": [
+			"ctx",
+			"orderId"
+		],
+		"triggerRules": [
+			"ctx",
+			"order"
+		],
+		"getOrders": [
+			"ctx",
+			"memberId",
+			"types",
+			"status",
+			"staffId"
+		],
+		"revoke": [
+			"ctx",
+			"orderId",
+			"revokeStaffId"
+		],
+		"createX": [
+			"ctx",
+			"order"
+		],
+		"pollZkTecoCheckins": [
+			"ctx"
+		],
+		"executeZkTecoCheckin": [
+			"ctx",
+			"record"
+		],
+		"getAllOrders": [
+			"ctx"
+		],
+		"commit": [
+			"ctx",
+			"orderId"
+		],
+		"getOrderByCode": [
+			"ctx",
+			"orderCode"
+		],
+		"create": [
+			"ctx",
+			"order"
+		],
+		"save": [
+			"ctx",
+			"order"
+		],
+		"update": [
+			"ctx",
+			"order"
+		],
+		"getOrdersByWeixinId":[
+	        "ctx"
+        ]
+	},
+	"booking": {
+		"saveBooking": [
+			"ctx",
+			"booking"
+		],
+		"cancelBooking": [
+			"ctx",
+			"bookingId"
+		],
+		"cancelBookingsByScheduleId": [
+			"ctx",
+			"scheduleId"
+		],
+		"updateBooking": [
+			"ctx",
+			"booking"
+		],
+		"noShowBooking": [
+			"ctx",
+			"bookingId"
+		],
+		"checkInBooking": [
+			"ctx",
+			"bookingId"
+		],
+		"getBookingDetail": [
+			"ctx",
+			"bookingId"
+		],
+		"getBookingByMemberId": [
+			"ctx",
+			"memberId"
+		],
+		"getBookingListByScheduleId": [
+			"ctx",
+			"scheduleId"
+		],
+		"getAllBookings": [
+			"ctx",
+			"status"
+		],
+		"getBookingsByTimeSlot": [
+			"ctx",
+			"status",
+			"startDate",
+			"endDate"
+		],
+		"create": [
+			"ctx",
+			"newBooking"
+		]
+	},
+	"scheduling": {
+		"getSchedule": [
+			"ctx",
+			"scheduleId"
+		],
+		"setScheduleAvailableCapacity": [
+			"ctx",
+			"scheduleId",
+			"newAvailableCapacity"
+		],
+		"updateScheduleStatus": [
+			"scheduleId",
+			"status"
+		],
+		"getScheduleAvailableCapacity": [
+			"ctx",
+			"scheduleId"
+		],
+		"saveScheduling": [
+			"ctx",
+			"schedule"
+		],
+		"removeSchedule": [
+			"ctx",
+			"scheduleId"
+		],
+		"getScheduleBookingCount": [
+			"ctx",
+			"scheduleId",
+			"startDate",
+			"endDate"
+		],
+		"getAllSchedule": [
+			"ctx",
+			"type"
+		],
+		"getAllScheduleByTimeSlot": [
+			"ctx",
+			"type",
+			"startDate",
+			"endDate"
+		],
+		"getAvailableSchedule": [
+			"ctx",
+			"startDate",
+			"endDate"
+		],
+		"create": [
+			"ctx",
+			"schedule"
+		]
+	},
+	"account": {
+		"createAccount": [
+			"ctx",
+			"account"
+		],
+		"exist": [
+			"ctx",
+			"username"
+		],
+		"getAccount": [
+			"ctx",
+			"username"
+		],
+		"getAccountById": [
+			"ctx",
+			"accountId"
+		],
+		"verifyStaffAccount": [
+			"ctx",
+			"username",
+			"password"
+		],
+		"getAccountByStaffId": [
+			"ctx",
+			"staffId"
+		],
+		"updatePassword": [
+			"ctx",
+			"username",
+			"oldPassword",
+			"newPassword"
+		],
+		"resetPassword": [
+			"ctx",
+			"username",
+			"newPassword"
+		],
+		"updateProfile": [
+			"ctx",
+			"account"
+		],
+		"activeAccount": [
+			"ctx",
+			"accountId"
+		],
+		"getStoreByAcountIdX": [
+			"ctx",
+			"accountId"
+		],
+		"createMappingX": [
+			"ctx",
+			"mapping"
+		],
+		"verifyX": [
+			"ctx",
+			"username",
+			"password"
+		],
+		"getSubStoreListAndDetailsByAccountId": [
+			"ctx",
+			"accountId"
+		],
+		"getStoreListByAccountId": [
+			"ctx",
+			"accountId"
+		],
+		"getAccountListByStoreId": [
+			"ctx",
+			"storeId"
+		],
+		"getAccountAndMangeStoreByDomainId": [
+			"ctx",
+			"domainId"
+		],
+		"getAccountListByDomainId": [
+			"ctx",
+			"domainId"
+		],
+		"grantStore": [
+			"ctx",
+			"accountId",
+			"storeId"
+		],
+		"grantStores": [
+			"ctx",
+			"accountId",
+			"storeIds"
+		],
+		"revokeStores": [
+			"ctx",
+			"accountId",
+			"storeIds"
+		],
+		"createMessage": [
+			"ctx",
+			"message"
+		],
+		"deleteNotificationMsg": [
+			"ctx",
+			"msgId"
+		],
+		"updateMessage": [
+			"ctx",
+			"message"
+		],
+		"getAllNotificationMsg": [
+			"ctx",
+			"accountId"
+		],
+		"revokeStore": [
+			"ctx",
+			"accountId",
+			"storeId"
+		],
+		"getMessage": [
+			"ctx",
+			"msgId"
+		],
+		"verify": [
+			"ctx",
+			"username",
+			"password"
+		]
+	},
+	"inventory": {
+		"getInventory": [
+			"ctx",
+			"skuId"
+		],
+		"createInventory": [
+			"ctx",
+			"inventory"
+		],
+		"getInventoryByCategoryEx": [
+			"ctx",
+			"categoryId"
+		],
+		"queryInventoryExWithCategoryIdAndProductFilter": [
+			"ctx",
+			"categoryId",
+			"filter"
+		],
+		"queryInventoryEx": [
+			"ctx",
+			"filter"
+		],
+		"updateInventory": [
+			"ctx",
+			"change"
+		],
+		"batchUpdateInventory": [
+			"ctx",
+			"changeList"
+		],
+		"getInventoryChange": [
+			"ctx",
+			"skuId"
+		],
+		"filterInventoryChange": [
+			"ctx",
+			"skuId",
+			"type",
+			"from",
+			"to"
+		]
+	},
+	"marketing": {
+		"triggerEnrollRules": [
+			"ctx",
+			"member",
+			"extraRules"
+		],
+		"triggerSignOnRules": [
+			"ctx",
+			"memberId"
+		],
+		"getExtraProductRulesForMember": [
+			"ctx",
+			"memberId"
+		],
+		"buildProductExecutables": [
+			"ctx",
+			"extraRules",
+			"levelCard"
+		],
+		"triggerProductRules": [
+			"ctx",
+			"product",
+			"rules",
+			"levelCard"
+		],
+		"triggerProductRulesExpress": [
+			"ctx",
+			"product",
+			"executables",
+			"levelCard"
+		],
+		"saveLevelSetting": [
+			"ctx",
+			"setting"
+		],
+		"updateRechargeRule": [
+			"ctx",
+			"rule"
+		],
+		"getAllRechargeRules": [
+			"ctx"
+		],
+		"addHongBaoRule": [
+			"ctx",
+			"rule"
+		],
+		"updateHongBaoRule": [
+			"ctx",
+			"rule"
+		],
+		"getAllHongBaoRules": [
+			"ctx"
+		],
+		"addPerformanceRule": [
+			"ctx",
+			"rule"
+		],
+		"updatePerformanceRule": [
+			"ctx",
+			"rule"
+		],
+		"getAllPerformanceRules": [
+			"ctx"
+		],
+		"queryRules": [
+			"ctx",
+			"levelId",
+			"type",
+			"event"
+		],
+		"triggerOrderRules": [
+			"ctx",
+			"order",
+			"extraRules"
+		],
+		"triggerCheckoutRules": [
+			"ctx",
+			"checkoutContext",
+			"extraRules",
+			"result"
+		],
+		"createMarketingTemplate": [
+			"ctx",
+			"marketingTemplate"
+		],
+		"deleteMarketingTemplate": [
+			"ctx",
+			"id"
+		],
+		"updateMarketingTemplate": [
+			"ctx",
+			"marketingTemplate"
+		],
+		"getAllMarketingTemplates": [
+			"ctx"
+		],
+		"queryMarketingTemplatesByTemplateId": [
+			"ctx",
+			"templateId"
+		],
+		"getMarketingTemplate": [
+			"ctx",
+			"id"
+		],
+		"updateDiscountRule": [
+			"ctx",
+			"rule"
+		],
+		"getLevelSetting": [
+			"ctx"
+		],
+		"addEnrollRule": [
+			"ctx",
+			"rule"
+		],
+		"updateEnrollRule": [
+			"ctx",
+			"rule"
+		],
+		"getAllEnrollRules": [
+			"ctx"
+		],
+		"addDiscountRule": [
+			"ctx",
+			"rule"
+		],
+		"getAllDiscountRules": [
+			"ctx"
+		],
+		"addLevelDiscountRule": [
+			"ctx",
+			"rule"
+		],
+		"updateLevelDiscountRule": [
+			"ctx",
+			"rule"
+		],
+		"getAllLevelDiscountRules": [
+			"ctx"
+		],
+		"addPointRule": [
+			"ctx",
+			"rule"
+		],
+		"updatePointRule": [
+			"ctx",
+			"rule"
+		],
+		"getAllPointRules": [
+			"ctx"
+		],
+		"addSignOnRule": [
+			"ctx",
+			"rule"
+		],
+		"updateSignOnRule": [
+			"ctx",
+			"rule"
+		],
+		"getAllSignOnRules": [
+			"ctx"
+		],
+		"addLevelRule": [
+			"ctx",
+			"rule"
+		],
+		"updateLevelRule": [
+			"ctx",
+			"rule"
+		],
+		"getAllLevelRules": [
+			"ctx"
+		],
+		"addRechargeRule": [
+			"ctx",
+			"rule"
+		]
+	},
+	"rule": {
+		"triggerRules": [
+			"ctx",
+			"context",
+			"result",
+			"event",
+			"extraRules"
+		],
+		"removeRule": [
+			"ctx",
+			"ruleId"
+		],
+		"createRule": [
+			"ctx",
+			"newRule"
+		],
+		"getRule": [
+			"ctx",
+			"ruleId"
+		],
+		"saveRule": [
+			"ctx",
+			"rule"
+		],
+		"getAllRules": [
+			"ctx",
+			"type"
+		],
+		"updateRule": [
+			"ctx",
+			"rule"
+		],
+		"buildExecutables": [
+			"ctx",
+			"context",
+			"event",
+			"extraRules"
+		],
+		"triggerRulesExpress": [
+			"ctx",
+			"context",
+			"result",
+			"event",
+			"executables"
+		]
+	},
+	"staff": {
+		"getPosition": [
+			"ctx",
+			"positionId"
+		],
+		"getStaff": [
+			"ctx",
+			"staffId"
+		],
+		"getStaffByAccountId": [
+			"ctx",
+			"accountId"
+		],
+		"getStavesByAccountId": [
+			"ctx",
+			"accountId"
+		],
+		"getAllStaff": [
+			"ctx"
+		],
+		"getStaves": [
+			"ctx",
+			"positionId",
+			"jobCodeOrName"
+		],
+		"updateStaff": [
+			"ctx",
+			"staff"
+		],
+		"removeStaff": [
+			"ctx",
+			"staffId"
+		],
+		"handOver": [
+			"ctx",
+			"startDate",
+			"staffId"
+		],
+		"saveHandOverRecord": [
+			"ctx",
+			"record"
+		],
+		"getAllHandOverRecords": [
+			"ctx",
+			"Start",
+			"end"
+		],
+		"addPerformance": [
+			"ctx",
+			"performance"
+		],
+		"updatePerformance": [
+			"ctx",
+			"performance"
+		],
+		"getPerformances": [
+			"ctx",
+			"type"
+		],
+		"activeStaffAccount": [
+			"ctx",
+			"account",
+			"staffId"
+		],
+		"getDefaultPositionByIndustry": [
+			"ctx",
+			"industry"
+		],
+		"generatePinCode": [
+			"ctx"
+		],
+		"createPosition": [
+			"ctx",
+			"position"
+		],
+		"getAllPositions": [
+			"ctx"
+		],
+		"updatePosition": [
+			"ctx",
+			"position"
+		],
+		"removePosition": [
+			"ctx",
+			"positionId"
+		],
+		"createStaff": [
+			"ctx",
+			"staff"
+		],
+		"getStaffByPinCode": [
+			"ctx",
+			"code"
+		],
+		"getStaffByCellphone": [
+			"ctx",
+			"cellphoneNumber"
+		]
+	},
+	"security": {
+		"grant": [
+			"ctx",
+			"subject",
+			"roleId"
+		],
+		"getRole": [
+			"ctx",
+			"roleId"
+		],
+		"createPrivilege": [
+			"ctx",
+			"newPrivilege"
+		],
+		"removePrivilege": [
+			"ctx",
+			"privilegeId"
+		],
+		"updatePrivilege": [
+			"ctx",
+			"privilege"
+		],
+		"getPrivilege": [
+			"ctx",
+			"privilegeId"
+		],
+		"getAllPrivilege": [
+			"ctx"
+		],
+		"createRole": [
+			"ctx",
+			"newRole"
+		],
+		"removeRole": [
+			"ctx",
+			"roleId"
+		],
+		"updateRole": [
+			"ctx",
+			"role"
+		],
+		"getAllRoles": [
+			"ctx"
+		],
+		"revoke": [
+			"ctx",
+			"subject",
+			"roleId"
+		],
+		"havePermission": [
+			"ctx",
+			"subject",
+			"resource",
+			"operation"
+		],
+		"checkPermission": [
+			"ctx",
+			"resource",
+			"operation"
+		]
+	},
+	"card": {
+		"createCard": [
+			"ctx",
+			"cardDef",
+			"active",
+			"memberId"
+		],
+		"refundBalance": [
+			"ctx",
+			"cardId",
+			"amount",
+			"orderId"
+		],
+		"revokeBalance": [
+			"ctx",
+			"cardId",
+			"amount",
+			"orderId"
+		],
+		"useBalance": [
+			"ctx",
+			"cardId",
+			"amount",
+			"orderId",
+			"remark"
+		],
+		"refundPoint": [
+			"ctx",
+			"cardId",
+			"amount",
+			"orderId"
+		],
+		"revokePoint": [
+			"ctx",
+			"cardId",
+			"amount",
+			"orderId"
+		],
+		"usePoint": [
+			"ctx",
+			"cardId",
+			"amount",
+			"orderId"
+		],
+		"refundHongBao": [
+			"ctx",
+			"cardId",
+			"amount",
+			"orderId"
+		],
+		"revokeHongBao": [
+			"ctx",
+			"cardId",
+			"amount",
+			"orderId"
+		],
+		"useHongBao": [
+			"ctx",
+			"cardId",
+			"amount",
+			"orderId"
+		],
+		"saveCard": [
+			"ctx",
+			"card"
+		],
+		"getAllCards": [
+			"ctx",
+			"type",
+			"status",
+			"memberId"
+		],
+		"addUsage": [
+			"card",
+			"value",
+			"type",
+			"orderId",
+			"now",
+			"remark"
+		],
+		"rechargeBalance": [
+			"ctx",
+			"cardId",
+			"amount",
+			"giftAmount",
+			"orderId"
+		],
+		"addMarketingRecordsUsage": [
+			"ctx",
+			"value",
+			"card",
+			"memberId",
+			"type",
+			"orderId",
+			"remark"
+		],
+		"rechargePoint": [
+			"ctx",
+			"cardId",
+			"amount",
+			"expiration",
+			"orderId"
+		],
+		"rechargeHongBao": [
+			"ctx",
+			"cardId",
+			"amount",
+			"expiration",
+			"orderId",
+			"operator"
+		],
+		"getCardById": [
+			"ctx",
+			"cardId"
+		],
+		"getUsageRecords": [
+			"ctx",
+			"cardId",
+			"memberId",
+			"cardType",
+			"type"
+		],
+		"getAllBandedProductIds": [
+			"ctx"
+		],
+		"createSmsAccountCard": [
+			"ctx",
+			"active",
+			"storeId",
+			"storeName"
+		],
+		"createVoucher": [
+			"ctx",
+			"defId",
+			"source",
+			"memberId"
+		],
+		"getVouchers": [
+			"ctx",
+			"defId",
+			"source",
+			"storeId",
+			"filterStr",
+			"status"
+		],
+		"getRedeemCodeX": [
+			"ctx",
+			"redeemCodeId"
+		],
+		"getRedeemCodesX": [
+			"ctx",
+			"cardId",
+			"status"
+		],
+		"redeemStampCardCodeX": [
+			"ctx",
+			"redeemParameter"
+		],
+		"redeemPeriodCardCodeX": [
+			"ctx",
+			"redeemParameter"
+		],
+		"redeemBalanceCardCodeX": [
+			"ctx",
+			"redeemParameter"
+		],
+		"removeRedeemCodeX": [
+			"ctx",
+			"codeId"
+		],
+		"getNextRedeemCodeX": [
+			"ctx",
+			"cardId",
+			"memberId"
+		],
+		"saveRedeemCode": [
+			"ctx",
+			"redeemCode"
+		],
+		"getMyRedeemCodes": [
+			"ctx",
+			"codeLength",
+			"size",
+			"memberId"
+		],
+		"verifyMyRedeemCode": [
+			"ctx",
+			"redeemCode"
+		],
+		"getCardByCodeInAllCards": [
+			"ctx",
+			"cardCode"
+		],
+		"updateCardCode": [
+			"ctx",
+			"cardId",
+			"cardCode"
+		],
+		"renewCard": [
+			"ctx",
+			"cardId",
+			"newExpirationDate",
+			"orderId"
+		],
+		"rechargeStampCard": [
+			"ctx",
+			"cardId",
+			"count",
+			"orderId"
+		],
+		"redeemVoucher": [
+			"ctx",
+			"cardId",
+			"orderId"
+		],
+		"createRedeemCodeX": [
+			"ctx",
+			"cardId",
+			"memberId"
+		],
+		"redeemStampCardBindProduct": [
+			"ctx",
+			"cardId",
+			"count",
+			"orderId",
+			"remark",
+			"recordItems"
+		],
+		"redeemStampCard": [
+			"ctx",
+			"cardId",
+			"count",
+			"orderId",
+			"remark"
+		],
+		"redeemPeriodCardBindProduct": [
+			"ctx",
+			"cardId",
+			"count",
+			"orderId",
+			"remark",
+			"recordItems"
+		],
+		"redeemPeriodCard": [
+			"ctx",
+			"cardId",
+			"count",
+			"orderId",
+			"remark"
+		],
+		"undoPurchaseCard": [
+			"ctx",
+			"cardId",
+			"orderId",
+			"orderFinishTime"
+		],
+		"revokeStampCard": [
+			"ctx",
+			"cardId",
+			"count",
+			"orderId"
+		],
+		"refundStampCard": [
+			"ctx",
+			"cardId",
+			"count",
+			"orderId"
+		],
+		"refundPeriodCard": [
+			"ctx",
+			"cardId",
+			"count",
+			"orderId",
+			"productId"
+		],
+		"createCardByDefId": [
+			"ctx",
+			"cardDefId",
+			"active",
+			"memberId"
+		],
+		"createCardByDefIdForOldCard": [
+			"ctx",
+			"cardDefId",
+			"active",
+			"memberId",
+			"createDate"
+		],
+		"createCardByDefIdX": [
+			"ctx",
+			"cardDefId",
+			"active",
+			"memberId"
+		],
+		"saveCardX": [
+			"ctx",
+			"card"
+		],
+		"updateCard": [
+			"ctx",
+			"card"
+		],
+		"deleteCard": [
+			"ctx",
+			"cardId"
+		],
+		"batchImportCard": [
+			"ctx",
+			"card"
+		],
+		"giftHongBao": [
+			"ctx",
+			"memberList",
+			"amount",
+			"operator"
+		],
+		"giftPoint": [
+			"ctx",
+			"memberList",
+			"amount",
+			"operator"
+		],
+		"giftBirthDayMsg": [
+			"ctx",
+			"memberList",
+			"operator"
+		],
+		"getUsageRecordsWithOrderId": [
+			"ctx",
+			"orderId",
+			"cardId"
+		],
+		"getUsageRecord": [
+			"ctx",
+			"recordId"
+		],
+		"getAllBindedCardsId": [
+			"ctx"
+		],
+		"isCardDefBeenSold": [
+			"ctx",
+			"cardDefId"
+		],
+		"getCardByCode": [
+			"ctx",
+			"cardCode"
+		],
+		"addBirthDayMsgUsage": [
+			"ctx",
+			"cardId",
+			"memberId",
+			"type",
+			"orderId",
+			"remark"
+		],
+		"getSmsAccountCard": [
+			"ctx"
+		],
+		"redeemSmsAccountStampCard": [
+			"ctx",
+			"memberId",
+			"cardId",
+			"count",
+			"orderId",
+			"remark"
+		]
+	},
+	"report": {
+		"getProductSaleFlowReport": [
+			"ctx"
+		],
+		"getGrouponRedeemTransactionFlowReport": [
+			"ctx"
+		],
+		"getTransactionFlowReportByTypes": [
+			"ctx",
+			"types"
+		],
+		"getTransactionFlowReportNoTotalAmount": [
+			"ctx"
+		],
+		"getTransactionDailySummaryReport": [
+			"ctx"
+		],
+		"getRevocationFlowReport": [
+			"ctx"
+		],
+		"getTransactionDetail": [
+			"ctx",
+			"orderCode"
+		],
+		"getTransactionDetailByOrderId": [
+			"ctx",
+			"orderId"
+		],
+		"getRechargeFlowReport": [
+			"ctx"
+		],
+		"getRechargeSummaryReport": [
+			"ctx"
+		],
+		"getRechargeFlowDetail": [
+			"ctx",
+			"recordId"
+		],
+		"getStampCardRedeemReport": [
+			"ctx"
+		],
+		"getStampCardRedeemDetail": [
+			"ctx",
+			"recordId"
+		],
+		"getPeriodCardRedeemReport": [
+			"ctx"
+		],
+		"getPeriodCardRedeemDetail": [
+			"ctx",
+			"recordId"
+		],
+		"getAutoRedeemDailySummaryReport": [
+			"ctx"
+		],
+		"getAutoRedeemDailyReport": [
+			"ctx"
+		],
+		"getBalanceCardRedeemReport": [
+			"ctx"
+		],
+		"getBalanceCardRedeemDetail": [
+			"ctx",
+			"recordId"
+		],
+		"getTransactionFlowReport4Member": [
+			"ctx",
+			"memberId"
+		],
+		"getRechargeFlowReport4Member": [
+			"ctx",
+			"memberId"
+		],
+		"getSaleReport4Member": [
+			"ctx",
+			"memberId",
+			"revoked"
+		],
+		"getCardSaleReport4Member": [
+			"ctx",
+			"memberId",
+			"revoked"
+		],
+		"getRedeemReport4Member": [
+			"ctx",
+			"memberId",
+			"revoked"
+		],
+		"getStampCardRedeemReportByCard": [
+			"ctx",
+			"cardId"
+		],
+		"getPeriodCardRedeemReportByCard": [
+			"ctx",
+			"cardId"
+		],
+		"getBalanceCardRedeemReportByCard": [
+			"ctx",
+			"cardId"
+		],
+		"getRevokeReport": [
+			"ctx"
+		],
+		"getPerformanceSummaryReport": [
+			"ctx",
+			"positionId",
+			"jobCodeOrName"
+		],
+		"getPerformanceDetailReport": [
+			"ctx",
+			"staffId"
+		],
+		"getPerformanceDetailByPositionIdReport": [
+			"ctx",
+			"positionId",
+			"staffId"
+		],
+		"getInventoryFlowReport": [
+			"ctx"
+		],
+		"queryInventoryFlowReport": [
+			"ctx",
+			"type",
+			"filterStr"
+		],
+		"getInventoryFlowByCategoryReport": [
+			"ctx",
+			"type",
+			"filterStr",
+			"categoryId"
+		],
+		"getInventoryStatisticsFlowReport": [
+			"ctx"
+		],
+		"getInventoryStatisticsByFilterFlowReport": [
+			"ctx",
+			"filter"
+		],
+		"getDailyIncomeReport": [
+			"ctx"
+		],
+		"getDailyRevenueReport": [
+			"ctx"
+		],
+		"getDailySaleReport": [
+			"ctx"
+		],
+		"getDailyRechargeReport": [
+			"ctx"
+		],
+		"getTransactionFlowReport": [
+			"ctx"
+		],
+		"getExpenseDetailFlowReport": [
+			"ctx"
+		],
+		"getCrossExpenseFlowReport": [
+			"ctx"
+		],
+		"getDailyBalanceReport": [
+			"ctx"
+		],
+		"getDailyItemizedSaleReport": [
+			"ctx"
+		],
+		"getMemberReport": [
+			"ctx"
+		],
+		"queryMemberReport": [
+			"ctx",
+			"customFilter"
+		],
+		"getStampCardReport": [
+			"ctx"
+		],
+		"getPeriodCardReport": [
+			"ctx"
+		],
+		"getBalanceCardReport": [
+			"ctx"
+		],
+		"getStampCardSalesReport": [
+			"ctx"
+		],
+		"getPeriodCardSalesReport": [
+			"ctx"
+		],
+		"getDiscountCardSalesReport": [
+			"ctx"
+		],
+		"getBalanceCardSalesReport": [
+			"ctx"
+		],
+		"getFinanceAnalysisReport": [
+			"ctx"
+		],
+		"getYesterdaysSale": [
+			"ctx"
+		],
+		"getYesterdaysOrderCount": [
+			"ctx"
+		],
+		"getYesterdaysEnrollCount": [
+			"ctx"
+		],
+		"getYesterdaysAnonymousCustomerCount": [
+			"ctx"
+		],
+		"getDailyAnonymousCustomerCount": [
+			"ctx"
+		],
+		"getDailyMemberCustomerCount": [
+			"ctx"
+		],
+		"getDailyConsumeCustomerCount": [
+			"ctx"
+		],
+		"getDailySaleOfLast2Weeks": [
+			"ctx"
+		],
+		"getBestSellingCatalog": [
+			"ctx",
+			"productTag",
+			"orderByCount",
+			"limit"
+		],
+		"getBestSelling": [
+			"ctx"
+		],
+		"getBestSellingByFilterWithPage": [
+			"ctx",
+			"productTag",
+			"orderByCount"
+		],
+		"getBestSellingByFilter": [
+			"ctx",
+			"productTag",
+			"orderByCount",
+			"limit"
+		],
+		"getStampCardBestSelling": [
+			"ctx"
+		],
+		"getSoonExpirationStampCardDefs": [
+			"ctx"
+		],
+		"getTodaysSummary": [
+			"ctx"
+		],
+		"getTodaysSummary2": [
+			"ctx"
+		],
+		"getManagementSummaryOfDay": [
+			"ctx",
+			"date",
+			"histogram"
+		],
+		"getManagementSummaryOfWeek": [
+			"ctx",
+			"date"
+		],
+		"getManagementSummaryOfMonth": [
+			"ctx",
+			"date"
+		],
+		"getAllManagementSummary": [
+			"ctx",
+			"date"
+		],
+		"getDailyTouchSpaReport": [
+			"ctx",
+			"date"
+		],
+		"getMonthlyTouchSpaReport": [
+			"ctx",
+			"aDayInMonth"
+		],
+		"getTouchSpaReport2": [
+			"ctx"
+		],
+		"getTouchSpaReport3": [
+			"ctx"
+		],
+		"getCardAcquisitionFlowReport": [
+			"ctx"
+		],
+		"getCardAcquisitionDetail": [
+			"ctx",
+			"orderCode"
+		],
+		"getCardAcquisitionDailySummaryReport": [
+			"ctx"
+		],
+		"getCardOperationFlowReport": [
+			"ctx"
+		],
+		"queryCardOperationFlowReport": [
+			"ctx",
+			"filterStr"
+		],
+		"getCardRedeemOperationFlowReport": [
+			"ctx"
+		],
+		"queryCardRedeemOperationFlowReport": [
+			"ctx",
+			"filterStr"
+		],
+		"getCardFreezeAndUnFreezeFlowReport": [
+			"ctx"
+		],
+		"queryCardFreezeAndUnFreezeFlowReport": [
+			"ctx",
+			"filterStr"
+		],
+		"queryCardCustomReport": [
+			"ctx",
+			"cardCustomFilter"
+		],
+		"getSmsMarketingReport": [
+			"ctx",
+			"type"
+		]
+	},
+	"weixin": {
+		"createMessage": [
+			"ctx",
+			"message"
+		],
+		"updateMessage": [
+			"ctx",
+			"message"
+		],
+		"deleteMessage": [
+			"ctx",
+			"msgId"
+		],
+		"getAllMessages": [
+			"ctx"
+		],
+		"queryMessageByKeywords": [
+			"ctx",
+			"keywords"
+		],
+		"createArticle": [
+			"ctx",
+			"article"
+		],
+		"deleteArticle": [
+			"ctx",
+			"articleId"
+		],
+		"updateArticle": [
+			"ctx",
+			"article"
+		],
+		"getArticle": [
+			"ctx",
+			"articleId"
+		],
+		"getAllArticles": [
+			"ctx"
+		],
+		"createActivity": [
+			"ctx",
+			"lottery"
+		],
+		"deleteActivity": [
+			"ctx",
+			"lotteryId"
+		],
+		"updateActivity": [
+			"ctx",
+			"lottery"
+		],
+		"getActivity": [
+			"ctx",
+			"lotteryId"
+		],
+		"getAllActivities": [
+			"ctx",
+			"type",
+			"storeId",
+			"status"
+		],
+		"queryActivities": [
+			"ctx",
+			"type",
+			"storeId",
+			"status"
+		],
+		"createActivityHistory": [
+			"ctx",
+			"activityHistory"
+		],
+		"deleteActivityHistory": [
+			"ctx",
+			"lotteryHistoryId"
+		],
+		"updateActivityHistory": [
+			"ctx",
+			"lotteryHistory"
+		],
+		"getActivityHistory": [
+			"ctx",
+			"lotteryHistoryId"
+		],
+		"getActivityHistoryByTicketId": [
+			"ctx",
+			"ticketId"
+		],
+		"getActivityHistories": [
+			"ctx",
+			"memberId",
+			"lotteryId",
+			"activityType",
+			"win",
+			"level",
+			"drawStart",
+			"drawEnd"
+		],
+		"getActivityViaStoreIdList": [
+			"ctx",
+			"storeIdList"
+		],
+		"getStoreIdList": [
+			"ctx"
+		],
+		"getCustomerEvents": [
+			"ctx",
+			"memberId",
+			"types"
+		],
+		"createArtGallery": [
+			"ctx",
+			"artGallery"
+		],
+		"removeArtGallery": [
+			"ctx",
+			"artGalleryId"
+		],
+		"updateArtGallery": [
+			"ctx",
+			"artGallery"
+		],
+		"getArtGallery": [
+			"ctx",
+			"artGalleryId"
+		],
+		"getAllArtGallerys": [
+			"ctx"
+		],
+		"getArtGallerysByStaffId": [
+			"ctx",
+			"staffId"
+		],
+		"getAllTopArtGallerys": [
+			"ctx"
+		],
+		"likeArtGallery": [
+			"ctx",
+			"artGalleryId",
+			"addCount"
+		],
+		"getMessage": [
+			"ctx",
+			"msgId"
+		]
+	},
+	"sync": {
+		"syncOld": [
+			"ctx",
+			"oldSchemaVersion",
+			"oldData",
+			"knownServerTimes"
+		],
+		"openDevice": [
+			"ctx",
+			"apkVersion"
+		],
+		"forgetDevice": [
+			"deviceId"
+		],
+		"syncNew": [
+			"ctx",
+			"invocations",
+			"knownServerTimes"
+		],
+		"sync": [
+			"deviceId",
+			"invocations",
+			"knownServerTimes"
+		]
+	},
+	"domain": {
+		"getDomain": [
+			"ctx",
+			"domainId"
+		],
+		"exist": [
+			"ctx",
+			"name"
+		],
+		"getDomainByName": [
+			"ctx",
+			"name"
+		],
+		"register": [
+			"ctx",
+			"domain"
+		]
+	},
+	"groupon": {
+		"createGroup": [
+			"ctx",
+			"memberId",
+			"promotionId"
+		],
+		"getGroup": [
+			"ctx",
+			"groupId"
+		],
+		"findGroupsToExpire": [
+			"ctx"
+		],
+		"findGrouponsToExpire": [
+			"ctx"
+		],
+		"scanPromotions": [
+			"ctx"
+		],
+		"scanGroups": [
+			"ctx"
+		],
+		"scanGroupons": [
+			"ctx"
+		],
+		"getGrouponTotalIncome": [
+			"ctx"
+		],
+		"stopPromotion": [
+			"ctx",
+			"promotionId"
+		],
+		"deletePromotion": [
+			"ctx",
+			"promotionId"
+		],
+		"expirePromotion": [
+			"ctx",
+			"promotionId"
+		],
+		"joinGroup": [
+			"ctx",
+			"memberId",
+			"groupId",
+			"cellphone"
+		],
+		"finishGrouponOrder": [
+			"ctx",
+			"orderCode",
+			"weixinTransactionId"
+		],
+		"abortGroup": [
+			"ctx",
+			"group"
+		],
+		"expireGroup": [
+			"ctx",
+			"group"
+		],
+		"commitGroup": [
+			"ctx",
+			"group"
+		],
+		"getPromotions": [
+			"ctx",
+			"filter"
+		],
+		"getPromotionDetail": [
+			"ctx",
+			"promtionId"
+		],
+		"getPromotionGroups": [
+			"ctx",
+			"promotionId"
+		],
+		"getPromotion": [
+			"ctx",
+			"promtionId"
+		],
+		"getGroups": [
+			"ctx",
+			"memberId",
+			"success",
+			"expired"
+		],
+		"getGroupDetails": [
+			"ctx",
+			"memberId",
+			"success",
+			"expired"
+		],
+		"getGroupDetail": [
+			"ctx",
+			"groupId"
+		],
+		"getGroupons": [
+			"ctx",
+			"memberId",
+			"status",
+			"paid"
+		],
+		"getRecentUnpaidGroupons": [
+			"ctx",
+			"age"
+		],
+		"getGroupon": [
+			"ctx",
+			"grouponId"
+		],
+		"getGrouponsReport": [
+			"ctx",
+			"filter"
+		],
+		"findPromotionsToExpire": [
+			"ctx"
+		],
+		"createPromotion": [
+			"ctx",
+			"promotion"
+		],
+		"updatePromotion": [
+			"ctx",
+			"promotion"
+		],
+		"publishPromotion": [
+			"ctx",
+			"promotionId"
+		]
+	},
+	"alipaystore": {
+		"submit": [
+			"ctx",
+			"storeId"
+		],
+		"hide": [
+			"ctx",
+			"storeId"
+		],
+		"readAlert": [
+			"ctx",
+			"alertId"
+		],
+		"readAllAlert": [
+			"ctx"
+		],
+		"getAlerts": [
+			"ctx",
+			"read"
+		],
+		"countUnreadAlerts": [
+			"ctx"
+		],
+		"saveAuthToken": [
+			"ctx",
+			"authToken",
+			"tokenExpirationTime",
+			"refreshToken",
+			"reTokenExpirationTime"
+		],
+		"refreshAuthToken": [
+			"ctx"
+		],
+		"getOAuthSuccessURL": [
+			"ctx",
+			"redirectUrl"
+		],
+		"syncImage": [
+			"ctx",
+			"imageId"
+		],
+		"getStoreByAlipayAppId": [
+			"ctx",
+			"appId"
+		],
+		"getStoreByShopId": [
+			"ctx",
+			"shopId"
+		],
+		"show": [
+			"ctx",
+			"storeId"
+		],
+		"getAlipayStoreInfos": [
+			"ctx"
+		],
+		"appendAlert": [
+			"ctx",
+			"alert"
+		]
+	},
+	"memberGrade": {
+		"getMGradeDetailForWx": [
+			"ctx",
+			"cardId",
+			"share"
+		],
+
+		"getMemberGradeForWx": [
+			"ctx",
+			"map"
+		],
+
+		"regBRONZEGradeForWx": [
+			"ctx",
+			"map"
+		]
+	},
+
+	"merchantGrade": {
+		"queryMerchantGrade": [
+			"ctx",
+			"merchantGrades"
+		]
+
+	},
+	"memberGradeFirst": {
+		"saveFlag": [
+			"ctx",
+			"memberGradeId"
+		]
+
+	},
+	"invoice": {
+		"saveInvoice": [
+			"ctx",
+			"invoice"
+		],
+		"saveOrUpdateInvoiceHeader": [
+			"ctx",
+			"invoiceHeader"
+		],
+
+		"queryInvoiceHeaderByOpenIdForWx": [
+			"context",
+			"weixinId"
+		],
+
+		"deleteInvoiceHeader": [
+			"ctx",
+			"id"
+		],
+
+		"setDefaultInvoiceHeader": [
+
+			"ih"
+		],
+		"queryInvoiceHeaderByIdForWx": [
+			"id"
+		],
+		"isExistByWeixinId": [
+			"weixinId"
+		],
+		"queryInvoiceHistoryForWechat": [
+			"weixinId"
+		],
+		"deleteInvoiceHeader": [
+			"id"
+		],
+		"queryRegions": [
+			"map"
+		],
+		"registerMerchant": [
+			"obj"
+		],
+		"verifySMSCode": [
+			"ctx",
+			"map"
+		],
+		"getSMSVerifyCode": [
+			"ctx",
+			"map"
+		]
+	}
+}

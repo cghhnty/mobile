@@ -1,0 +1,94 @@
+<div class="activity-scratchcard" rn-scope>
+	<img class="activity-scratchcard-banner" rn-prop="src: res('img/activity-scratchcard/banner@2x.png')">
+
+	<div class="activity-scratchcard-nav">
+		<a href="javascript:" class="activity-scratchcard-nav-tab active activity-scratchcard-tab-main">幸运抽奖</a>
+		<a href="javascript:" class="activity-scratchcard-nav-tab activity-scratchcard-tab-history">中奖查询</a>
+	</div>
+
+	<div class="activity-scratchcard-main">
+		<div class="activity-scratchcard-container activity-scratchcard-card">
+			<div class="activity-scratchcard-remaining" style="{{hide(remaining == null || member.trial)}}">您还有<em>{{remaining}}</em>次机会</div>
+			<div class="activity-scratchcard-scratch-area">
+				<span class="activity-scratchcard-draw">{{ticket.level == -1 ? '谢谢参与' : activity.prizes[ticket.level].name || '中奖啦'}}</span>
+			</div>
+		</div>
+
+		<div class="activity-scratchcard-container activity-scratchcard-win" style="display: none">
+			<div class="activity-scratchcard-result-title">中奖啦！！！</div>
+			<div>恭喜您中了{{activity.prizes[ticket.level].name}}{{activity.prizes[ticket.level].description}}一张！</div>
+			<div style="{{hide(remaining == 0 || member.trial)}}">
+				<button class="activity-scratchcard-btn-rest">歇一会儿</button> <button class="activity-scratchcard-btn-again">再刮一张</button>
+			</div>
+			<div style="{{show(member.trial)}}">
+				关注微信号"{{store.weixinConfig.name}}"获得更多刮奖机会!
+			</div>
+		</div>
+
+		<div class="activity-scratchcard-container activity-scratchcard-loose" style="display: none">
+			<div><img rn-prop="src: res('img/activity-scratchcard/loose@2x.gif')"></div>
+			<div>一定是你刮奖的姿势不对！</div>
+			<div style="{{hide(member.trial)}}">
+				<button class="activity-scratchcard-btn-rest">歇一会儿</button> <button class="activity-scratchcard-btn-again">再刮一张</button>
+			</div>
+			<div style="{{show(member.trial)}}">
+				关注微信号"{{store.weixinConfig.name}}"获得更多刮奖机会!
+			</div>
+		</div>
+
+		<div class="activity-scratchcard-container activity-scratchcard-gameover" style="display: none">
+			<div class="activity-scratchcard-result-title">no~ 刮完了</div>
+			<div>明天再来试试吧</div>
+		</div>
+
+		<div class="activity-scratchcard-container activity-scratchcard-subscribe" style="display: none">
+			关注微信号"{{store.weixinConfig.name}}"获得更多刮奖机会!
+		</div>
+
+		<div class="activity-scratchcard-box">
+			<div class="activity-scratchcard-head">{{activity.name}}</div>
+
+			<div class="activity-scratchcard-head">活动日期:</div>
+			<div>{{date(activity.startTime)}} 至 {{date(activity.endTime)}}</div>
+
+			<div class="activity-scratchcard-head">奖品内容:</div>
+			<div rn-foreach="activity.prizes">{{_value.name ? _value.name + ': ' : ''}}{{description}}</div>
+
+			<div class="activity-scratchcard-head">奖品使用有效期:</div>
+			<div>{{activity.prizes[0].voucherDef.effectiveDate ? date(activity.prizes[0].voucherDef.effectiveDate) + ' 至 ' + date(activity.prizes[0].voucherDef.expirationDate) : '永久有效'}}</div>
+
+			<div class="activity-scratchcard-head">活动门店:</div>
+			<div class="activity-scratchcard-stores activity-scratchcard-collapse">
+				<div class="activity-scratchcard-store" rn-foreach="activity.storeWhiteList">
+					<div class="activity-scratchcard-store-name">{{details.name}}</div>
+					<div>地址: <a href="{{details.latitude ? mapLink(details.latitude, details.longitude, details.name, details.address, details.phoneNumber) : 'javascript:'}}">{{details.address}}</a></div>
+					<div>电话: <a href="tel:{{details.phoneNumber}}">{{details.phoneNumber}}</a></div>
+				</div>
+			</div>
+			<div class="activity-scratchcard-stores-toggle" style="{{hide(activity.storeWhiteList.length < 2)}}">
+				其他{{activity.storeWhiteList.length - 1}}家适用门店 <i class="activity-scratchcard-stores-toggle-icon fa fa-angle-down"></i>
+			</div>
+
+			<div class="activity-scratchcard-head" style="{{show(activity.intro)}}">活动说明:</div>
+			<div class="activity-scratchcard-desc">{{activity.intro}}</div>
+		</div>
+	</div>
+
+	<div class="activity-scratchcard-history" style="display: none"></div>
+
+	<script>
+	inc(
+		'js/wScratchPad.js',
+		'js/ActivityScratchcard.js',
+		'css/activity-scratchcard.css',
+		'css/card.css',
+		'css/activity-history.css',
+		'js/ActivityHistory.js',
+		'html/activity/history.html',
+		function() {
+			$('.activity-scratchcard-history')[0].innerHTML = inc.get('html/activity/history.html');
+			new ActivityScratchcard();
+		}
+	);
+	</script>
+</div>

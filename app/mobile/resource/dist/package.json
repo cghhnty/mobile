@@ -1,0 +1,17 @@
+{
+  "name": "cpweb",
+  "version": "0.1.0",
+  "author": "lakala",
+  "private": true,
+  "devDependencies": {
+    "grunt": "~0.4.0",
+	"grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-cssmin": "^2.0.0",
+    "grunt-contrib-jshint": "^1.1.0",
+    "grunt-contrib-less": "^1.4.1",
+    "grunt-contrib-uglify": "^2.3.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-htmlhint": "^0.9.13",
+    "matchdep": "*"
+  }
+}

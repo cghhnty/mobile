@@ -1,0 +1,81 @@
+<div id="top">
+    <header class="header">
+        <div class="my-avatar">
+            <img src="{{member.avatar + '@267w_267h_1e_1c|267-0ci' || app.resource + '/img/shouqianba/default-avatar@2x.png'}}" alt=""/>
+        </div>
+        <div class="my-points">
+            近七日赚的积分 {{personalRanking.points}}
+        </div>
+        <div class="my-top" style="{{hide(!personalRanking.bottom || personalRanking.noPoint)}}">
+            您前面还有<span class="high-light">{{personalRanking.top}}%</span>的人<br />赶紧去找附近收钱吧旗下店铺，奋起直追！
+        </div>
+        <div class="my-top" style="{{hide(personalRanking.bottom || personalRanking.noPoint)}}">
+            您打败了收钱吧福利社<span class="high-light">{{personalRanking.top}}%</span>的人，再接再厉！
+        </div>
+        <div class="my-top" style="{{hide(!personalRanking.noPoint)}}">
+            您还未赚取积分哟<br />赶紧去找附近收钱吧旗下店铺消费赚积分吧！
+        </div>
+    </header><div id="tab">
+        <ul class="tab">
+            <li class="tab-item active" data-target="_7">7日榜单</li><li class="tab-item" data-target="all">总榜单</li>
+        </ul>
+        <div class="tab-content active" id="_7">
+            <div style="{{hide(sevenDaysLeaderBoard.length)}}" class="ranking-not-found">
+                <div class="ranking-not-found-header">暂无7日榜单排名</div>
+            </div>
+            <ul class="top-list">
+                <li rn-foreach="sevenDaysLeaderBoard" class="top-list-item">
+                    <div class="avatar">
+                        <div class="avatar-container">
+                            <img src="{{avatar || app.resource + '/img/shouqianba/default-avatar@2x.png'}}" alt="avatar"/>
+                        </div>
+                    </div><div class="user-info">
+                        <p class="name">{{name}}</p>
+                        <p class="location"><span class="icon-location"></span>{{location}}</p>
+                    </div><div class="point">
+                        <span class="point-number">{{totalPoint}}</span>
+                        <span class="point-label">分</span>
+                    </div>
+                </li>
+                <!--<li class="top-list-item">
+                    <div class="avatar">
+                        <div class="avatar-container">
+                            <img src="{{member.avatar + '@144w_144h_1e_1c|144-1ci'}}" alt="avatar"/>
+                        </div>
+                    </div><div class="user-info">
+                        <p class="name">我叫王小明但是是一个很长名字的王小明</p>
+                        <p class="location"><span class="icon-location"></span>上海</p>
+                    </div><div class="point">
+                        <span class="point-number">50000</span>
+                        <span class="point-label">分</span>
+                    </div>
+                    </li>-->
+            </ul>
+        </div>
+        <div class="tab-content" id="all">
+            <div style="{{hide(totalLeaderBoard.length)}}" class="ranking-not-found">
+                <div class="ranking-not-found-header">暂无全国榜单排名</div>
+            </div>
+            <ul class="top-list">
+                <li rn-foreach="totalLeaderBoard" class="top-list-item">
+                    <div class="avatar">
+                        <div class="avatar-container">
+                            <img src="{{avatar || app.resource + '/img/shouqianba/default-avatar@2x.png'}}" alt="avatar"/>
+                        </div>
+                    </div><div class="user-info">
+                    <p class="name">{{name}}</p>
+                    <p class="location"><span class="icon-location"></span>{{location}}</p>
+                    </div><div class="point">
+                        <span class="point-number">{{totalPoint}}</span>
+                        <span class="point-label">分</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script>inc('css/shouqianba-top.css',
+        'js/shouqianbaTop.js',
+        function () {
+            new shouqianbaTop();
+        });</script>

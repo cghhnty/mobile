@@ -1,0 +1,40 @@
+<div class="lakala-merchant" rn-scope>
+    <div class="merchant-info">
+        <div class="merchant-name">{{memberEx.store.details.name}}</div>
+        <div class="user-coupon">
+            <div class="point">{{memberEx.point}} 分</div>
+            <div class="coupon">{{memberEx.countVoucherCards}} 张券</div>
+        </div>
+    </div>
+    <div class="no-coupon" style="{{hide(memberEx.voucherCards.length)}}">
+        <img src="{{app.resource + '/img/lakala/no-merchant.png'}}" alt=""/>
+        <p>空空如也~ 快去消费吧</p>
+    </div>
+    <ul class="coupons">
+        <li class="{{!!disabled ? 'coupon disabled':'coupon'}}" rn-foreach="memberEx.voucherCards">
+            <div class="summary">
+                <div class="coupon-name">
+                    {{name}}
+                </div><div class="coupon-amount">
+                    &yen; {{faceValue?faceValue/100:0}}
+                </div>
+            </div>
+            <div class="coupon-expired">
+                <div class="time">
+                    {{expirationTime ? '有效期至 '+date(expirationTime):'长期有效'}}
+                </div><div class="overdue">
+                    已过期
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+<script>
+    inc(
+        'css/lakala/merchant.css',
+        'js/lakala/merchant.js',
+        function() {
+            new LakalaCenter();
+        }
+    );
+</script>

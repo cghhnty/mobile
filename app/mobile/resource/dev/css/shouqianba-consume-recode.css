@@ -1,0 +1,60 @@
+#recordHistory {
+  padding: 15px 15px 0;
+}
+#recordHistory .recode-item {
+  min-height: 84px;
+  padding: 10px;
+  margin-bottom: 12px;
+  background-color: #fff;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+}
+#recordHistory .recode-item .time-container {
+  font-size: 13px;
+}
+#recordHistory .recode-item .time {
+  float: left;
+  color: rgba(21,25,34,0.5);
+}
+#recordHistory .recode-item .expired {
+  text-align: right;
+  color: rgba(255,0,0,0.5);
+}
+#recordHistory .recode-item .content-container {
+  clear: both;
+  margin-top: 4px;
+  vertical-align: top;
+}
+#recordHistory .recode-item .content-container .consume-detail {
+  float: left;
+  padding-top: 10px;
+  color: #212534;
+  font-size: 14px;
+}
+#recordHistory .recode-item .content-container .consume-detail .location {
+  padding-right: 10px;
+}
+#recordHistory .recode-item .content-container .consume-detail .checkout .high-light {
+  color: #f00;
+}
+#recordHistory .recode-item .content-container .consume-detail .revoke .high-light {
+  color: #0f0;
+}
+#recordHistory .recode-item .content-container .point-change {
+  text-align: right;
+  vertical-align: top;
+}
+#recordHistory .recode-item .content-container .point-change span {
+  display: inline-block;
+}
+#recordHistory .recode-item .content-container .point-change.increase {
+  color: #f00;
+}
+#recordHistory .recode-item .content-container .point-change.decrease {
+  color: #0f0;
+}
+#recordHistory #loading {
+  display: none;
+  text-align: center;
+}
+/*# sourceMappingURL=shouqianba-consume-recode.css.map */

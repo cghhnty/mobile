@@ -1,0 +1,234 @@
+<div class="my-vouchers" rn-scope>
+	<div class="tab">
+		<div class="tab-filter active-filter {{currentTab == 'ACTIVE' ? 'tab-focus':''}}">未使用</div>
+		<div class="tab-splitter"></div>
+		<div class="tab-filter used-filter {{currentTab == 'REDEEMED' ? 'tab-focus':''}}">已使用</div>
+		<div class="tab-splitter"></div>
+		<div class="tab-filter expired-filter {{currentTab == 'EXPIRED' ? 'tab-focus':''}}">已过期</div>
+	</div>
+
+	<div class="block block-active" style="{{show(currentTab == 'ACTIVE')}}" >
+		<div style="{{hide(active_vouchers.length)}}" class="common-not-found">
+			<div class="common-not-found-header">您的可用券包是空的!</div>
+		</div>
+		<div class="card3 card3-red my-vouchers-card {{status == 'ACTIVE' ? 'card3-red' : 'card3-gray'}}" rn-foreach="active_vouchers">
+			<div class="my-vouchers-padding">
+			<div class="my-vouchers-text-content">
+				<div class="voucher-header">
+					<div class="card3-header">{{typeof groupId === 'undefined'?name:title}}</div>
+					<div class="voucher-type {{typeof groupId === 'undefined'?'voucher': 'groupon'}}">{{typeof groupId === 'undefined'? '代金券': '拼团券'}}</div>
+				</div>
+				<!--<div class="my-vouchers-prize card3-color"><span class="my-vouchers-lg">{{yuan(faceValue)}}</span>元</div>-->
+				<div class="my-vouchers-gray" style="{{show(status == 'ACTIVE')}}">有效期: {{_value.effectiveTime ? ' 至 ' + date(expirationTime) : '永久有效'}}</div>
+				<!--<div class="my-vouchers-gray" style="{{show(status == 'ACTIVE')}}">有效期: {{_value.effectiveTime ? date(effectiveTime) + ' 至 ' + date(expirationTime) : '永久有效'}}</div>-->
+				<div class="my-vouchers-gray" style="{{hide(status == 'ACTIVE')}}">{{_data.status(_value)}}</div>
+			</div><div class="my-vouchers-img" data-toggle="modal" data-target="#qrcodeModal{{id}}" data-backdrop="true">
+				<img class="thumb-qrcode" src="{{app.resource + '/img/card3/squarecode@2x.png'}}">
+			</div>
+			<!-- Modal -->
+			<div id="qrcodeModal{{id}}"  class="modal fade {{_parent.currentCard==id?'in':''}}" role="dialog">
+				<div class="modal-dialog my-modal-dialog">
+					<!-- Modal content-->
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close my-modal-close-button" data-dismiss="modal">&times;</button>
+							<h4 class="modal-title my-modal-title">{{typeof groupId === 'undefined'?name:title}}</h4>
+						</div>
+						<div class="my-modal-body">
+							<div class="my-modal-text">券号：{{cardCode}}</div>
+							<img class="modal-qrcode" rn-attr="src: app.api + '/qrcode?text=' + cardCode">
+						</div>
+						<div class="branches-wrap" style="{{show(branchStores.length && typeof groupId === 'undefined')}}">
+							<div class="branch-text">
+								<div class="my-modal-title">适用商户：</div>
+								<div class="my-modal-text" rn-foreach="branchStores" branch-id="{{id}}" style="{{show(_key<2)}}">{{details.name}}</div>
+							</div>
+							<img style="{{show(branchStores.length>1)}}" class="dropdown-arrow" src="{{app.resource + '/img/card3/dropdown-arrow@2x.png'}}"></img>
+							<div class="branches-extend" style="display: none">
+								<div class="my-modal-text" rn-foreach="branchStores" branch-id="{{id}}" style="{{show(_key>1)}}">{{details.name}}</div>
+							</div>
+						</div>
+						<div class="my-modal-footer" style="{{show(typeof groupId !== 'undefined')}}">
+							<table class="my-vouchers-gray">
+								<tr>
+									<td >交易商户:</td>
+									<td>&nbsp;{{store.details.name}}</td>
+								</tr>
+								<tr>
+									<td>交易时间:</td>
+									<td>&nbsp;{{date(effectiveTime)}}</td>
+								</tr>
+								<tr>
+									<td>支付总额: </td>
+									<td> &nbsp;{{yuan(costPerPerson)}}</td>
+								</tr>
+								<tr>
+									<td>支付方式: </td>
+									<td>&nbsp; 微信</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--end of Modal -->
+		</div>
+		</div>
+	</div>
+	<div class="block block-redeemed" style="{{show(currentTab == 'REDEEMED')}}">
+		<div style="{{hide(redeemed_vouchers.length)}}" class="common-not-found">
+			<div class="common-not-found-header">您的已用券包是空的!</div>
+		</div>
+		<div class="card3 card3-red my-vouchers-card {{status == 'ACTIVE' ? 'card3-red' : 'card3-gray'}}" rn-foreach="redeemed_vouchers">
+			<div class="my-vouchers-padding">
+				<div class="my-vouchers-text-content">
+					<div class="voucher-header">
+						<div class="card3-header">{{typeof groupId === 'undefined'?name:title}}</div>
+						<div class="voucher-type {{type=='VOUCHER_CARD' && typeof groupId === 'undefined'?'voucher': 'groupon'}}">{{(type=='VOUCHER_CARD' && typeof groupId === 'undefined')? '代金券': '拼团券'}}</div>
+					</div>
+					<!--<div class="my-vouchers-prize card3-color"><span class="my-vouchers-lg">{{yuan(faceValue)}}</span>元</div>-->
+					<div class="my-vouchers-gray" style="{{show(status == 'ACTIVE')}}">有效期: {{_value.effectiveTime ? ' 至 ' + date(expirationTime) : '永久有效'}}</div>
+					<!--<div class="my-vouchers-gray" style="{{show(status == 'ACTIVE')}}">有效期: {{_value.effectiveTime ? date(effectiveTime) + ' 至 ' + date(expirationTime) : '永久有效'}}</div>-->
+					<div class="my-vouchers-gray" style="{{hide(status == 'ACTIVE')}}">{{_data.status(_value)}}</div>
+				</div><div class="my-vouchers-img" data-toggle="modal" data-target="#qrcodeModal{{id}}" data-backdrop="true">
+					<img class="thumb-qrcode" src="{{app.resource + '/img/card3/squarecode@2x.png'}}">
+				</div>
+				<!-- Modal -->
+				<div id="qrcodeModal{{id}}"  class="modal fade {{_parent.currentCard==id?'in':''}}" role="dialog">
+					<div class="modal-dialog my-modal-dialog">
+						<!-- Modal content-->
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close my-modal-close-button" data-dismiss="modal">&times;</button>
+								<h4 class="modal-title my-modal-title">{{typeof groupId === 'undefined'?name:title}}</h4>
+							</div>
+							<div class="my-modal-body">
+								<div class="my-modal-text">券号：{{cardCode}}</div>
+								<img class="modal-qrcode" rn-attr="src: app.api + '/qrcode?text=' + cardCode">
+							</div>
+							<div class="branches-wrap" style="{{show(branchStores.length && typeof groupId === 'undefined')}}">
+								<div class="branch-text">
+									<div class="my-modal-title">适用商户：</div>
+									<div class="my-modal-text" rn-foreach="branchStores" branch-id="{{id}}" style="{{show(_key<2)}}">{{details.name}}</div>
+								</div>
+								<img style="{{show(branchStores.length>1)}}" class="dropdown-arrow" src="{{app.resource + '/img/card3/dropdown-arrow@2x.png'}}"></img>
+								<div class="branches-extend" style="display: none">
+									<div class="my-modal-text" rn-foreach="branchStores" branch-id="{{id}}" style="{{show(_key>1)}}">{{details.name}}</div>
+								</div>
+							</div>
+							<div class="my-modal-footer" style="{{show(typeof groupId !== 'undefined')}}">
+								<table class="my-vouchers-gray">
+									<tr>
+										<td >交易商户:</td>
+										<td>&nbsp;{{store.details.name}}</td>
+									</tr>
+									<tr>
+										<td>交易时间:</td>
+										<td>&nbsp;{{date(effectiveTime)}}</td>
+									</tr>
+									<tr>
+										<td>支付总额: </td>
+										<td> &nbsp;{{yuan(costPerPerson)}}</td>
+									</tr>
+									<tr>
+										<td>支付方式: </td>
+										<td>&nbsp; 微信</td>
+									</tr>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--end of Modal -->
+			</div>
+		</div>
+	</div>
+	<div class="block block-expired" style="{{show(currentTab == 'EXPIRED')}}">
+		<div style="{{hide(expired_vouchers.length)}}" class="common-not-found">
+			<div class="common-not-found-header">您的过期券包是空的!</div>
+		</div>
+		<div class="card3 card3-red my-vouchers-card {{status == 'ACTIVE' ? 'card3-red' : 'card3-gray'}}" rn-foreach="expired_vouchers">
+			<div class="my-vouchers-padding">
+				<div class="my-vouchers-text-content">
+					<div class="voucher-header">
+						<div class="card3-header">{{typeof groupId === 'undefined'?name:title}}</div>
+						<div class="voucher-type {{type=='VOUCHER_CARD' && typeof groupId === 'undefined'?'voucher': 'groupon'}}">{{(type=='VOUCHER_CARD' && typeof groupId === 'undefined')? '代金券': '拼团券'}}</div>
+					</div>
+					<!--<div class="my-vouchers-prize card3-color"><span class="my-vouchers-lg">{{yuan(faceValue)}}</span>元</div>-->
+					<div class="my-vouchers-gray" style="{{show(status == 'ACTIVE')}}">有效期: {{_value.effectiveTime ? ' 至 ' + date(expirationTime) : '永久有效'}}</div>
+					<!--<div class="my-vouchers-gray" style="{{show(status == 'ACTIVE')}}">有效期: {{_value.effectiveTime ? date(effectiveTime) + ' 至 ' + date(expirationTime) : '永久有效'}}</div>-->
+					<div class="my-vouchers-gray" style="{{hide(status == 'ACTIVE')}}">{{_data.status(_value)}}</div>
+				</div><div class="my-vouchers-img" data-toggle="modal" data-target="#qrcodeModal{{id}}" data-backdrop="true">
+					<img class="thumb-qrcode" src="{{app.resource + '/img/card3/squarecode@2x.png'}}">
+				</div>
+				<!-- Modal -->
+				<div id="qrcodeModal{{id}}"  class="modal fade {{_parent.currentCard==id?'in':''}}" role="dialog">
+					<div class="modal-dialog my-modal-dialog">
+						<!-- Modal content-->
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close my-modal-close-button" data-dismiss="modal">&times;</button>
+								<h4 class="modal-title my-modal-title">{{typeof groupId === 'undefined'?name:title}}</h4>
+							</div>
+							<div class="my-modal-body">
+								<div class="my-modal-text">券号：{{cardCode}}</div>
+								<img class="modal-qrcode" rn-attr="src: app.api + '/qrcode?text=' + cardCode">
+							</div>
+							<div class="branches-wrap" style="{{show(branchStores.length && typeof groupId === 'undefined')}}">
+								<div class="branch-text">
+									<div class="my-modal-title">适用商户：</div>
+									<div class="my-modal-text" rn-foreach="branchStores" branch-id="{{id}}" style="{{show(_key<2)}}">{{details.name}}</div>
+								</div>
+								<img style="{{show(branchStores.length>1)}}" class="dropdown-arrow" src="{{app.resource + '/img/card3/dropdown-arrow@2x.png'}}"></img>
+								<div class="branches-extend" style="display: none">
+									<div class="my-modal-text" rn-foreach="branchStores" branch-id="{{id}}" style="{{show(_key>1)}}">{{details.name}}</div>
+								</div>
+							</div>
+							<div class="my-modal-footer" style="{{show( typeof groupId !== 'undefined')}}">
+								<table class="my-vouchers-gray">
+									<tr>
+										<td >交易商户:</td>
+										<td>&nbsp;{{store.details.name}}</td>
+									</tr>
+									<tr>
+										<td>交易时间:</td>
+										<td>&nbsp;{{date(effectiveTime)}}</td>
+									</tr>
+									<tr>
+										<td>支付总额: </td>
+										<td> &nbsp;{{yuan(costPerPerson)}}</td>
+									</tr>
+									<tr>
+										<td>支付方式: </td>
+										<td>&nbsp; 微信</td>
+									</tr>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--end of Modal -->
+			</div>
+		</div>
+	</div>
+
+	<style type="text/css">
+		body{
+			background-color: white;
+		}
+	</style>
+
+	<script>
+	inc(
+		'css/store-branches.css',
+		'html/store/branches.html',
+		//'css/card3.css',
+		'css/my-vouchers.css',
+		'js/MyVouchers.js',
+		function() {
+			$(inc.get('html/store/branches.html')).find('.store-branches-branch').appendTo('.my-vouchers-branches');
+			new MyVouchers();
+		}
+	);
+	</script>
+</div>

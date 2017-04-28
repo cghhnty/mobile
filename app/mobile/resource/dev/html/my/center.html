@@ -1,0 +1,189 @@
+<div class="my-center" rn-scope>
+	<div class="my-center-header">
+		<div class="my-center-group">
+			<div class="my-center-logo"></div>
+			<div class="my-center-vendor-name">{{store.details.name}}</div>
+		</div>
+		
+		<div class="my-center-profile">
+			<div class="my-center-face-set">
+				<div class="my-center-member-avatar" style="background-image: url({{member.avatar || app.resource + '/img/my-center/avatar.png'}})"></div>
+				<div class="my-center-member-level"><div class="my-center-member-level-text">{{memberEx.levelName}}</div></div>
+			</div>
+			<div class="my-center-detail-set">
+				<div class="my-center-member-name">{{member.fullName}}</div>
+				<div class="my-center-member-info">
+					会员号: {{member.memberCode}}
+				<!-- <span style="{{show(memberEx.levelName)}}">&nbsp;&nbsp;等级: {{memberEx.levelName}}</span> -->
+				</div>
+				<div class="my-center-group">
+					<i class="my-center-icon-redmoney my-center-icon-inline"></i>
+					<div class="my-center-member-hbjf-item my-center-text-inline">红包: {{yuan(memberEx.hongBao)}}元</div>
+				</div>
+				<div class="my-center-group">
+					<i class="my-center-icon-score my-center-icon-inline"></i>
+					<div class="my-center-member-hbjf-item my-center-text-inline">积分: {{memberEx.point?memberEx.point/100:0}}分</div><!--积分: {{yuan(memberEx.point)}}分-->
+				</div>
+			</div>
+		</div>
+		<a href="{{app.promotion}}#/{{store.id}}/promotion/my" class="my-center-member-groupon" style="{{hide(numOfGroup==0)}}">
+			<i class="my-center-cart-icon"></i>
+			<div class="my-center-member-groupon-text">我参加的拼团</div>
+			<div class="my-center-member-groupon-text-right">{{numOfGroup}}</div>
+			<img class="my-center-member-groupon-arrow" src="{{app.resource + '/img/my-center/arrow@2x.png'}}" />
+		</a>
+	</div>
+
+	<div class="my-center-content">
+		<div class="my-center-item-wrap">
+			<a class="my-center-item" href="{{link('my/balance')}}">
+				<div class="my-center-item-content">
+					<div class="my-center-item-icon">
+						<!-- <i class="my-center-icon my-center-icon-balance"></i> -->
+						<img class="my-center-icon" src="{{app.resource + '/img/my-center/balance@2x.png'}}"></img>
+						<span class="my-center-item-text">储值账户</span>
+					</div>
+					<div class="my-center-item-comment" style="{{greycolor(memberEx.balance)}}">{{yuan(memberEx.balance)}}元<span class="my-center-item-dot" style="{{show(noticeBalance)}}"></span></div>					
+				</div>
+			</a>
+		</div>
+
+		<div class="my-center-item-wrap">
+			<a class="my-center-item" href="{{link('my/vouchers')}}">
+				<div class="my-center-item-content">
+					<div class="my-center-item-icon">
+						<img class="my-center-icon" src="{{app.resource + '/img/my-center/voucher@2x.png'}}"></img>
+						<span class="my-center-item-text">券包</span>
+					</div>
+					<div class="my-center-item-comment" style="{{greycolor(voucherCardsCount)}}">{{voucherCardsCount}}张券<span class="my-center-item-dot" style="{{show(noticeVoucher)}}"></span></div>
+				</div>
+			</a>
+		</div>
+
+		<div class="my-center-item-wrap">
+			<a class="my-center-item" href="{{link('my/cards')}}">
+				<div class="my-center-item-content">
+					<div class="my-center-item-icon">
+						<img class="my-center-icon" src="{{app.resource + '/img/my-center/card@2x.png'}}"></img>
+						<span class="my-center-item-text">会员卡</span>
+					</div>
+					<div class="my-center-item-comment" style="{{greycolor(cardsCount)}}">{{cardsCount}}张有效<span class="my-center-item-dot" style="{{show(noticeCard)}}"></span></div>
+				</div>
+			</a>
+		</div>
+
+		<div class="my-center-item-wrap">
+			<a class="my-center-item" href="{{link('timeline/list', {memberId: member.id})}}">
+				<div class="my-center-item-content">
+					<div class="my-center-item-icon">
+						<div class="my-center-icon-block">
+							<img class="my-center-icon" src="{{app.resource + '/img/my-center/capture@2x.png'}}"></img>
+							<span class="my-center-item-dot2" style="{{show(newTimelineItemsCount)}}"></span>
+						</div>
+					</div>
+					<div class="my-center-item-text-second">美好时光</div>
+					<!-- <div class="my-center-item-comment" style="{{show(newTimelineItemsCount)}}">有{{newTimelineItemsCount}}条新记录</div> -->
+				</div>
+			</a>
+		</div>
+
+		<div class="my-center-item-wrap" style="{{show(isViewConsumeNum)}}">
+			<a class="my-center-item" href="{{link('my/orders')}}">
+				<div class="my-center-item-content">
+					<div class="my-center-item-icon">
+						<div class="my-center-icon-block">
+							<img class="my-center-icon" src="{{app.resource + '/img/my-center/record@2x.png'}}"></img>
+							<span class="my-center-item-dot2" style="{{show(newOrdersCount)}}"></span>		
+						</div>
+					</div>
+					<div class="my-center-item-text-second">消费记录</div>
+					<!-- <div class="my-center-item-comment" style="{{show(newOrdersCount)}}">有{{newOrdersCount}}条新记录</div> -->
+				</div>
+			</a>
+		</div>
+
+		<div class="my-center-item-wrap">
+			<a class="my-center-item" href="{{link('store/branches')}}">
+				<div class="my-center-item-content">
+					<div class="my-center-item-icon">
+						<img class="my-center-icon" src="{{app.resource + '/img/my-center/branch@2x.png'}}"></img>
+					</div>
+					<div class="my-center-item-text-second">商户信息</div>
+					<!-- <div class="my-center-item-comment"></div> -->
+				</div>
+			</a>
+		</div>
+
+		<!--
+		<div class="my-center-item-wrap">
+			<a class="my-center-item" href="{{link('my/bookings')}}">
+				<div class="my-center-item-content">
+					<div class="my-center-item-icon">
+						<i class="my-center-icon my-center-icon-clock"></i>
+					</div>
+
+					<div class="my-center-item-text">我的预约</div>
+					<div class="my-center-item-comment"></div>
+				</div>
+			</a>
+		</div>
+		-->
+	</div>
+    <div class="my-center-promotions-container"  style="{{hide(!store.weixinConfig.verified)}}">
+        <div id="myCenterPromotionsContainer" class="my-center-promotions"></div>
+    </div>
+    <div id="promotionItemTemplate" class="activity-item" style="display: none;">
+        <a class="activity-banner">
+            <img />
+
+            <div class="activity-banner-change-gradually-layout"></div>
+        </a>
+
+        <div class="activity-banner-cutoff-symbol">
+            <div class="min-participants">
+                <span class="min-participants-number"></span>
+                <span class="min-participants-label">人团</span>
+            </div>
+            <div class="activity-cutoff">
+                <span class="activity-cutoff-number"></span>
+                <span class="activity-cutoff-label">折</span>
+            </div>
+        </div>
+        <div class="banner-count-intro">
+            <div class="banner-intro-up">
+                <p class="intro-end"><img src="{{app.resource + '/img/my-center/nameEnd@2x.png'}}"/></p>
+
+                <p class="intro-list"></p>
+
+                <p class="intro-head"><img src="{{app.resource + '/img/my-center/nameHead@2x.png'}}"/></p>
+            </div>
+            <div class="banner-intro-down"><span class="origin-price">原价</span><span class="promotion-price-label">拼团价</span><span class="promotion-price-number"></span></div>
+        </div>
+    </div>
+    <div class='my-center-bottom'>
+        <div class='logo'></div>
+    </div>
+    </div>
+	<script>
+	inc(
+		'css/my-center.css',
+		//'css/jquery.excoloSlider.css',
+		'js/MyCenter.js',
+		// 'js/jquery-1.9.1.min.js',
+		//'js/jquery.excoloSlider.min.js',
+            'lib/islider/js/islider.js',
+            'lib/islider/css/islider.css',
+
+		function() {
+			new MyCenter();
+			// $(function () {
+			//     $("#slider").excoloSlider();
+			// });
+		}
+
+	);
+	</script>
+	<script>
+		
+	</script>
+</div>

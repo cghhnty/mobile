@@ -1,0 +1,22 @@
+<div class="common-wx-share-overlay" style="display: none"></div>
+<div class="common-wx-subscribe-overlay" style="display: none"></div>
+
+<div class="common-modal modal fade" data-backdrop="static" rn-scope style="display: none">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-body">
+				<p>{{body}}</p>
+			</div>
+
+			<div class="common-modal-footer btn-group btn-group-justified">
+				<div class="btn-group" style="{{show(_data.closeText)}}">
+					<a href="javascript:" class="common-modal-close" data-dismiss="modal">{{closeText}}</a>
+				</div>
+
+				<div class="btn-group">
+					<a href="javascript:" class="common-modal-apply" data-dismiss="modal">{{_data.applyText || '确定'}}</a>
+				</div>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

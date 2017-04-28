@@ -1,0 +1,83 @@
+@import 'nib';
+
+.card {
+	position: relative;
+	background: #f8f8f8;
+	border-radius: 14px;
+	margin: 18px auto;
+	box-shadow: 0 2px 1px rgba(0, 0, 0, 0.15);
+	overflow: hidden;
+}
+
+.card-head {
+	padding: 11px 15px 15px;
+	background-repeat: repeat-x;
+	background-position: 2px bottom;
+	font-size: 18px;
+	line-height: 22px;
+}
+
+.card-default .card-head {
+	background-color: #0eb1ce;
+	background-image: url(../img/card/top.png);
+	background-size: 4px auto;
+	color: #fff;
+}
+
+.card-gray .card-head {
+	background-color: #bababa;
+	background-image: url(../img/card/top-gray.png);
+	background-size: 4px auto;
+	color: #333;
+}
+
+.card-head-right {
+	float: right;
+	font-size: 12px;
+	color: #fff;
+}
+
+.card-img-wrap {
+    position: relative;
+}
+
+.card-img-top {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    top: 0;
+    left: 0;
+    background: url(../img/card/img-top.png) repeat-x 2px top;
+    background-size: 4px 2px;
+}
+
+.card-img-bottom {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background: url(../img/card/img-bottom.png) repeat-x 2px top;
+    background-size: 4px 2px;
+}
+
+.card-img {
+	display: block;
+    width: 100%;
+}
+
+.card-content {
+	padding: 10px;
+}
+
+.card-default .card-bottom {
+	background-color: #0eb1ce;
+	background-image: url(../img/card/bottom.png);
+	background-repeat: repeat-x;
+	background-size: 4px auto;
+	background-position: 2px top;
+	color: #fff;
+	font-size: 12px;
+	line-height: 22px;
+	padding: 12px 15px;
+}

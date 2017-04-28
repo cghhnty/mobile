@@ -1,0 +1,39 @@
+<div class="my-bind-existed-account" rn-scope>
+	<div class="my-bind-existed-account-head">账号绑定</div>
+
+	<form class="my-bind-existed-account-form">
+		<div class="form-group">
+			<div class="input-group input-group-lg">
+				<span class="input-group-addon"><i class="fa fa-mobile fa-fw"></i></span>
+				<input type="tel" rn-value="phone" class="form-control" placeholder="请输入手机号码">
+			</div>
+		</div>
+
+		<div class="form-group">
+			<div class="input-group input-group-lg">
+				<span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
+				<input type="tel" rn-value="authcode" class="form-control" placeholder="请输入验证码">
+				<span class="input-group-btn">
+					<button type="button" class="my-bind-existed-account-send-authcode btn btn-primary" rn-prop="disabled: countdown > 0">获取{{countdown ? ' (' + countdown + ')' : ''}}</button>
+				</span>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<button type="submit" class="btn btn-primary btn-block btn-lg">
+				<span style="{{hide(submiting)}}">确定</span>
+				<i class="fa fa-circle-o-notch fa-spin" style="{{show(submiting)}}"></i>
+			</button>
+		</div>
+	</form>
+
+	<script>
+	inc(
+		'css/my-bind-existed-account.css',
+		'js/MyBindExistedAccount.js',
+		function() {
+			new MyBindExistedAccount();
+		}
+	);
+	</script>	
+</div>

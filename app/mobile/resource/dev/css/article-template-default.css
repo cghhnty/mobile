@@ -1,0 +1,38 @@
+html {
+  background-color: #e7e8eb;
+}
+iframe,
+video {
+  width: 100% !important;
+  height: 240px !important;
+}
+.article-template-default {
+  background-color: #fff;
+  padding: 10px;
+  border-width: 0 1px;
+  border-style: solid;
+  border-color: #d9dadc;
+}
+.article-template-default-title {
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: bold;
+  padding-bottom: 10px;
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+.article-template-default-meta {
+  margin-right: 0.5em;
+  font-size: 12px;
+}
+.article-template-default-date {
+  color: #8c8c8c;
+}
+.article-template-default-weixin-nickname {
+  color: #607fa6;
+}
+.article-template-default img {
+  max-width: 100%;
+  height: auto;
+}
+/*# sourceMappingURL=article-template-default.css.map */

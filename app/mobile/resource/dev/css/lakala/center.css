@@ -1,0 +1,102 @@
+body {
+  background-color: #e5e5e5;
+}
+@media (min-width: 1024px) {
+  .lakala-center {
+    width: 375px;
+    margin: auto;
+  }
+}
+.lakala-center {
+  padding: 0 10px;
+}
+.lakala-center .user-info {
+  padding: 15px 0 17px;
+}
+.lakala-center .user-avatar {
+  width: 73px;
+  height: 73px;
+  margin: 0 auto 10px;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.lakala-center .user-avatar img {
+  width: 100%;
+}
+.lakala-center .user-name {
+  text-align: center;
+  font-size: 16px;
+  color: #000;
+}
+.lakala-center .no-merchant {
+  margin-top: 120px;
+  text-align: center;
+  font-size: 14px;
+  color: #c9c9c9;
+}
+.lakala-center .no-merchant p {
+  margin-top: 10px;
+}
+.lakala-center .no-merchant img {
+  width: 120px;
+  height: 62px;
+}
+.lakala-center .merchants {
+  padding: 0;
+  list-style-type: none;
+}
+.lakala-center .merchant {
+  margin: 14px 0px;
+/*padding 13px 10px;*/
+  background: url("../../img/lakala/merchant-bg.png?v=5074662ce25152eceb58f328b351fe0b") no-repeat;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.lakala-center .merchant:first-child {
+  margin-top: 0;
+}
+.lakala-center .merchant:last-child {
+  margin-bottom: 0;
+}
+.lakala-center .merchant-name,
+.lakala-center .coupon-under-merchant {
+  display: inline-block;
+  vertical-align: middle;
+}
+.lakala-center .merchant-name {
+  width: 70%;
+  padding: 15px 30px 15px 20px;
+  font-size: 18px;
+  color: #131d28;
+}
+@media (max-width: 320px) {
+  .lakala-center .merchant-name {
+    font-size: 13px;
+  }
+}
+.lakala-center .coupon-under-merchant {
+  width: 30%;
+  padding: 15px 0;
+  font-size: 15px;
+  color: #fff;
+}
+.lakala-center .coupon-under-merchant .point {
+  padding-left: 22px;
+  background: url("../../img/lakala/point.png?v=e9a9ce2ba7428b99356a1ca8827013c2") no-repeat;
+  -webkit-background-size: 16px 19px;
+  -moz-background-size: 16px 19px;
+  background-size: 16px 19px;
+}
+.lakala-center .coupon-under-merchant .coupon {
+  padding-left: 22px;
+  background: url("../../img/lakala/coupon.png?v=d11e85fe94f1fc9cae0602b87ffdc7a1") no-repeat;
+  -webkit-background-size: 16px 19px;
+  -moz-background-size: 16px 19px;
+  background-size: 16px 19px;
+}
+/*# sourceMappingURL=center.css.map */

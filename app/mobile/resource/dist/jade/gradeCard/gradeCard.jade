@@ -1,0 +1,56 @@
+doctype html
+html
+    head
+        meta(charset='utf-8')
+        title 会员等级卡
+        meta(name='viewport', content='width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no')
+        meta(name='apple-mobile-web-app-capable', content='yes')
+        meta(name='format-detection', content='telephone=no, email=no')
+        meta(name='msapplication-tap-highlight', content='no')
+        link(rel='Shortcut Icon', href='/mobile/dist/images/icon/favicon.ico')
+        link(rel='stylesheet', type='text/css', href='/mobile/dist/build/css/app.min.css')
+        script(src='/mobile/dist/build/js/app.min.js')
+        script(src='/mobile/dist/assets/js/app/mobile-config.js')
+        //script(src='https://res.wx.qq.com/open/js/jweixin-1.0.0.js')
+    body
+        #gradeCard(data-role='page', data-title='会员等级卡', data-dom-cache='false')
+            input#memberId(type='hidden', value='#{member?member.id:""}')
+            input#storeId(type='hidden', value='#{store?store.id:""}')
+            input#loginWeixin(type='hidden', value='#{member?member.weixinId:""}')
+            .ui-content.p-l-none.p-r-none.p-t-none.p-b-none.absolute(data-role='main')
+                .lay-body
+                    ul#page-gradeCard-list.list-unstyled.m-t-sm.m-b-md
+                        //
+                          <li class="m-t-md m-l m-r">
+                          <div class="pos-rlt m-l-xs m-r-xs">
+                          <img class="w-full pos-rlt pointer-none" src="./../../images/pattern/card_gold.png" >
+                          <div class="absolute-top m-sm">
+                          <div class="pull-left p-l-sm" style="width:60%;"><p class="m-b-none font-bold m-t-xs">PPTV</p><p class="m-b-none text-xs" style="color:#a87a15; margin-top:-2px;">黄金会员</p></div>
+                          <div class="pull-right text-white p-r-sm m-t-sm" style="width:40%; height:32px; overflow:hidden">
+                          <p class="text-xs m-b-none text-left">这里是备注<br>这里是备注这里是备注这里是备注</p>
+                          </div>
+                          </div>
+                          <div class="absolute-bottom text-2xs text-white">
+                          <div class="pull-left p-l-sm text-ellipsis" style="width:50%;">生效日期：2016-10-05</div>
+                          <div class="pull-right text-right p-r-sm text-ellipsis" style="width:50%;">最终解释权归商家所有</div>
+                          </div>
+                          </div>
+                          <img class="w-full block pointer-none" src="./../../images/pattern/card_shadow.png">
+                          </li>
+                          <li class="m-t-md m-l m-r">
+                          <div class="pos-rlt m-l-xs m-r-xs">
+                          <img class="w-full pos-rlt pointer-none" src="./../../images/pattern/card_bronze.png" >
+                          <div class="absolute-top m-sm">
+                          <div class="pull-left p-l-sm" style="width:80%;"><p class="m-b-none font-bold m-t-xs">PPTV</p><p class="m-b-none text-xs" style="color:#805743; margin-top:-2px;">白银会员</p></div>
+                          <div class="pull-right text-white text-right p-r-sm m-t-sm" style="width:20%;">9.5折</div>
+                          </div>
+                          <div class="absolute-bottom text-2xs text-white">
+                          <div class="pull-left p-l-sm text-ellipsis" style="width:50%;">生效日期：2016-10-05</div>
+                          <div class="pull-right text-right p-r-sm text-ellipsis" style="width:50%;">最终解释权归商家所有</div>
+                          </div>
+                          </div>
+                          <img class="w-full block pointer-none" src="./../../images/pattern/card_shadow.png">
+                          </li>
+                    a.goback(href='/lakala/center?storeId=#{store?store.id:""}',data-role='none',type='button', style='color:#fff')
+                    //<a data-rel="back" type="button" class="el-click block w-full btn bg-primary no-radius no-border l-h-max m-t-md m-b-md" style="color:#fff">返 回</a>
+            script(src='/mobile/dist/assets/js/app/gradeCard/gradeCard.js')

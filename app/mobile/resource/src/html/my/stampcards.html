@@ -1,0 +1,150 @@
+<div class="my-stampcards" rn-scope>
+	<div style="{{hide(cards.length)}}">您还没有计次卡</div>
+
+	<a class="my-stampcards-link" href="{{link('my/orders', {type: 'STAMP_CARD', cardId: id})}}" rn-foreach="cardsActive">
+		<div class="my-stampcards-card">
+			<div class="my-stampcards-card-head">{{name}}<i class="fa fa-angle-right"></i></div>
+			<table>
+				<tr>
+					<th>价格</th>
+					<td>{{yuan(dealPrice)}}</td>
+				</tr>
+
+				<tr>
+					<th>有效期</th>
+					<td>{{effectiveTime || expirationTime ? date(effectiveTime || createDate) + ' 至 ' +  (expirationTime ? date(expirationTime) : '永久') : '永久有效'}}</td>
+				</tr>
+
+				<tr>
+					<th>购买次数</th>
+					<td>{{numberOfStamps}}</td>
+				</tr>
+
+				<tr>
+					<th>已使用次数</th>
+					<td>{{numberOfStamps - remainingStamps}}</td>
+				</tr>
+
+				<tr>
+					<th><span class="my-stampcards-orange">可用次数</span></th>
+					<td><span class="my-stampcards-orange">{{remainingStamps}}</span></td>
+				</tr>
+			</table>
+
+			<div class="my-stampcards-stamps">
+				<div rn-foreach="usage" class="my-stampcards-stamp-wrap">
+					<div class="my-stampcards-stamp my-stampcards-stamp-used">{{_key + 1}}</div>
+					<div class="my-stampcards-stamp-summary">
+						{{storeName}}<br>
+						{{date(datetime)}}<br>
+						{{time(datetime)}}
+					</div>
+				</div><div rn-foreach="new Array(remainingStamps)" class="my-stampcards-stamp-wrap">
+					<div class="my-stampcards-stamp my-stampcards-stamp-unused">{{numberOfStamps - remainingStamps + _key + 1}}</div>
+				</div>
+			</div>
+		</div>
+	</a>
+
+	<div class="my-stampcards-splitter" style="{{show(cardsFrozen.length)}}">已冻结</div>
+	<a class="my-stampcards-link" href="{{link('my/orders', {type: 'STAMP_CARD', cardId: id})}}" rn-foreach="cardsFrozen">
+		<div class="my-stampcards-card my-stampcards-card-gray">
+			<div class="my-stampcards-card-head">{{name}}<i class="fa fa-angle-right"></i></div>
+			<table>
+				<tr>
+					<th>价格</th>
+					<td>{{yuan(dealPrice)}}</td>
+				</tr>
+
+				<tr>
+					<th>有效期</th>
+					<td>{{effectiveTime || expirationTime ? date(effectiveTime || createDate) + ' 至 ' +  (expirationTime ? date(expirationTime) : '永久') : '永久有效'}}</td>
+				</tr>
+
+				<tr>
+					<th>购买次数</th>
+					<td>{{numberOfStamps}}</td>
+				</tr>
+
+				<tr>
+					<th>已使用次数</th>
+					<td>{{numberOfStamps - remainingStamps}}</td>
+				</tr>
+
+				<tr>
+					<th>可用次数</th>
+					<td>{{remainingStamps}}</td>
+				</tr>
+			</table>
+
+			<div class="my-stampcards-stamps">
+				<div rn-foreach="usage" class="my-stampcards-stamp-wrap">
+					<div class="my-stampcards-stamp my-stampcards-stamp-used">{{_key + 1}}</div>
+					<div class="my-stampcards-stamp-summary">
+						{{storeName}}<br>
+						{{date(datetime)}}<br>
+						{{time(datetime)}}
+					</div>
+				</div><div rn-foreach="new Array(remainingStamps)" class="my-stampcards-stamp-wrap">
+					<div class="my-stampcards-stamp my-stampcards-stamp-used">{{numberOfStamps - remainingStamps + _key + 1}}</div>
+				</div>
+			</div>
+		</div>
+	</a>
+
+	<div class="my-stampcards-splitter" style="{{show(cardsExpired.length)}}">已失效</div>
+	<a class="my-stampcards-link" href="{{link('my/orders', {type: 'STAMP_CARD', cardId: id})}}" rn-foreach="cardsExpired">
+		<div class="my-stampcards-card my-stampcards-card-gray">
+			<div class="my-stampcards-card-head">{{name}}<i class="fa fa-angle-right"></i></div>
+			<table>
+				<tr>
+					<th>价格</th>
+					<td>{{yuan(dealPrice)}}</td>
+				</tr>
+
+				<tr>
+					<th>有效期</th>
+					<td>{{effectiveTime || expirationTime ? date(effectiveTime || createDate) + ' 至 ' +  (expirationTime ? date(expirationTime) : '永久') : '永久有效'}}</td>
+				</tr>
+
+				<tr>
+					<th>购买次数</th>
+					<td>{{numberOfStamps}}</td>
+				</tr>
+
+				<tr>
+					<th>已使用次数</th>
+					<td>{{numberOfStamps - remainingStamps}}</td>
+				</tr>
+
+				<tr>
+					<th>可用次数</th>
+					<td>{{remainingStamps}}</td>
+				</tr>
+			</table>
+
+			<div class="my-stampcards-stamps">
+				<div rn-foreach="usage" class="my-stampcards-stamp-wrap">
+					<div class="my-stampcards-stamp my-stampcards-stamp-used">{{_key + 1}}</div>
+					<div class="my-stampcards-stamp-summary">
+						{{storeName}}<br>
+						{{date(datetime)}}<br>
+						{{time(datetime)}}
+					</div>
+				</div><div rn-foreach="new Array(remainingStamps)" class="my-stampcards-stamp-wrap">
+					<div class="my-stampcards-stamp my-stampcards-stamp-used">{{numberOfStamps - remainingStamps + _key + 1}}</div>
+				</div>
+			</div>
+		</div>
+	</a>
+
+	<script>
+	inc(
+		'css/my-stampcards.css',
+		'js/MyStampcards.js',
+		function() {
+			new MyStampcards();
+		}
+	)
+	</script>
+</div>

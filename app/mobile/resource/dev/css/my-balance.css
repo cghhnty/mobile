@@ -1,0 +1,23 @@
+.my-balance-account {
+  padding: 30px 24px 25px;
+  display: block;
+  background: #fff url("../img/my-balance/no-expires@2x.png?v=aeafdb99d0aafc63a738e3b8ab350be9") no-repeat right 30px top 23px/57px 37px;
+  margin-bottom: 15px;
+}
+.my-balance-account-header {
+  color: #b4b4b4;
+}
+.my-balance-account-balance {
+  font-size: 60px;
+  color: #fdb731;
+}
+.my-balance-account-balance-fraction {
+  font-size: 28px;
+}
+.my-balance-card {
+  margin: 14px;
+}
+.my-balance-card-balance {
+  font-size: 40px;
+}
+/*# sourceMappingURL=my-balance.css.map */

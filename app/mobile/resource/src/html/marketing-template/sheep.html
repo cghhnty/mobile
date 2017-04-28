@@ -1,0 +1,79 @@
+<div class="music" id="music">
+	<i class="icon icon-play"></i>
+	<audio id="player" rn-attr="src: res('img/marketing-template/sheep/sheep.mp3')" autoplay loop></audio>
+</div>
+
+<div class="swiper-container template-sheep">
+	<div class="swiper-wrapper">
+		<div class="swiper-slide slide1">
+			<i class="top"></i>
+			<div class="hny">
+				<span class="icon icon-2015"></span>
+			</div>
+			<div class="love">
+				<div class="heart"></div>
+				<div class="sheep">
+					<span class="icon icon-love"></span>
+				</div>
+			</div>
+			<div class="store">
+				<h1 class="logo">
+					<img rn-attr="src: content.storeLogo" style="{{show(content.storeLogo)}}">
+				</h1>
+				<h3 class="name">{{content.storeName}}</h3>
+			</div>
+		</div>
+		<div class="swiper-slide slide2">
+			<div class="hy">
+				<span class="icon icon-hy"></span>
+				<div class="bo">
+					<pre>{{content.page2}}</pre>
+				</div>
+			</div>
+			<div class="cloud"></div>
+			<i class="top"></i>
+		</div>
+		<div class="swiper-slide slide3">
+			<div class="gift"></div>
+			<span class="icon icon-little"></span>
+			<div class="cloud">
+				<div class="fu">
+					<pre>{{content.page3}}</pre>
+				</div>
+			</div>
+			<i class="top"></i>
+		</div>
+		<div class="swiper-slide slide4">
+			<span class="icon icon-hny"></span>
+			<div class="word">
+				<h3>{{content.storeName}}</h3>
+				<pre>{{content.page4}}</pre>
+			</div>
+			<div class="yang">
+				<span class="icon icon-sheep"></span>
+			</div>
+			 <div class="cloud">
+                
+                <div class="link">
+                    <a href="http://wosai.cn" class="wosai">
+                    <span class="icon icon-wosai"></span> 
+                </a>
+                <a href="http://yx.wosai.cn/" class="create">定制我的贺卡</a>
+                </div>
+             
+                 
+               </div>
+		</div>
+	</div>
+</div>
+
+<script>
+inc(
+	'lib/swiper/idangerous.swiper.js',
+	'css/marketing-template-sheep.css',
+	'js/MarketingTemplateSheep.js',
+	function() {
+		new MarketingTemplateSheep();
+	}
+)
+</script>

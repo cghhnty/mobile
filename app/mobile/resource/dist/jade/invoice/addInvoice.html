@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>开票信息</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="format-detection"content="telephone=no, email=no" />
+<meta name="msapplication-tap-highlight" content="no">
+<link rel="Shortcut Icon" href="./../../images/icon/favicon.ico">
+<link rel="stylesheet" type="text/css" href="../../assets/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="../../assets/css/app.min.css">
+<script src="./../../assets/js/lib/jquery-1.11.3.min.js"></script>
+<script src="./../../assets/js/lib/template-0.7.1.min.js"></script>
+<script src="./../../assets/js/app/mobile-config.js?v=jjj"></script>
+<script src="../../assets/js/app/invoice/addInvoice.js"></script>
+</head>
+<body class="bg-light">
+	<div class="absolute scroll-touch" style="bottom:76px">
+    	<img class="block m-auto m-t" src="../../images/icon/pic_invoice.png" width="60" />
+        <h4 class="text-center font-bold text-md p-b-xs">拉卡拉测试小店商户</h4>
+        <p class="p-l-sm m-b-xs text-xs text-info">发票类型</p>
+        <div class="col-xs-8 p-r-none pos-rlt">
+            <span class="icon-icon_arrowRight absolute-right text-xs text-muteder pointer-none" style="height:12px; margin-right:10px;"></span>
+            <span class="absolute-right pointer-none" id="selectText" style="margin-right:30px;"></span>
+            <select class="pos-rlt transparent block form-control no-border pull-right w-full" style="height:40px;" id="addInvoiceSelect">
+                <option value="增值发票">专用发票</option>
+                <option value="普通发票">普通发票</option>
+            </select>
+        </div>
+        <div class="p-l-sm p-t-sm m-b-xs text-xs text-info"><span>发票信息</span><span class="pull-right text-xs text-muted p-r-sm" id="prompt"></span></div>
+        <form class="invoiceForm">
+            <ul class="list-unstyled bg-white m-n">
+                <li>
+                    <span>名称</span><input type="text" name="invoiceHeader" value="" placeholder="请输入企业名称" />
+                </li>
+                <li>
+                    <span>纳税人识别号</span><input type="text" name="taxpayerNum" value="" placeholder="请输入纳税人识别号" />
+                </li>
+                <li>
+                    <span>开户行</span><input type="text" name="bankName" value="" placeholder="请输入开户行" />
+                </li>
+                <li>
+                    <span>银行账号</span><input type="text" name="bankCardNo" value="" placeholder="请输入银行账号" />
+                </li>
+                <li>
+                    <span>地址</span><input type="text" name="address" value="" placeholder="请输入银行地址" />
+                </li>
+                <li>
+                    <span>电话</span><input type="tel" name="telPhone" value="" placeholder="请输入银行电话" />
+                </li>
+                <li>
+                    <span>手机号码</span><input type="tel" name="phoneNo" value="" placeholder="请输入个人手机号码" />
+                </li>
+            </ul>
+            <ul class="list-unstyled bg-white m-n hide">
+                <li>
+                    <span>名称</span><input type="text" name="invoiceHeader" value="" placeholder="请输入姓名/企业名称" />
+                </li>
+                <li>
+                    <span>手机号码</span><input type="tel" name="phoneNo" value="" placeholder="请输入个人手机号码" />
+                </li>
+            </ul>
+        </form>
+    </div>
+    
+    <div class="absolute" style="bottom:15px; top:auto; margin:0 15px;">
+    	<button class="btn btn-lg btn-info w-full invoiceSubmit" disabled >保存</button>
+    </div>
+   
+</body>
+</html>

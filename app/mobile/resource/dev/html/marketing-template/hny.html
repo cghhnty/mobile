@@ -1,0 +1,76 @@
+<div class="music" id="music">
+	<i class="icon icon-play"></i>
+	<audio class="marketing-template-hny-player" id="player" rn-attr="src: res('img/marketing-template/hny/hny.mp3')" autoplay loop></audio>
+</div>
+
+<div class="swiper-container template-hny">
+	<div class="swiper-wrapper">
+		<div class="swiper-slide slide1">
+			<i class="left"></i>
+			<span class="icon icon-flower icon-tl"></span>
+			<span class="icon icon-flower icon-tr"></span>
+			<div class="spring">
+				<i class="icon icon-sheep"></i>
+			</div>
+			<span class="icon icon-flower icon-bl"></span>
+			<span class="icon icon-flower icon-br"></span>
+			<div class="store">
+				<h1 class="logo">
+					<img rn-attr="src: content.storeLogo" style="{{show(content.storeLogo)}}">
+				</h1>
+				<h3 class="name">{{content.storeName}}</h3>
+			</div>
+			<span class="icon icon-hny"></span>
+		</div>
+		<div class="swiper-slide slide2">
+			<i class="left"></i>
+			<span class="icon icon-flower icon-tl"></span>
+			<span class="icon icon-flower icon-tr"></span>
+			<div class="window">
+				<div class="word">
+					<pre>{{content.page2}}</pre>
+					<em>2015</em>
+					<h3>新年快乐</h3>
+				</div>
+				<span class="icon icon-hny2"></span>
+			</div>
+			<span class="icon icon-flower icon-bl"></span>
+			<span class="icon icon-flower icon-br"></span>
+		</div>
+		<div class="swiper-slide slide3">
+			<i class="left"></i>
+			<div class="cloud">
+				<i class="icon icon-moon"></i>
+			</div>
+			<div class="word">
+				<pre>{{content.page3}}</pre>
+			</div>
+			<div class="side">
+				<i class="icon icon-flower2"></i>
+			</div>
+		</div>
+		<div class="swiper-slide slide4">
+			<span class="icon icon-circle">{{content.storeName}}</span>
+			<div class="bless">
+				<pre>{{content.page4}}</pre>
+			</div>
+			   <div class="wosai">
+              
+                   <a href="http://wosai.cn" class="link"><span class="icon icon-wosai"></span></a>
+
+                <a href="http://yx.wosai.cn/" class="create">定制我的贺卡</a>
+                </div>
+		</div>
+	</div>
+</div>
+
+<script>
+inc(
+	'lib/swiper/idangerous.swiper.js',
+	'css/marketing-template-hny.css',
+	'js/MarketingTemplateHny.js',
+	function() {
+		new MarketingTemplateHny();
+	}
+);
+</script>

@@ -1,0 +1,228 @@
+<div class="my-orders" rn-scope>
+	<div style="{{hide(orders.length)}}" class="common-not-found">
+		<div class="common-not-found-header">{{query.type ? '该卡未使用' : '您还没有消费记录'}}</div>
+	</div>
+
+	<div class="my-orders-order" rn-foreach="orders">
+		<div class="my-orders-order-head">
+			消费单号: {{orderCode}} <span class="my-orders-order-revoked" style="{{show(status == 'REVOKED')}}">退</span>
+		</div>
+
+		<div class="my-orders-order-summary">
+			<table class="my-orders-order-table">
+				<tr>
+					<td>{{storeName}}</td>
+					<td class="my-orders-orange my-orders-order-price"><span style="{{hide(totalPrice-totalDiscount-stampCardPaid==0)}}">{{yuan(totalPrice - totalDiscount -stampCardPaid)}}</span></td>
+				</tr>
+
+				<tr class="my-orders-order-meta">
+					<td>{{window.datetime(datetime)}}&nbsp;&nbsp;员工: {{staffName}}</td>
+					<td class="my-orders-orange">{{_data.payment(_value)}}</td>
+				</tr>
+			</table>
+		</div>
+
+		<div class="my-orders-order-detail-wrap" style="display: none">
+			<div class="my-orders-order-detail">
+				<table class="my-orders-order-table">
+					<thead>
+						<tr>
+							<th>品名</th>
+							<th style="width: 4.5em"></th>
+							<th><span style="{{hide(totalPrice-totalDiscount-stampCardPaid==0)}}">金额</span></th>
+						</tr>
+					</thead>
+
+					<tbody style="{{hide(totalPrice-totalDiscount-stampCardPaid==0)}}">
+						<tr rn-foreach="itemList" style="{{hide(type in {HONEBAO: 1 })}}">
+							<td colspan="2">
+								<div style="{{ hide(type=='TIPPING') }}" class="{{type in {DISCOUNT: 1, VOUCHER_REDEEM: 1} ? 'my-orders-green' : ''}}">{{_data.productName(_value)}}</div>
+								<div style="{{ show(type=='TIPPING') }}" class="my-orders-green">小费</div>
+								<div style="{{hide(dealPrice == originPrice || type=='TIPPING')}}" class="my-orders-green">单品优惠</div>
+								<div style="{{ hide(type=='TIPPING') }}" class="my-orders-order-item-quantity">数量: {{quantity}}</div>
+							</td>
+							<td>
+								<div style="{{hide(type in {DISCOUNT: 1, VOUCHER_REDEEM: 1, TIPPING:1})}}">{{type in {REDEEM:1,PERIOD_CARD:1,STAMP_CARD:1} && !_parent.isOnlycard ? '--' : yuan(originPrice * quantity)}}</div>
+								<div style="{{show(type in {DISCOUNT: 1, VOUCHER_REDEEM: 1 })}}" class="my-orders-green">{{yuan(- Math.abs(originPrice) * quantity)}}</div>
+								<div style="{{show(type in {TIPPING: 1})}}" class="my-orders-green">{{yuan(Math.abs(originPrice) * quantity)}}</div>
+								<div style="{{hide(dealPrice == originPrice)}}" class="my-orders-green">{{yuan((dealPrice - originPrice) * quantity)}}</div>
+							</td>
+						</tr>
+
+						<tr class="my-orders-order-table-splitter">
+							<th>小计</th>
+							<td class="my-orders-order-quantity">数量: {{_data.itemCount(itemList)}}</td>
+							<td>{{yuan(totalPrice-stampCardPaid)}}</td>
+						</tr>						
+
+						<tr style="{{show(totalDiscount)}}">
+							<th colspan="2">整单优惠</th>
+							<td class="my-orders-green">{{yuan(totalDiscount)}}</td>
+						</tr>
+
+						<tr>
+							<th colspan="2" class="my-orders-orange">应收金额</th>
+							<td class="my-orders-orange">{{yuan(totalPrice - totalDiscount-stampCardPaid)}}</td>
+						</tr>
+
+						<tr style="{{show(bankPaid)}}">
+							<th colspan="2">银行卡付款</th>
+							<td>{{yuan(bankPaid)}}</td>
+						</tr>
+
+						<tr style="{{show(balancePaid)}}">
+							<th colspan="2">储值账户付款</th>
+							<td>{{yuan(balancePaid)}}</td>
+						</tr>
+
+						<tr style="{{show(hongBaoPaid)}}">
+							<th colspan="2">红包付款</th>
+							<td>{{yuan(hongBaoPaid)}}</td>
+						</tr>
+
+						<tr style="{{show(cashPaid)}}">
+							<th colspan="2">现金付款</th>
+							<td>{{yuan(cashPaid)}}</td>
+						</tr>
+
+						<tr style="{{show(alipayPaid)}}">
+							<th colspan="2">支付宝付款</th>
+							<td>{{yuan(alipayPaid)}}</td>
+						</tr>
+
+						<tr style="{{show(weixinPaid)}}">
+							<th colspan="2">微信付款</th>
+							<td>{{yuan(weixinPaid)}}</td>
+						</tr>
+
+						<tr style="{{show(change)}}">
+							<th colspan="2">找零</th>
+							<td>{{yuan(change)}}</td>
+						</tr>
+
+						<tr class="my-orders-order-table-splitter" style="{{_data.showCardUsage(cardUsage, 'DEBIT')}}">
+							<th></th>
+							<th>本次使用</th>
+							<th>余额</th>
+						</tr>
+						
+						<tr rn-foreach="cardUsage" style="{{show(type == 'DEBIT')}}">
+							<th>{{_key}}</th>
+							<td>{{cardType in {PERIOD_CARD: 1, STAMP_CARD: 1} ? value : yuan(value)}}</td>
+							<td>{{cardType == 'PERIOD_CARD' || cardType == 'STAMP_CARD' ? '--' : yuan(oldValue - value)}}</td>
+						</tr>
+
+						<tr class="my-orders-order-table-splitter" style="{{_data.showCardUsage(cardUsage, 'CREDIT')}}">
+							<th></th>
+							<th>本次新增</th>
+							<th>余额</th>
+						</tr>
+
+						<tr rn-foreach="cardUsage" style="{{show(type == 'CREDIT')}}">
+							<th>{{_key}}</th>
+							<td>{{cardType=='STAMP_CARD'?(value + giftValue ):yuan(value + giftValue )}}</td>
+							<td>{{cardType=='STAMP_CARD'?(oldValue + value + giftValue):yuan(oldValue + value + giftValue) }}</td>
+						</tr>
+					</tbody>
+					
+					<!-- 计次卡/时段卡 -->
+					<tbody style="{{show(totalPrice-totalDiscount-stampCardPaid==0)}}">
+						<tr rn-foreach="itemList" style="{{hide(type in {HONEBAO: 1})}}">
+							<td colspan="2">
+								<div class="{{type in {DISCOUNT: 1, VOUCHER_REDEEM: 1} ? 'my-orders-green' : ''}}">{{_data.productName(_value)}}</div>
+								<div style="{{hide(dealPrice == originPrice)}}" class="my-orders-green">　单品优惠</div>
+								<div class="my-orders-order-item-quantity">数量: {{quantity}}</div>
+							</td>
+							<td>
+							</td>
+						</tr>
+
+						<tr class="my-orders-order-table-splitter">
+							<th>小计</th>
+							<td class="my-orders-order-quantity">数量: {{_data.itemCount(itemList)}}</td>
+							<td></td>
+						</tr>
+
+						<tr style="{{show(totalDiscount)}}">
+							<th colspan="2">整单优惠</th>
+							<td class="my-orders-green">{{yuan(totalDiscount)}}</td>
+						</tr>
+
+						<tr style="{{show(bankPaid)}}">
+							<th colspan="2">银行卡付款</th>
+							<td>{{yuan(bankPaid)}}</td>
+						</tr>
+
+						<tr style="{{show(balancePaid)}}">
+							<th colspan="2">储值账户付款</th>
+							<td>{{yuan(balancePaid)}}</td>
+						</tr>
+
+						<tr style="{{show(hongBaoPaid)}}">
+							<th colspan="2">红包付款</th>
+							<td>{{yuan(hongBaoPaid)}}</td>
+						</tr>
+
+						<tr style="{{show(cashPaid)}}">
+							<th colspan="2">现金付款</th>
+							<td>{{yuan(cashPaid)}}</td>
+						</tr>
+
+						<tr style="{{show(alipayPaid)}}">
+							<th colspan="2">支付宝付款</th>
+							<td>{{yuan(alipayPaid)}}</td>
+						</tr>
+
+						<tr style="{{show(weixinPaid)}}">
+							<th colspan="2">微信付款</th>
+							<td>{{yuan(weixinPaid)}}</td>
+						</tr>
+
+						<tr style="{{show(change)}}">
+							<th colspan="2">找零</th>
+							<td>{{yuan(change)}}</td>
+						</tr>
+
+						<tr class="my-orders-order-table-splitter" style="{{_data.showCardUsage(cardUsage, 'DEBIT')}}">
+							<th></th>
+							<th>本次使用</th>
+							<th></th>
+						</tr>
+						
+						<tr rn-foreach="cardUsage" style="{{show(type == 'DEBIT')}}">
+							<th>{{_key}}</th>
+							<td>{{cardType in {PERIOD_CARD: 1, STAMP_CARD: 1} ? value : yuan(value)}}</td>
+							<td></td>
+						</tr>
+
+						<tr class="my-orders-order-table-splitter" style="{{_data.showCardUsage(cardUsage, 'CREDIT')}}">
+							<th></th>
+							<th>本次新增</th>
+							<th>余额</th>
+						</tr>
+
+						<tr rn-foreach="cardUsage" style="{{show(type == 'CREDIT')}}">
+							<th>{{_key}}</th>
+							<td>{{cardType=='STAMP_CARD'?value:yuan(value)}}</td>
+							<td>{{cardType=='STAMP_CARD'?(oldValue + value):yuan(oldValue + value)}}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+		<div class="my-orders-order-detail-toggle">
+			<i class="fa fa-caret-down"></i>
+		</div>
+	</div>
+
+	<script>
+	inc(
+		'css/my-orders.css',
+		'js/MyOrders.js',
+		function() {
+			new MyOrders();
+		}
+	);
+	</script>
+</div>

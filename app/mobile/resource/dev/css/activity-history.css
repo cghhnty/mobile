@@ -1,0 +1,46 @@
+.activity-history {
+  padding: 0 10px;
+}
+.activity-history-title {
+  font-weight: bold;
+}
+.activity-history-qrcode {
+  text-align: center;
+}
+.activity-history-toggle {
+  text-align: center;
+}
+.activity-history-content {
+  padding: 10px;
+}
+.activity-history-store {
+  display: block;
+  text-decoration: none;
+  color: #3e3e3e;
+  padding: 8px 10px 6px;
+  border-bottom: 1px dashed #bbb;
+}
+.activity-history-store:last-child {
+  border-bottom: 0;
+}
+.activity-history-stores-title {
+/*	background: #E6E6E6;
+	box-shadow: 0 1px 1px #ccc;
+*/
+  padding: 10px;
+  font-weight: bold;
+}
+.activity-history-stores {
+  overflow: hidden;
+}
+.activity-history-store-name {
+  font-weight: bold;
+}
+.activity-history-qrcode-icon {
+  float: right;
+}
+.activity-history-splitter {
+  text-align: center;
+  border-bottom: 1px solid #eee;
+}
+/*# sourceMappingURL=activity-history.css.map */

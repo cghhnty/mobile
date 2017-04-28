@@ -1,0 +1,52 @@
+.my-periodcards-card {
+  background-color: #efefef;
+  margin: 10px 0 20px;
+}
+.my-periodcards-card-head {
+  color: #87b740;
+  background-color: #e6e6e6;
+  border-bottom: 1px solid #ddd;
+  padding: 5px 10px;
+}
+.my-periodcards-card-gray .my-periodcards-card-head {
+  color: #333;
+}
+.my-periodcards-card-head i {
+  float: right;
+  margin-top: 5px;
+}
+.my-periodcards-link {
+  color: #333 !important;
+  text-decoration: none;
+}
+.my-periodcards table {
+  width: 100%;
+}
+.my-periodcards th {
+  padding-left: 10px;
+  text-align: left;
+}
+.my-periodcards td {
+  padding-right: 10px;
+  text-align: right;
+}
+.my-periodcards th,
+.my-periodcards td {
+  border-top: 1px solid #f9f9f9;
+  -webkit-box-shadow: 0 -1px 0 0 #dfdfdf;
+  box-shadow: 0 -1px 0 0 #dfdfdf;
+}
+.my-periodcards tr:first-child th,
+.my-periodcards tr:first-child td {
+  border-top: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.my-periodcards-orange {
+  color: #fb9620;
+}
+.my-periodcards-splitter {
+  text-align: center;
+  border-bottom: 1px solid #eee;
+}
+/*# sourceMappingURL=my-periodcards.css.map */

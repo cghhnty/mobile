@@ -1,0 +1,91 @@
+@import 'nib';
+
+.card2 {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  border-width: 1px;
+  border-radius: 12px;
+  color: #fff;
+  padding-bottom: 34px;
+}
+
+.card2:hover, .card2:focus {
+  color: #fff;
+}
+
+.card2-gray {
+  background-color: #989898;
+  border-color: rgb(138, 111, 131);
+}
+
+.card2-cyan {
+  border-color: rgb(125, 148, 125);
+  background-color: #506a61;
+  background-image: linear-gradient(90deg, #506a61 0%, #97ac94 100%);
+  -webkit-background-image: -webkit-gradient(90deg, #506a61 0%, #97ac94 100%);
+}
+
+.card2-blue {
+  border-color: rgb(105, 115, 125);
+  background-color: rgb(95, 108, 120);
+  background-image: linear-gradient(90deg, rgb(95, 108, 120) 0%, rgb(129, 143, 159) 100%);
+  -webkit-background-image: -webkit-gradient(90deg, rgb(95, 108, 120) 0%, rgb(129, 143, 159) 100%);
+}
+
+.card2-gold {
+  border-color: rgb(128, 122, 88);
+  background-color: rgb(105, 101, 68);
+  background-image: linear-gradient(90deg, rgb(105, 101, 68) 0%, rgb(159, 151, 115) 100%);
+  -webkit-background-image: -webkit-gradient(90deg, rgb(105, 101, 68) 0%, rgb(159, 151, 115) 100%);
+}
+
+.card2-header {
+  font-weight: bold;
+  padding: 12px;
+}
+
+.card2-header-right {
+  float: right;
+}
+
+.card2-body {
+  padding: 16px 12px;
+}
+
+.card2-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.271);
+  border-radius: 0 0 12px 12px;
+  padding: 6px 12px;
+}
+
+.card2-corner-mark {
+  width: 160px;
+  padding: 5px 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  text-align: center;
+  transform: rotate(45deg) translateX(50px) translateY(-20px);
+}
+
+.card2-gray .card2-corner-mark {
+  background-color: #7e7e7e;
+}
+
+.card2-water-mark {
+  font-family: "黑体";
+  width: 200px;
+  font-size: 60px;
+  font-weight: bold;
+  color: #000;
+  opacity: 0.10;
+  position: absolute;
+  top: 0;
+  right: 0;
+  text-align: center;
+  transform: rotate(-45deg) translateX(-30px) translateY(45px);
+}

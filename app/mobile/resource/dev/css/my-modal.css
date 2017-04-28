@@ -1,0 +1,46 @@
+.my-modal-title {
+  text-align: center;
+  font-size: 16px;
+}
+.my-modal-close-button {
+  position: absolute;
+  right: 15px;
+}
+.my-modal-body {
+  position: relative;
+  text-align: center;
+  color: #313c4a;
+}
+.my-modal-text {
+  padding-top: 10px;
+  font-size: 14px;
+}
+a.my-modal-footer {
+  padding: 15px;
+  border-top: 1px solid #e5e5e5;
+  display: block;
+  color: #44cbf3;
+}
+div.modal-content {
+  color: #313c4a;
+}
+.modal-qrcode {
+  width: 200px;
+}
+.modal-qrcode.opacity {
+  opacity: 0.1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=10)";
+  filter: alpha(opacity=10);
+}
+.my-modal-dialog {
+  margin-top: 75px;
+  margin-left: 35px;
+  margin-right: 35px;
+}
+.modal-right-arrow {
+  width: 8px;
+  position: absolute;
+  bottom: 18px;
+  right: 20px;
+}
+/*# sourceMappingURL=my-modal.css.map */

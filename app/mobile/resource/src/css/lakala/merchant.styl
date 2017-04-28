@@ -1,0 +1,138 @@
+@import 'nib';
+
+body {
+  background-color: #E5E5E5;
+}
+
+@media (min-width: 1024px) {
+  .lakala-merchant {
+    width: 740px;
+    margin: auto;
+  }
+}
+
+.lakala-merchant {
+  padding 0 10px;
+
+  .merchant-info {
+    padding 15px 0 20px
+  }
+
+  .merchant-name {
+    color #363e46
+    font-size 22px
+    font-weight 400
+    text-align center
+  }
+  .no-coupon {
+    margin-top 120px
+    text-align center
+    font-size 14px
+    color #c9c9c9
+
+    p {
+      margin-top 10px
+    }
+
+    img {
+      width 120px
+      height: 62px;
+    }
+  }
+  .user-coupon {
+    margin-top 5px
+    text-align center
+
+    .point, .coupon {
+      display inline-block
+      margin 0 11px;
+      padding-left 23px
+      color #1a1a1a
+      font-size 14px
+      font-weight 400
+    }
+    .point {
+      background url("../../img/lakala/point.png") no-repeat
+      background-size 16px 19px
+    }
+    .coupon {
+      background url("../../img/lakala/coupon.png") no-repeat
+      background-size 16px 18px
+    }
+  }
+  .coupons {
+    padding 0;
+
+    .coupon {
+      margin 14px 0;
+      border-radius 0 5px;
+
+      &:first-child {
+        margin-top 0
+      }
+      &:last-child {
+        margin-bottom 0
+      }
+      &.disabled {
+        .summary {
+          .coupon-name {
+            color #c9c9c9
+          }
+          .coupon-amount {
+            color #c9c9c9
+          }
+        }
+        .coupon-expired {
+          background-color #c9c9c9
+          background-image url(../../img/lakala/circle-disable.png)
+
+          .overdue {
+            display inline-block
+          }
+        }
+      }
+
+      .summary {
+        padding 10px 25px
+        background-color #ffffff
+        font-weight 400
+        border-radius 8px 8px 0 0
+
+        .coupon-name {
+          display inline-block
+          padding-right 15px
+          width 60%
+          color #131d28
+          font-size 18px
+          vertical-align middle
+        }
+        .coupon-amount {
+          display inline-block
+          width 40%
+          color #f2600f
+          font-size 32px
+          vertical-align middle
+          text-align right
+        }
+      }
+      .coupon-expired {
+        padding 10px 25px
+        background #ffaf98 url(../../img/lakala/circle.png) repeat-x
+        background-position 6px bottom
+        background-size 19px 7px
+        color #ffffff
+        border-radius 0 0 8px 8px
+
+        .time {
+          display inline-block
+          width 70%
+        }
+        .overdue {
+          display none
+          width 30%
+          text-align right
+        }
+      }
+    }
+  }
+}

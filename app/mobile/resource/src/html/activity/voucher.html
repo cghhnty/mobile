@@ -1,0 +1,56 @@
+<div class="card card-default activity-voucher">
+	<div class="card-head">
+		<span class="card-head-title">{{activity.voucherDef.name}}</span>
+	</div>
+
+	<div class="card-img-wrap">
+		<div class="card-img-top"></div>
+		<div class="card-img-bottom"></div>
+		<img class="card-img" rn-attr="src: activity.thumb || res('img/activity-voucher/voucher.jpg')">
+	</div>
+
+	<div class="activity-voucher-content">
+		<div class="activity-voucher-qrcode" style="{{show(_data.voucher)}}" >
+			<img rn-attr="src: app.api + '/qrcode?text=' + voucher.cardCode">
+			<div class="activity-voucher-qrcode-text">{{voucher.cardCode}}</div>
+		</div>
+
+		<div class="activity-voucher-desc-wrap">
+			<div><span class="activity-voucher-title">面额:</span> {{yuan(activity.voucherDef.faceValue)}}元</div>
+			<div><span class="activity-voucher-title">券有效期:</span> {{activity.voucherDef.effectiveDate ? date(activity.voucherDef.effectiveDate) +  ' 至 ' +  date(activity.voucherDef.expirationDate) : '永久有效'}}</div>
+			<div><span class="activity-voucher-title">活动日期:</span> {{date(activity.startTime)}} 至 {{date(activity.endTime)}}</div>
+			<div class="activity-voucher-title">活动说明:</div>
+			<div class="activity-voucher-description">{{activity.voucherDef.description}}</div>
+		</div>
+
+		<div class="activity-voucher-stores-title">适用门店:</div>
+		<div class="activity-voucher-stores activity-voucher-collapse">
+			<div class="activity-voucher-store" rn-foreach="activity.storeWhiteList">
+				<div class="activity-voucher-store-name">{{details.name}}</div>
+				<div>地址: <a href="{{details.latitude ? mapLink(details.latitude, details.longitude, details.name, details.address, details.phoneNumber) : 'javascript:'}}">{{details.address}}</a></div>
+				<div>电话: <a href="tel:{{details.phoneNumber}}">{{details.phoneNumber}}</a></div>
+			</div>
+		</div>
+		<div class="activity-voucher-stores-toggle" style="{{hide(activity.storeWhiteList.length < 2)}}">
+			其他{{activity.storeWhiteList.length - 1}}家适用门店 <i class="activity-voucher-stores-toggle-icon fa fa-angle-down"></i>
+		</div>
+	</div>
+
+	<div class="card-bottom common-wx-share">快和好友一起分享吧</div>
+
+	<div class="activity-voucher-bottom">
+		<a href="#" class="activity-voucher-bottom-btn activity-voucher-take {{_data.voucher ? 'activity-voucher-bottom-btn-gray' : ''}}">{{_data.voucher ? '已领取' : '领 取'}}</a>
+		<a href="javascript:" class="activity-voucher-bottom-btn common-wx-share">分享到朋友圈</a>
+	</div>
+</div>
+
+<script>
+inc(
+	'css/card.css',
+	'css/activity-voucher.css',
+	'js/ActivityVoucher.js',
+	function() {
+		new ActivityVoucher();
+	}
+);
+</script>

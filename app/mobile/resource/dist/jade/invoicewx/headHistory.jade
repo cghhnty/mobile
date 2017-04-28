@@ -1,0 +1,27 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    title 发票管家
+    meta(name='viewport', content='width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no')
+    meta(name='apple-mobile-web-app-capable', content='yes')
+    meta(name='format-detection', content='telephone=no, email=no')
+    meta(name='msapplication-tap-highlight', content='no')
+    link(rel='Shortcut Icon', href='/mobile/dist/images/icon/favicon.ico')
+    link(rel='stylesheet', type='text/css', href='/mobile/dist/assets/css/bootstrap.min.css')
+    link(rel='stylesheet', type='text/css', href='/mobile/dist/assets/css/app.min.css')
+    script(src='/mobile/dist/assets/js/lib/jquery-1.11.3.min.js')
+    script(src='/mobile/dist/assets/js/lib/template-0.7.1.min.js')
+    script(src='/mobile/dist/assets/js/app/mobile-config.js')
+
+  body.bg-light
+    input#loginWeixin(type='hidden', value='#{member ? member.weixinId : ""}')
+    input#storeId(type='hidden', value='#{store ? store.id : ""}')
+    #historyEmpty.absolute.text-center.w-full.hide(style='display:table;bottom:76px;')
+      .text-muteder(style='display:table-cell; vertical-align:middle;')
+        span.icon-icon_emnote(style='font-size:60px;')
+        p.p-t-xs 请您新增开票信息~
+    #invoiceChange.absolute.scroll-touch(style=' bottom:76px')
+    .absolute(style='bottom:15px; top:auto; margin:0 15px;')
+      a.btn.btn-lg.btn-info.r-3x.w-full(href='/lakala/addHead?storeId=#{store ? store.id : ""}') 新增开票信息
+      script(src='/mobile/dist/assets/js/app/invoicewx/headHistory.js?r=#{Math.random()}')

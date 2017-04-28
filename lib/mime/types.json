@@ -1,0 +1,9 @@
+{
+	"image/png": "png",
+	"image/jpeg": ["jpg", "jpeg"],
+	"image/gif": "gif",
+	"application/javascript": "js",
+	"text/css": "css",
+	"text/html": "html",
+	"text/plain": "txt"
+}

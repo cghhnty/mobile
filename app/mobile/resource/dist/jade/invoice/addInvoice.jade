@@ -1,0 +1,67 @@
+doctype html
+html
+    head
+        meta(charset='utf-8')
+        title 开票信息
+        meta(name='viewport', content='width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no')
+        meta(name='apple-mobile-web-app-capable', content='yes')
+        meta(name='format-detection', content='telephone=no, email=no')
+        meta(name='msapplication-tap-highlight', content='no')
+        link(rel='Shortcut Icon', href='/mobile/dist/images/icon/favicon.ico')
+        link(rel='stylesheet', type='text/css', href='/mobile/dist/assets/css/bootstrap.min.css')
+        link(rel='stylesheet', type='text/css', href='/mobile/dist/assets/css/app.min.css')
+        script(src='/mobile/dist/assets/js/lib/jquery-1.11.3.min.js')
+        script(src='/mobile/dist/assets/js/lib/template-0.7.1.min.js')
+        script(src='/mobile/dist/assets/js/app/mobile-config.js')
+
+    body.bg-light
+        .absolute.scroll-touch(style='bottom:76px')
+            input#loginWeixin(type='hidden', value='#{member?member.weixinId:""}')
+            input#merchantId(type='hidden', value='#{merchant?merchant.merchantId:""}')
+            img.block.m-auto.m-t(src='/mobile/dist/images/icon/pic_invoice.png', width='60')
+            h4.text-center.font-bold.text-md.p-b-xs #{merchant?merchant.shopName:""}
+            p.p-l-sm.m-b-xs.text-xs.text-info 发票类型
+            .row.m-n.bg-white.b-t.b-b(style='line-height:46px;')
+                .col-xs-4.p-l-sm 发票类型
+                .col-xs-8.p-r-none.pos-rlt
+                    span.icon-icon_arrowRight.absolute-right.text-xs.text-muteder.pointer-none(style='height:12px; margin-right:10px;')
+                    span#selectText.absolute-right.pointer-none(style='margin-right:30px;')
+                    select#addInvoiceSelect.pos-rlt.transparent.block.form-control.no-border.pull-right.w-full(style='height:46px;')
+                        option(value='profession') 专用发票
+                        option(value='normal') 普通发票
+            .p-l-sm.p-t-sm.m-b-xs.text-xs.text-info
+                span 发票信息
+                span#prompt.pull-right.text-xs.text-muted.p-r-sm
+            form.invoiceForm
+                ul.list-unstyled.bg-white.m-n
+                    li
+                        span 名称
+                        input(type='text', name='invoiceHeader', value='', placeholder='请输入企业名称')
+                    li
+                        span 纳税人识别号
+                        input(type='text', name='taxpayerNo', value='', placeholder='请输入纳税人识别号')
+                    li
+                        span 开户行
+                        input(type='text', name='bankName', value='', placeholder='请输入开户行')
+                    li
+                        span 银行账号
+                        input(type='text', name='bankCardNo', value='', placeholder='请输入银行账号')
+                    li
+                        span 地址
+                        input(type='text', name='address', value='', placeholder='请输入地址')
+                    li
+                        span 电话
+                        input(type='text', name='telPhone', value='', placeholder='请输入电话')
+                    li
+                        span 手机号码
+                        input(type='tel', name='phoneNo', value='', placeholder='请输入个人手机号码')
+                ul.list-unstyled.bg-white.m-n.hide
+                    li
+                        span 名称
+                        input(type='text', name='invoiceHeader', value='', placeholder='请输入姓名/企业名称')
+                    li
+                        span 手机号码
+                        input(type='tel', name='phoneNo', value='', placeholder='请输入个人手机号码')
+        .absolute(style='bottom:15px; top:auto; margin:0 15px;')
+            button.btn.btn-lg.btn-info.w-full.r-3x.invoiceSubmit(disabled='') 保存
+            script(src='/mobile/dist/assets/js/app/invoice/addInvoice.js?r=#{Math.random()}')

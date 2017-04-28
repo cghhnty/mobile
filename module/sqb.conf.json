@@ -1,0 +1,7 @@
+{
+    "order": {
+        "getOrderDetailByOrderSn": [
+            "orderSn"
+        ]
+    }
+}

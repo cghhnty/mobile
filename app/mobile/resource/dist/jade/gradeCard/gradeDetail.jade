@@ -1,0 +1,26 @@
+doctype html
+html
+    head
+        meta(charset='utf-8')
+        title 会员等级卡详情
+        meta(name='viewport', content='width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no')
+        meta(name='apple-mobile-web-app-capable', content='yes')
+        meta(name='format-detection', content='telephone=no, email=no')
+        meta(name='msapplication-tap-highlight', content='no')
+        link(rel='Shortcut Icon', href='/mobile/dist/images/icon/favicon.ico')
+        link(rel='stylesheet', type='text/css', href='/mobile/dist/build/css/app.min.css')
+        script(src='/mobile/dist/build/js/app.min.js')
+        script(src='/mobile/dist/assets/js/app/mobile-config.js')
+        script(type="text/javascript",define = null,require = null)
+        script(src='http://res.wx.qq.com/open/js/jweixin-1.0.0.js')
+    body
+        div(data-role='page', data-title='会员等级卡详情', data-dom-cache='false')
+            input#cardId(type='hidden', value='#{cardId}')
+            input#storeId(type='hidden', value='#{store?store.id:""}')
+            .ui-content.p-l-none.p-r-none.p-t-none.p-b-none.absolute(data-role='main')
+                #page-gradeDetail.lay-body.p-b(style='background-color:#fff;')
+                a.goback(href='/lakala/memberGrade?storeId=#{store?store.id:""}',data-role='none',type='button', style='color:#fff')
+                #gradeDetail-modals-show.modals.animated.fadeIn(style='background-color:rgba(0,0,0,0.6);')
+                    .modal-close.el-click.scroll-touch(style='height:100%')
+                        img.w-full(src='/mobile/dist/images/icon/show.png')
+            script(src='/mobile/dist/assets/js/app/gradeCard/gradeDetail.js?r=#{Math.random()}')

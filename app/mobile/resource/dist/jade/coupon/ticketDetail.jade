@@ -1,0 +1,65 @@
+doctype html
+html
+    head
+        meta(charset='utf-8')
+        title 优惠券详情
+        meta(name='viewport', content='width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no')
+        meta(name='apple-mobile-web-app-capable', content='yes')
+        meta(name='format-detection', content='telephone=no, email=no')
+        meta(name='msapplication-tap-highlight', content='no')
+        meta(http-equiv='expires', content='0')
+        meta(http-equiv='Pragma', content='no-cache')
+        meta(http-equiv='Cache-Control', content='no-cache')
+        link(rel='Shortcut Icon', href='/mobile/dist/images/icon/favicon.ico')
+        link(rel='stylesheet', type='text/css', href='/mobile/dist/build/css/app.min.css')
+        script(src='/mobile/dist/build/js/app.min.js')
+        script(src='/mobile/dist/assets/js/app/mobile-config.js')
+    body
+        #ticketDetail(data-role='page', data-title='优惠券详情', data-dom-cache='false')
+            if(id)
+                input#channelId(type='hidden', value='#{channelId}')
+                .ui-content.p-l-none.p-r-none.p-t-none.p-b-none.absolute(data-role='main')
+                    .lay-body
+                        .m.m-t-lg.p-l-md.p-r-md.padder-v.r-2x.box-shadow(style='background-color:#fafafa')
+                            p.font-bold.text-center.text-lg #{name}
+                            .row.m-r-none.m-l-none
+                                .col-xs-4.no-padder
+                                    p.m-b-none.text-muted #{type}
+                                    p
+                                        span #{type == "代金券" ? '￥' : ''}
+                                        span(style="font-size: #{faceValue.length > 4 ? '16px' : '20px'}") #{faceValue}
+                                        | #{type == "折扣券" ? '折' : ''}
+                                .col-xs-8.no-padder.m-t-xs.text-right
+                                    p.text-muted.m-b-none 使用条件
+                                    p #{flag}
+                            p.text-muted.m-b-none 有效期
+                            p
+                                | #{effectiveTime}
+                                span.p-l-xs.p-r-xs 至
+                                | #{expirationTime}
+                            p.text-muted.m-b-none 适用时间段
+                            p
+                                if (!effectiveStart | !effectiveEnd)
+                                    span 营业时间内均可使用
+                                else
+                                    span #{effectiveStart}
+                                    span.p-l-xs.p-r-xs 至
+                                    span #{effectiveEnd}
+                            .b-t.b-b.no-border-l.no-border-r.b-light.pos-rlt
+                                img.no-select(width='10', src='/mobile/dist/images/icon/circle-left.jpg', style='position:absolute; top:-10px; left:-22px;')
+                                img.no-select(width='10', src='/mobile/dist/images/icon/circle-right.jpg', style='position:absolute; top:-10px; right:-22px;')
+                                input#merchantId(value='#{storeId}', type='hidden')
+                                input#isHasOfflineStore(value='#{isHasOfflineStore}', type='hidden')
+                                a#searchStore.pos-rlt.block.text-muted.m-b-none.padder-v.p-r-lg
+                                    | 适用门店
+                                    span.icon-icon_arrowRight.pull-right.m-r-n-md.text-muted.m-t-xs
+                            p.text-muted.m-b-none.m-t-sm 使用说明
+                            p !{description}
+                        p.pos-rlt.padder.text-muted.text-2xs(style='padding-left:78px;')
+                            span(style='position:absolute; left:15px; top:0;') 友情提示：
+                            | 到店后，您可以提醒收银员打开会员管理-收银记账模板，然后您扫一扫二维码后使用优惠券。
+                        a.goback(href='/lakala/center?storeId=#{channelId}' , data-role='none', type='button', style='color:#fff')
+                script(src='/mobile/dist/assets/js/app/coupon/ticketDetail.js')
+            else
+                span(style='textAlign:center')
+                    | 没查到数据,检查数据是否存在哦

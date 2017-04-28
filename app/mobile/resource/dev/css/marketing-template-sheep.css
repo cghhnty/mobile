@@ -1,0 +1,618 @@
+@charset "utf-8";
+body, html {
+	height: 100%;
+	margin: 0
+}
+h3, p {
+	margin: 0
+}
+.icon {
+	display: inline-block;
+	vertical-align: middle
+}
+.template-sheep .icon-2015 {
+	background-image: url(../img/marketing-template/sheep/sprite2x.png);
+	background-position: -203px 0;
+	height: 172px;
+	width: 320px;
+	background-size: 523px 346px
+}
+.template-sheep .icon-hny {
+	background-image: url(../img/marketing-template/sheep/sprite2x.png);
+	background-position: -203px -172px;
+	height: 45px;
+	width: 240px;
+	background-size: 523px 346px
+}
+.template-sheep .icon-hy {
+	background-image: url(../img/marketing-template/sheep/sprite2x.png);
+	background-position: -148px -254px;
+	height: 19px;
+	width: 121px;
+	background-size: 523px 346px
+}
+.template-sheep .icon-love {
+	background-image: url(../img/marketing-template/sheep/sprite2x.png);
+	background-position: 0 -233px;
+	height: 113px;
+	width: 82px;
+	background-size: 523px 346px
+}
+.template-sheep .icon-sheep {
+	background-image: url(../img/marketing-template/sheep/sprite2x.png);
+	background-position: 0 0;
+	height: 233px;
+	width: 203px;
+	background-size: 523px 346px
+}
+.template-sheep .icon-little {
+	background-image: url(../img/marketing-template/sheep/sprite2x.png);
+	background-position: -82px -233px;
+	height: 66px;
+	width: 66px;
+	background-size: 523px 346px
+}
+.template-sheep .icon-wosai {
+	background-image: url(../img/marketing-template/sheep/sprite2x.png);
+	background-position: -203px -217px;
+	height: 17px;
+	width: 72px;
+	background-size: 523px 346px
+}
+.icon-play {
+	background-image: url(../img/marketing-template/sheep/sprite2x.png);
+	background-position: -148px -233px;
+	height: 21px;
+	width: 21px;
+	background-size: 523px 346px
+}
+.icon-stop {
+	background-image: url(../img/marketing-template/sheep/sprite2x.png);
+	background-position: -169px -233px;
+	height: 21px;
+	width: 21px;
+	background-size: 523px 346px
+} 
+.music {
+	width: 20px;
+	height: 20px;
+	position: fixed;
+	top: 10px;
+	right: 10px;
+	z-index: 9;
+	cursor: pointer;
+	-webkit-tap-highlight-color: transparent
+}
+.music .icon-play {
+	-webkit-animation: rotate 1s linear infinite
+}
+.music.stop .icon-play {
+	background-image: url(../img/marketing-template/sheep/sprite2x.png);
+	background-position: -169px -233px;
+	height: 21px;
+	width: 21px;
+	background-size: 523px 346px;
+	-webkit-animation: none
+}
+.swiper-container {
+	margin: 0 auto;
+	position: relative;
+	overflow: hidden;
+	direction: ltr;
+	-webkit-backface-visibility: hidden;
+	-ms-backface-visibility: hidden;
+	-o-backface-visibility: hidden;
+	backface-visibility: hidden;
+	z-index: 1
+}
+.swiper-wrapper {
+	position: relative;
+	-moz-transition-property: -moz-transform, left, top;
+	-moz-transition-duration: 0s;
+	-moz-transform: translate3d(0px, 0, 0);
+	-moz-transition-timing-function: ease;
+	-o-transition-property: -o-transform, left, top;
+	-o-transition-duration: 0s;
+	-o-transition-timing-function: ease;
+	-o-transform: translate(0px, 0);
+	-ms-transition-property: -ms-transform, left, top;
+	-ms-transition-duration: 0s;
+	-ms-transform: translate3d(0px, 0, 0);
+	-ms-transition-timing-function: ease;
+	-webkit-transition-property: -webkit-transform, left, top;
+	transition-property: transform, left, top;
+	-webkit-transition-duration: 0s;
+	transition-duration: 0s;
+	-webkit-transform: translate3d(0px, 0, 0);
+	transform: translate3d(0px, 0, 0);
+	-webkit-transition-timing-function: ease;
+	transition-timing-function: ease;
+	box-sizing: content-box
+}
+.swiper-free-mode>.swiper-wrapper {
+	-webkit-transition-timing-function: ease-out;
+	transition-timing-function: ease-out;
+	margin: 0 auto
+}
+.swiper-slide {
+	float: left;
+	box-sizing: content-box
+}
+.swiper-wp8-horizontal {
+	-ms-touch-action: pan-y
+}
+.swiper-wp8-vertical {
+	-ms-touch-action: pan-x
+}
+.swiper-container, .swiper-slide, .swiper-wrapper {
+	width: 100%;
+	height: 100%
+}
+.template-sheep .swiper-slide {
+	overflow: hidden;
+	position: relative;
+	background: url(../img/marketing-template/sheep/bg.jpg) 0 0/cover no-repeat
+}
+.template-sheep .swiper-slide pre {
+	margin: 0
+}
+.template-sheep .swiper-slide .cloud {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	z-index: 1;
+	width: 100%;
+	height: 140px;
+	background: url(../img/marketing-template/sheep/cloud.png) 0 0/100% 140px repeat-x
+}
+.template-sheep .swiper-slide .icon-wosai {
+	position: absolute;
+	bottom: 6px;
+	left: 50%;
+	margin-left: -36px
+}
+.template-sheep .slide1 .top {
+	width: 21px;
+	height: 14px;
+	position: absolute;
+	bottom: 10px;
+	left: 50%;
+	margin-left: -10px;
+	background: url(../img/marketing-template/sheep/arrow.png) 0 0/21px 14px no-repeat;
+	-webkit-animation: fadeOut 1.2s ease-in both infinite
+}
+.template-sheep .slide1 .hny {
+	padding: 20px 0 10px;
+	text-align: center
+}
+.template-sheep .slide1 .love {
+	height: 200px;
+	position: relative
+}
+.template-sheep .slide1 .heart {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 200px;
+	background: url(../img/marketing-template/sheep/heart.png) 0 0/100% auto no-repeat
+}
+.template-sheep .slide1 .sheep {
+	position: relative;
+	background: url(../img/marketing-template/sheep/sheep.png) 0 0/100% auto no-repeat;
+	height: 200px
+}
+.template-sheep .slide1 .sheep .icon-love {
+	position: absolute;
+	-webkit-transition: all 500ms cubic-bezier(0.55, .085, .68, .53);
+	transition: all 500ms cubic-bezier(0.55, .085, .68, .53)
+}
+.template-sheep .slide1 .store {
+	position: absolute;
+	bottom: 10px;
+	left: 0;
+	width: 100%;
+	padding: 20px;
+	box-sizing: border-box
+}
+.template-sheep .slide1 .logo {
+	margin: 0 auto 20px;
+	width: 200px;
+	max-height: 200px;
+	text-align: center;
+	overflow: hidden
+}
+.template-sheep .slide1 .logo img {
+	max-width: 100%;
+	-o-object-fit: cover;
+	object-fit: cover;
+	overflow: hidden
+}
+.template-sheep .slide1 .name {
+	color: #fff9d7;
+	font-size: 20px;
+	text-align: center
+}
+.template-sheep .slide2 .hy {
+	position: absolute;
+	left: 50%;
+	bottom: 20px;
+	z-index: 2;
+	background: url(../img/marketing-template/sheep/hy.png) 0 0/289px auto no-repeat;
+	width: 289px;
+	height: 477px;
+	margin-left: -145px;
+	text-align: center
+}
+.template-sheep .slide2 .hy .bo, .template-sheep .slide2 .hy .icon {
+	position: absolute;
+	left: 50%
+}
+.template-sheep .slide2 .hy .icon-hy {
+	top: 200px;
+	margin-left: -60px
+}
+.template-sheep .slide2 .hy .bo {
+	line-height: 1.2;
+	top: 230px;
+	width: 164px;
+	margin-left: -82px
+}
+.template-sheep .slide2 .hy .bo pre {
+	font-size: 14px;
+	color: #093d7b
+}
+.template-sheep .slide3 .gift {
+	height: 346px;
+	background: url(../img/marketing-template/sheep/gift.png) 0 0/100% 346px no-repeat
+}
+.template-sheep .slide3 .icon-little {
+	position: absolute;
+	z-index: 0;
+	right: 26px;
+	bottom: 10px
+}
+.template-sheep .slide3 .cloud pre {
+	text-align: center;
+	color: #093d7b;
+	font-size: 14px;
+	line-height: 1.5
+}
+.template-sheep .slide3 .fu {
+	position: absolute;
+	bottom: 3px;
+	left: 50%;
+	width: 100%;
+	-webkit-transform: translate3d(-50%, 0, 0)
+}
+.template-sheep .slide4 .cloud {
+	height: 80px
+}
+.template-sheep .slide4 .word {
+	color: #fff;
+	position: relative;
+	z-index: 9
+}
+.template-sheep .slide4 .word h3 {
+	font-size: 20px;
+	text-align: center;
+	margin-bottom: 16px
+}
+.template-sheep .slide4 .word pre {
+	color: #fff;
+	text-align: center;
+	font-size: 16px;
+	line-height: 1.8;
+	width: 80%;
+	margin: 0 auto;
+	word-wrap: break-word
+}
+.template-sheep .slide4 .icon-hny {
+	display: block;
+	margin: 50px auto 20px
+}
+.template-sheep .slide4 .yang {
+	position: absolute;
+	bottom: 30px;
+	left: 50%;
+	width: 202px;
+	margin-left: -101px;
+	z-index: 3
+}
+
+.template-sheep .slide4 .link{
+	overflow: hidden;
+	position: absolute;
+	width: 100%;
+	left: 0;
+	bottom: 6px;
+}
+.template-sheep .slide4 .create{
+	float: right;
+	padding-right: 30px;
+	color: #666;
+	text-decoration: underline;
+	color: #f40;
+	font-size: 12px;
+}
+.template-sheep .slide4 .wosai{
+	float: left;
+	padding-left: 30px;
+ 
+}
+
+
+.template-sheep .swiper-slide-active .hny {
+	-webkit-animation: bounceInDown 1s ease both
+}
+.template-sheep .swiper-slide-active .sheep {
+	-webkit-animation: fadeUp 1s ease both 1s
+}
+.template-sheep .swiper-slide-active .icon-love {
+	-webkit-animation: fly 1s ease-in both 2s
+}
+.template-sheep .swiper-slide-active .heart {
+	-webkit-animation: zoomIn 1s ease both 3s
+}
+.template-sheep .swiper-slide-active .store {
+	-webkit-animation: fadeInUp 1s ease both 4s
+}
+.template-sheep .swiper-slide-active .hy {
+	-webkit-animation: zoomIn 2s ease both
+}
+.template-sheep .swiper-slide-active .icon-hy {
+	-webkit-animation: zoomIn 1s ease both 2s
+}
+.template-sheep .swiper-slide-active .bo {
+	-webkit-animation: zoomIn 1s ease both 3s
+}
+.template-sheep .swiper-slide-active .icon-hny {
+	-webkit-animation: bounceInDown 1s linear both
+}
+.template-sheep .swiper-slide-active .word h3 {
+	-webkit-animation: fadeInUp 1s linear both 1s
+}
+.template-sheep .swiper-slide-active .word pre {
+	-webkit-animation: fadeInUp 1s linear both 2s
+}
+.template-sheep .swiper-slide-active .fu {
+	-webkit-animation: fadeIn 1s linear both 2s
+}
+.template-sheep .swiper-slide-active .gift {
+	-webkit-animation: fadeInUp 1s ease-in both
+}
+.template-sheep .swiper-slide-active .yang {
+	-webkit-animation: fadeIn 1s linear both 3s
+}
+.template-sheep .swiper-slide-active .icon-sheep {
+	-webkit-animation: shake 1s linear both infinite
+}
+.template-sheep .swiper-slide-active .icon-wosai {
+	-webkit-animation: wobble 1s linear both 4s
+}
+.template-sheep .swiper-slide-active .icon-little {
+	-webkit-animation: jump 3s linear infinite alternate
+}
+@media (max-width:414px) and (max-height:736px) {
+	.template-sheep .slide1 .hny {
+		margin-bottom: 50px
+	}
+	.template-sheep .slide1 .heart {
+		height: 240px
+	}
+	.template-sheep .slide3 .gift {
+		height: 460px;
+		background-size: 100% 460px
+	}
+	.template-sheep .slide4 .icon-hny {
+		margin-bottom: 50px
+	}
+}
+@media (max-width:375px) and (max-height:667px) {
+	.template-sheep .slide1 .hny {
+		margin-bottom: 40px
+	}
+	.template-sheep .slide3 .gift {
+		height: 460px;
+		background-size: 100% 460px
+	}
+	.template-sheep .slide4 .icon-hny {
+		margin-bottom: 50px
+	}
+}
+@media (max-height:450px) {
+	.template-sheep .slide1 .store {
+		background-color: rgba(0, 0, 0, .2);
+		padding: 5px 0
+	}
+	.template-sheep .slide4 .word {
+		background-color: rgba(0, 0, 0, .3);
+		padding: 5px 0
+	}
+}
+@-webkit-keyframes shake {
+	0% {
+		-webkit-transform: translate(0, 0) scale(1, 1)
+	}
+	25% {
+		-webkit-transform: translate(1px, 1px) scale(1.02, .99)
+	}
+	50% {
+		-webkit-transform: translate(-1px, -3px) scale(0.97, 1.03)
+	}
+	75% {
+		-webkit-transform: translate(1px, 0) scale(1.01, 1)
+	}
+	100% {
+		-webkit-transform: translate(0, 0) scale(1, 1)
+	}
+}
+@-webkit-keyframes rotate {
+	0% {
+		-webkit-transform: rotate(0deg)
+	}
+	100% {
+		-webkit-transform: rotate(360deg)
+	}
+}
+@-webkit-keyframes fly {
+	0% {
+		opacity: 0;
+		left: 0;
+		top: 0
+	}
+	5% {
+		opacity: 1
+	}
+	100% {
+		left: 30%;
+		top: 5px
+	}
+}
+@-webkit-keyframes fadeIn {
+	0% {
+		opacity: 0
+	}
+	100% {
+		opacity: 1
+	}
+}
+@-webkit-keyframes fadeOut {
+	100% {
+		opacity: 0
+	}
+}
+@-webkit-keyframes wobble {
+	0% {
+		-webkit-transform: none;
+		transform: none
+	}
+	15% {
+		-webkit-transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg);
+		transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg)
+	}
+	30% {
+		-webkit-transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg);
+		transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg)
+	}
+	45% {
+		-webkit-transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg);
+		transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg)
+	}
+	60% {
+		-webkit-transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg);
+		transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg)
+	}
+	75% {
+		-webkit-transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg);
+		transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg)
+	}
+	100% {
+		-webkit-transform: none;
+		transform: none
+	}
+}
+@-webkit-keyframes jump {
+	0% {
+		bottom: -100px
+	}
+	30% {
+		bottom: 180px
+	}
+	50% {
+		bottom: 200px;
+		-webkit-transform: rotate(45deg)
+	}
+	70% {
+		bottom: 180px;
+		-webkit-transform: rotate(45deg)
+	}
+	100% {
+		bottom: -100px;
+		-webkit-transform: rotate(95deg)
+	}
+}
+@-webkit-keyframes fadeUp {
+	0% {
+		opacity: 0;
+		-webkit-transform: translate3d(0, 100%, 0);
+		transform: translate3d(0, 100%, 0)
+	}
+	100% {
+		opacity: 1;
+		-webkit-transform: translate3d(0, 0, 0);
+		transform: translate3d(0, 0, 0)
+	}
+}
+@-webkit-keyframes fadeInUp {
+	0% {
+		opacity: 0;
+		-webkit-transform: translate3d(0, 100%, 0);
+		transform: translate3d(0, 100%, 0)
+	}
+	100% {
+		opacity: 1;
+		-webkit-transform: none;
+		transform: none
+	}
+}
+@-webkit-keyframes zoomIn {
+	0% {
+		opacity: 0;
+		-webkit-transform: scale3d(0.3, .3, .3);
+		transform: scale3d(0.3, .3, .3)
+	}
+	50% {
+		opacity: 1
+	}
+}
+@-webkit-keyframes lightSpeedIn {
+	0% {
+		-webkit-transform: translate3d(-100%, 0, 0) skewX(-30deg);
+		transform: translate3d(-100%, 0, 0) skewX(-30deg);
+		opacity: 0
+	}
+	60% {
+		-webkit-transform: skewX(20deg);
+		transform: skewX(20deg);
+		opacity: 1
+	}
+	80% {
+		-webkit-transform: skewX(-5deg);
+		transform: skewX(-5deg);
+		opacity: 1
+	}
+	100% {
+		-webkit-transform: none;
+		transform: none;
+		opacity: 1
+	}
+}
+@-webkit-keyframes bounceInDown {
+	0%, 100%, 60%, 75%, 90% {
+		-webkit-transition-timing-function: cubic-bezier(0.215, .61, .355, 1);
+		transition-timing-function: cubic-bezier(0.215, .61, .355, 1)
+	}
+	0% {
+		opacity: 0;
+		-webkit-transform: translate3d(0, -3000px, 0);
+		transform: translate3d(0, -3000px, 0)
+	}
+	60% {
+		opacity: 1;
+		-webkit-transform: translate3d(0, 25px, 0);
+		transform: translate3d(0, 25px, 0)
+	}
+	75% {
+		-webkit-transform: translate3d(0, -10px, 0);
+		transform: translate3d(0, -10px, 0)
+	}
+	90% {
+		-webkit-transform: translate3d(0, 5px, 0);
+		transform: translate3d(0, 5px, 0)
+	}
+	100% {
+		-webkit-transform: translate3d(0, 0, 0)
+	}
+}
+/*# sourceMappingURL=marketing-template-sheep.css.map */

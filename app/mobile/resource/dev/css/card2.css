@@ -1,0 +1,103 @@
+.card2 {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  border-width: 1px;
+  -webkit-border-radius: 12px;
+  border-radius: 12px;
+  color: #fff;
+  padding-bottom: 34px;
+}
+.card2:hover,
+.card2:focus {
+  color: #fff;
+}
+.card2-gray {
+  background-color: #989898;
+  border-color: #8a6f83;
+}
+.card2-cyan {
+  border-color: #7d947d;
+  background-color: #506a61;
+  background-image: -webkit-linear-gradient(0deg, #506a61 0%, #97ac94 100%);
+  background-image: -moz-linear-gradient(0deg, #506a61 0%, #97ac94 100%);
+  background-image: -o-linear-gradient(0deg, #506a61 0%, #97ac94 100%);
+  background-image: -ms-linear-gradient(0deg, #506a61 0%, #97ac94 100%);
+  background-image: linear-gradient(90deg, #506a61 0%, #97ac94 100%);
+  -webkit-background-image: -webkit-gradient(90deg, #506a61 0%, #97ac94 100%);
+}
+.card2-blue {
+  border-color: #69737d;
+  background-color: #5f6c78;
+  background-image: -webkit-linear-gradient(0deg, #5f6c78 0%, #818f9f 100%);
+  background-image: -moz-linear-gradient(0deg, #5f6c78 0%, #818f9f 100%);
+  background-image: -o-linear-gradient(0deg, #5f6c78 0%, #818f9f 100%);
+  background-image: -ms-linear-gradient(0deg, #5f6c78 0%, #818f9f 100%);
+  background-image: linear-gradient(90deg, #5f6c78 0%, #818f9f 100%);
+  -webkit-background-image: -webkit-gradient(90deg, #5f6c78 0%, #818f9f 100%);
+}
+.card2-gold {
+  border-color: #807a58;
+  background-color: #696544;
+  background-image: -webkit-linear-gradient(0deg, #696544 0%, #9f9773 100%);
+  background-image: -moz-linear-gradient(0deg, #696544 0%, #9f9773 100%);
+  background-image: -o-linear-gradient(0deg, #696544 0%, #9f9773 100%);
+  background-image: -ms-linear-gradient(0deg, #696544 0%, #9f9773 100%);
+  background-image: linear-gradient(90deg, #696544 0%, #9f9773 100%);
+  -webkit-background-image: -webkit-gradient(90deg, #696544 0%, #9f9773 100%);
+}
+.card2-header {
+  font-weight: bold;
+  padding: 12px;
+}
+.card2-header-right {
+  float: right;
+}
+.card2-body {
+  padding: 16px 12px;
+}
+.card2-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(0,0,0,0.271);
+  -webkit-border-radius: 0 0 12px 12px;
+  border-radius: 0 0 12px 12px;
+  padding: 6px 12px;
+}
+.card2-corner-mark {
+  width: 160px;
+  padding: 5px 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  text-align: center;
+  -webkit-transform: rotate(45deg) translateX(50px) translateY(-20px);
+  -moz-transform: rotate(45deg) translateX(50px) translateY(-20px);
+  -o-transform: rotate(45deg) translateX(50px) translateY(-20px);
+  -ms-transform: rotate(45deg) translateX(50px) translateY(-20px);
+  transform: rotate(45deg) translateX(50px) translateY(-20px);
+}
+.card2-gray .card2-corner-mark {
+  background-color: #7e7e7e;
+}
+.card2-water-mark {
+  font-family: "黑体";
+  width: 200px;
+  font-size: 60px;
+  font-weight: bold;
+  color: #000;
+  opacity: 0.1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=10)";
+  filter: alpha(opacity=10);
+  position: absolute;
+  top: 0;
+  right: 0;
+  text-align: center;
+  -webkit-transform: rotate(-45deg) translateX(-30px) translateY(45px);
+  -moz-transform: rotate(-45deg) translateX(-30px) translateY(45px);
+  -o-transform: rotate(-45deg) translateX(-30px) translateY(45px);
+  -ms-transform: rotate(-45deg) translateX(-30px) translateY(45px);
+  transform: rotate(-45deg) translateX(-30px) translateY(45px);
+}
+/*# sourceMappingURL=card2.css.map */

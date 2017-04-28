@@ -1,0 +1,32 @@
+doctype html
+html
+    head
+        meta(charset='utf-8')
+        title 适用门店
+        meta(name='viewport', content='width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no')
+        meta(name='apple-mobile-web-app-capable', content='yes')
+        meta(name='format-detection', content='telephone=no, email=no')
+        meta(name='msapplication-tap-highlight', content='no')
+        link(rel='Shortcut Icon', href='/mobile/dist/images/icon/favicon.ico')
+        link(rel='stylesheet', type='text/css', href='/mobile/dist/build/css/app.min.css')
+        script(src='/mobile/dist/build/js/app.min.js')
+        script(src='/mobile/dist/assets/js/app/mobile-config.js')
+    body
+       div(data-role='page', data-title='适用门店', data-dom-cache='false')
+            .ui-content.p-l-none.p-r-none.p-t-none.p-b-none.absolute(data-role='main')
+                .lay-body
+                    p.m-b-none.l-h-max.text-xs.p-l(style='background-color:#f6f6f6') 共#{list?list.length:0}家门店
+                    ul.list-unstyled.b-b
+                        if (list&&list.length) > 0
+                            each item in list
+                                li.bg-white.padder.padder-v-sm.b-t
+                                    p.m-b-xs  #{item.details.aliasName ? item.details.aliasName : item.details.name}
+                                    p.text-xs.m-b-none.text-muted
+                                        | #{item.details.pcdStr ? item.details.pcdStr : item.details.address}
+                        else
+                            li.bg-white.padder.padder-v-sm.b-t(style="text-align:center;")
+                                span(style="color:red;")
+                                    | 本店暂未建设网点
+                    a.goback(href='/lakala/gradeDetail?storeId=#{storeId}&cardId=#{cardId}',data-ajax="false", data-role='none', type='button', style='color:#fff')
+
+

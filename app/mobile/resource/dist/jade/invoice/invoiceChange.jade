@@ -1,0 +1,25 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    title 更换开票信息
+    meta(name='viewport', content='width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no')
+    meta(name='apple-mobile-web-app-capable', content='yes')
+    meta(name='format-detection', content='telephone=no, email=no')
+    meta(name='msapplication-tap-highlight', content='no')
+    link(rel='Shortcut Icon', href='/mobile/dist/images/icon/favicon.ico')
+    link(rel='stylesheet', type='text/css', href='/mobile/dist/assets/css/bootstrap.min.css')
+    link(rel='stylesheet', type='text/css', href='/mobile/dist/assets/css/app.min.css')
+    script(src='/mobile/dist/assets/js/lib/jquery-1.11.3.min.js')
+    script(src='/mobile/dist/assets/js/lib/template-0.7.1.min.js')
+    script(src='/mobile/dist/assets/js/app/mobile-config.js')
+
+  body.bg-light
+    input#loginWeixin(type='hidden', value='#{member ? member.weixinId : ""}')
+    input#merchantId(type='hidden', value='#{merchant? merchant.merchantId : ""}')
+    #invoiceChange.absolute.scroll-touch(style='bottom:76px')
+    .absolute(style='bottom:15px; top:auto; margin:0 15px;')
+      //a.btn.btn-lg.btn-default.inline(style='width:46%; margin-right:6%;', href='') 开票记录
+      //a.btn.btn-lg.btn-default.inline(style='width:45%;', href='/lakala/addHeader?weixinId=#{member?member.weixinId:""}&merchantId=#{merchant?merchant.merchantId:""}') 新增开票信息
+      a.btn.btn-lg.btn-info.r-3x.w-full(href='/invoice/addHeader?weixinId=#{member?member.weixinId:""}&merchantId=#{merchant?merchant.merchantId:""}') 新增开票信息
+      script(src='/mobile/dist/assets/js/app/invoice/invoiceChange.js?r=#{Math.random()}')

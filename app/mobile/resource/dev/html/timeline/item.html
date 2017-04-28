@@ -1,0 +1,46 @@
+<div class="timeline-item common-bottom-bar-margin {{isSelf ? '' : 'common-top-bar-margin'}}" rn-scope>
+	<div class="common-top-bar common-wx-subscribe" style="{{hide(isSelf)}}">关注这家店</div>
+
+	<div class="timeline-item-title">{{store.details.name}}与您共享美好时光</div>
+
+	<div class="timeline-item-info">
+
+	<div class="swiper-container">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide" rn-foreach="timelineItem.imageUrls">
+				<a href="{{link('timeline/photo', {id: timelineItem.id, index: _key})}}"><img rn-attr="src: img(_value, '1480w_1480h_60Q_1e_1c')" width="290"></a>
+			</div>
+		</div>
+		<div class="swiper-pagination"></div>
+	</div>
+
+	<div class="timeline-item-title">
+		<div class="timeline-list-date">
+			<div class="timeline-list-date-lg">{{dateOfMonth(timelineItem.lastModified)}} <span style="font-size: 12px;">{{monthCn(timelineItem.lastModified)}}</span></div>
+			<div></div>
+		</div>
+
+		<div class="timeline-list-describ">
+			{{timelineItem.description}}
+
+			
+		</div>	
+	</div>
+	</div>
+	<div rn-foreach="timelineItem.imageUrls" class="timeline-list-item" style="{{show(imageUrls.length)}}"></div>
+
+
+	<div class="common-bottom-bar common-wx-share" style="{{show(isSelf)}}">分享给好友</div>
+	<div class="common-bottom-bar common-wx-subscribe" style="{{hide(isSelf)}}">我也想去</div>
+	<script>
+	inc(
+		'lib/swiper/idangerous.swiper.css',
+		'lib/swiper/idangerous.swiper.js',
+		'css/timeline-item.css',
+		'js/TimelineItem.js',
+		function() {
+			new TimelineItem();
+		}
+	);
+	</script>
+</div>
